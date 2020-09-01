@@ -1,0 +1,894 @@
+﻿// Abilities
+Guard
+0052
+Upper Slash
+0089
+Horizontal Slash
+010F
+Finishing Leap
+010B
+Retaliating Slash
+0111
+Slapshot
+0106
+Dodge Slash
+0107
+Flash Step
+022F
+Slide Dash
+0108
+Vicinity Break
+0232
+Guard Break
+0109
+Explosion
+010A
+Aerial Sweep
+010D
+Aerial Dive
+0230
+Aerial Spiral
+010E
+Aerial Finish
+0110
+Magnet Burst
+0231
+Counterguard
+010C
+Auto Valor
+0181
+Auto Wisdom
+0182
+Auto Limit
+0238
+Auto Master
+0183
+Auto Final
+0184
+Auto Summon
+0185
+Trinity Limit
+00C6
+Donald Fire
+00A5
+Donald Blizzard
+00A6
+Donald Thunder
+00A7
+Donald Cure
+00A8
+Fantasia (Comet)
+00C7
+Flare Force (Duck Flare)
+00C8
+Goofy Tornado
+01A7
+Goofy Bash
+01AD
+Goofy Turbo
+01A9
+Tornado Fusion (Whirli-Goof)
+00C9
+Teamwork (Knocksmash)
+00CA
+Scan
+008A
+Aerial Recovery
+009E
+Combo Master
+021B
+Combo Plus
+00A2
+Air Combo Plus
+00A3
+Combo Boost
+0186
+Air Combo Boost
+0187
+Reaction Boost
+0188
+Finishing Plus
+0189
+Negative Combo
+018A
+Berserk Charge
+018B
+Damage Drive
+018C
+Drive Boost
+018D
+Form Boost
+018E
+Summon Boost
+018F
+Combination Boost
+0190
+Experience Boost
+0191
+Leaf Bracer
+0192
+Magic Lock-On
+0193
+Light & Darkness
+021D
+Draw
+0195
+Jackpot
+0196
+Lucky Lucky
+0197
+Drive Converter
+021C
+Fire Boost
+0198
+Blizzard Boost
+0199
+Thunder Boost
+019A
+Item Boost
+019B
+MP Rage
+019C
+MP Haste
+019D
+MP Hastera
+01A5
+MP Hastega
+01A6
+Defender
+019E
+Damage Control
+021E
+Second Chance
+019F
+Once More
+01A0
+No Experience
+0194
+Auto Limit
+01A1
+Auto Change
+01A2
+Hyper Healing
+01A3
+Auto Healing
+01A4
+Protect
+0254
+Protectra
+0255
+Protectga
+0256
+// Accessories
+Ability Ring
+0008
+Engineer's Ring
+0009
+Technician's Ring
+000A
+Skill Ring
+0026
+Skillful Ring
+0027
+Expert's Ring
+000B
+Master's Ring
+0022
+Cosmic Ring
+0034
+Executive's Ring
+0257
+Sardonyx Ring
+000C
+Tourmaline Ring
+000D
+Aquamarine Ring
+000E
+Garnet Ring
+0F10
+Diamond Ring
+0010
+Silver Ring
+0011
+Gold Ring
+0012
+Platinum Ring
+0013
+Mythril Ring
+0014
+Orichalcum Ring
+001C
+Soldier Earring
+0028
+Fencer Earring
+002E
+Mage Earring
+002F
+Slayer Earring
+0030
+Medal
+0035
+Moon Amulet
+0023
+Star Charm
+0024
+Cosmic Arts
+0038
+Shadow Archive
+0039
+Shadow Archive+
+003A
+Full Bloom
+0040
+Full Bloom+
+0042
+Draw Ring
+0041
+Lucky Ring
+003F
+// Armor
+Elven Bandana
+0043
+Divine Bandana
+0044
+Protect Belt
+004E
+Gaia Belt
+004F
+Power Band
+0045
+Buster Band
+0046
+Cosmic Belt
+006F
+Fire Bangle
+00AD
+Fira Bangle
+00AE
+Firaga Bangle
+00C5
+Firagun Bangle
+011C
+Blizzard Armlet
+011E
+Blizzara Armlet
+011F
+Blizzaga Armlet
+0120
+Blizzagun Armlet
+0121
+Thunder Trinket
+0123
+Thundara Trinket
+0124
+Thundaga Trinket
+0125
+Thundagun Trinket
+0126
+Shock Charm
+0084
+Shock Charm+
+0085
+Shadow Anklet
+0128
+Dark Anklet
+0129
+Midnight Anklet
+012A
+Chaos Anklet
+012B
+Champion Belt
+0131
+Abas Chain
+012D
+Aegis Chain
+012E
+Acrisius
+012F
+Acrisius+
+0133
+Cosmic Chain
+0134
+Petite Ribbon
+0132
+Ribbon
+0130
+Grand Ribbon
+009D
+// Bonus Modifiers
+HP Up
+05
+MP Up
+0A
+Armor Slot Up
+01
+Accessory Slot Up
+01
+Item Slot Up
+01
+Drive Gauge Up
+01
+// Forms
+Valor Form
+001A
+Wisdom Form
+001B
+Limit Form
+0233
+Master Form
+001F
+Final Form
+001D
+// Growth Abilities
+High Jump LV1
+005E
+High Jump LV2
+005F
+High Jump LV3
+0060
+High Jump MAX
+0061
+Quick Run LV1
+0062
+Quick Run LV2
+0063
+Quick Run LV3
+0064
+Quick Run MAX
+0065
+Dodge Roll LV1
+0234
+Dodge Roll LV2
+0235
+Dodge Roll LV3
+0236
+Dodge Roll MAX
+0237
+Aerial Dodge LV1
+0066
+Aerial Dodge LV2
+0067
+Aerial Dodge LV3
+0068
+Aerial Dodge MAX
+0069
+Glide LV1
+006A
+Glide LV2
+006B
+Glide LV3
+006C
+Glide MAX
+006D
+// Items
+Potion
+0001
+Hi-Potion
+0002
+Ether
+0003
+Elixir
+0004
+Mega-Potion
+0005
+Mega-Ether
+0006
+Mega-Elixir
+0007
+Tent
+0083
+Drive Recovery
+0112
+High Drive Recovery
+0113
+Power Boost
+0114
+Magic Boost
+0115
+Defense Boost
+0116
+AP Boost
+0117
+// Key Items
+Torn Page
+0020
+Munny Pouch (Olette)
+016A
+Munny Pouch (Mickey)
+0217
+Crystal Orb
+016B
+Seifer's Trophy
+016C
+Tournament Poster
+016D
+Poster
+016E
+Letter
+016F
+Namine's Sketches
+0170
+Membership Card
+0171
+Olympus Stone
+0172
+Auron's Statue
+0173
+Cursed Medallion
+0174
+Presents
+0175
+Decoy Presents
+0176
+Ice Cream
+0177
+Picture
+0178
+Promise Charm
+020C
+Hades Cup Trophy
+0219
+"The Struggle" Trophy
+021A
+// Keyblades
+Kingdom Key
+0029
+Oathkeeper
+002A
+Oblivion
+002B
+Star Seeker
+01E0
+Hidden Dragon
+01E1
+Hero's Crest
+01E4
+Monochrome
+01E5
+Follow the Wind
+01E6
+Circle of Life
+01E7
+Photon Debugger
+01E8
+Gull Wing
+01E9
+Rumbling Rose
+01EA
+Guardian Soul
+01EB
+Wishing Lamp
+01EC
+Decisive Pumpkin
+01ED
+Sweet Memories
+01EF
+Mysterious Abyss
+01F0
+Sleeping Lion
+01EE
+Bond of Flame
+01F2
+Two Become One
+021F
+Fatal Crest
+01F1
+Fenrir
+01F3
+Ultima Weapon
+01F4
+Winner's Proof
+0220
+Detection Saber
+002C
+Edge of Ultima
+002D
+// Area Maps
+Navigational Map
+0059
+DH Map
+0216
+Tower Map
+0215
+Twilight Town Map
+00FF
+Sunset Hill Map
+0213
+Mansion Map
+0214
+Castle Perimeter Map
+0201
+The Great Maw Map
+0202
+Marketplace Map
+00FD
+Dark Remembrance Map
+024A
+Depths of Remembrance Map
+024E
+Garden of Assemblage Map
+0250
+Castle Map
+005A
+Basement Map
+005B
+Castle Walls Map
+005C
+Underworld Map
+0087
+Caverns Map
+0088
+Coliseum Map
+0086
+Cave of Wonders Map
+0079
+Ruins Map
+007A
+Agrabah Map
+0078
+Palace Map
+0082
+Encampment Area Map
+0070
+Village Area Map
+0071
+100 Acre Wood Map
+007D
+Piglet's House Map
+007F
+Rabbit's House Map
+007E
+Kanga's House Map
+0080
+Spooky Cave Map
+0081
+Starry Hill Map
+007C
+Savannah Map
+0200
+Pride Rock Map
+00FC
+Oasis Map
+01FF
+Undersea Kingdom Map
+007B
+Disney Castle Map
+0077
+Cornerstone Hill Map
+0072
+Window of Time Map
+0206
+Window of Time Map?
+0073
+Lilliput Map
+0074
+Building Site Map
+0075
+Mickey's House Map
+0076
+Halloween Town Map
+00FA
+Christmas Town Map
+01FD
+Curly Hill Map
+01FE
+Naval Map
+00FB
+Isla de Muerta Map
+01FB
+Ship Graveyard Map
+01FC
+The Interceptor Map
+01F9
+The Black Pearl Map
+01FA
+Pit Cell Area Map
+00FE
+I/O Tower Map
+0203
+Central Computer Core Map
+0204
+Solar Sailer Simulation Map
+0205
+Dark City Map
+0100
+Castle That Never Was Map
+0218
+// Proofs
+Proof of Connection
+0251
+Proof of Nonexistence
+0252
+Proof of Peace
+0253
+// Recipes
+Mega-Recipe
+017E
+Star Recipe
+01C1
+Recovery Recipe
+01C2
+Skill Recipe
+01C3
+Guard Recipe
+01C4
+Road to Discovery
+01D0
+Strength Beyond Strength
+01D1
+Book of Shadows
+01D2
+Cloaked Thunder
+01D3
+Eternal Blossom
+01D4
+Rare Document
+01D5
+Style Recipe
+01DB
+Moon Recipe
+01DC
+Queen Recipe
+01DD
+King Recipe
+01DE
+Ultimate Recipe
+01DF
+// Secret Reports
+Secret Ansem's Report 1
+00E2
+Secret Ansem's Report 2
+00E3
+Secret Ansem's Report 3
+00E4
+Secret Ansem's Report 4
+00E5
+Secret Ansem's Report 5
+00E6
+Secret Ansem's Report 6
+00E7
+Secret Ansem's Report 7
+00E8
+Secret Ansem's Report 8
+00E9
+Secret Ansem's Report 9
+00EA
+Secret Ansem's Report 10
+00EB
+Secret Ansem's Report 11
+00EC
+Secret Ansem's Report 12
+00ED
+Secret Ansem's Report 13
+00EE
+// Goofy's Shields
+Knight's Shield
+0031
+Adamant Shield
+008B
+Chain Gear
+008C
+Falling Star
+008E
+Dream Cloud
+008F
+Knight Defender
+0090
+Ogre Shield
+008D
+Genji Shield
+0091
+Akashic Record
+0092
+Akashic Record+
+0259
+Nobody Guard
+0093
+Frozen Pride
+0228
+Frozen Pride+
+0229
+Save The King
+01E3
+Save The King+
+01F8
+Joyous Mushroom
+022A
+Joyous Mushroom+
+022B
+Majestic Mushroom
+022C
+Majestic Mushroom+
+022D
+Ultimate Mushroom
+022E
+Detection Shield
+0032
+Test The King
+0033
+// Donald's Staves
+Mage's Staff
+004B
+Hammer Staff
+0094
+Victory Bell
+0095
+Comet Staff
+0097
+Lord's Broom
+0098
+Wisdom Wand
+0099
+Meteor Staff
+0096
+Rising Dragon
+009A
+Shaman's Relic
+009C
+Shaman's Relic+
+0258
+Nobody Lance
+009B
+Centurion
+0221
+Centurion+
+0222
+Save The Queen
+01E2
+Save The Queen+
+01F7
+Plain Mushroom
+0223
+Plain Mushroom+
+0224
+Precious Mushroom
+0225
+Precious Mushroom+
+0226
+Premium Mushroom
+0227
+Staff of Detection
+00A1
+// Magic Spells
+Fire
+0015
+Blizzard
+0016
+Thunder
+0017
+Cure
+0018
+Magnet
+0057
+Reflect
+0058
+// Summons
+Baseball Charm
+017F
+Ukulele Charm
+0019
+Lamp Charm
+009F
+Feather Charm
+00A0
+// Synth Materials
+Blazing Shard
+013D
+Blazing Stone
+013E
+Blazing Gem
+013F
+Blazing Crystal
+0140
+Frost Shard
+017A
+Frost Stone
+017B
+Frost Gem
+017C
+Frost Crystal
+017D
+Lightning Shard
+0145
+Lightning Stone
+0146
+Lightning Gem
+0147
+Lightning Crystal
+0148
+Lucid Shard
+014D
+Lucid Stone
+014E
+Lucid Gem
+014F
+Lucid Crystal
+0150
+Power Shard
+0149
+Power Stone
+014A
+Power Gem
+014B
+Power Crystal
+014C
+Dark Shard
+0118
+Dark Stone
+0119
+Dark Gem
+011A
+Dark Crystal
+011B
+Dense Shard
+0151
+Dense Stone
+0152
+Dense Gem
+0153
+Dense Crystal
+0154
+Twilight Shard
+0155
+Twilight Stone
+0156
+Twilight Gem
+0157
+Twilight Crystal
+0158
+Mythril Shard
+0159
+Mythril Stone
+015A
+Mythril Gem
+015B
+Mythril Crystal
+015C
+Remembrance Shard
+0240
+Remembrance Stone
+0241
+Remembrance Gem
+0242
+Remembrance Crystal
+0243
+Tranquility Shard
+0244
+Tranquility Stone
+0245
+Tranquility Gem
+0246
+Tranquility Crystal
+0247
+Bright Shard
+015D
+Bright Stone
+015E
+Bright Gem
+015F
+Bright Crystal
+0160
+Energy Shard
+0161
+Energy Stone
+0162
+Energy Gem
+0163
+Energy Crystal
+0164
+Serenity Shard
+0165
+Serenity Stone
+0166
+Serenity Gem
+0167
+Serenity Crystal
+0168
+Lost Illusion
+0248
+Manifest Illusion
+0249
+Orichalcum
+0179
+Orichalcum+
+0169
