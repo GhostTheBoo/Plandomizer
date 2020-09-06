@@ -14,11 +14,23 @@ namespace Plandomizer
         { get; set; }
         public string Index
         { get; set; }
+        public string Replacement
+        { get; set; }
+        public bool isReplaced
+        { get; set; }
+        public string locationType
+        { get; set; }
+        public string ReplacementIndex
+        { get; set; }
         public rewardLocation(string location, string original, string index)
         {
+            isReplaced = false;
+            Replacement = "DEFAULT";
             Location = location;
             Original = original;
             Index = index;
+            locationType = "chest";
+            ReplacementIndex = "";
         }
     }
 }
