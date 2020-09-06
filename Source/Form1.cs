@@ -17,7 +17,6 @@ namespace Plandomizer
     {
         private List<List<Reward>> rewards;
         private List<List<rewardLocation>> rewardLocations;
-        private List<List<Replacement>> replacements;
         // private string finalOutput;
                 
         enum RewardType
@@ -79,11 +78,6 @@ namespace Plandomizer
 
             rewards = Load_Rewards();
             rewardLocations = Load_Locations();
-            replacements = new List<List<Replacement>>();
-
-            for (int i = 0; i < 22; i++)
-                replacements.Add(new List<Replacement>());
-
             worldSelectorDropDown.DataSource = Enum.GetValues(typeof(RewardLocation));
             rewardTypeDropDown.DataSource = Enum.GetValues(typeof(RewardType));
             specificRewardDropDown.DisplayMember = "Title";
@@ -429,15 +423,15 @@ namespace Plandomizer
         {
             rewardLocation location = rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index];
             Reward replace = rewards[rewardTypeDropDown.SelectedIndex][specificRewardDropDown.SelectedIndex];
-            DialogResult = MessageBox.Show("Are you sure you want to replace " + location.Original + " with " + replace.Title + "?", "Replace Confirmation", MessageBoxButtons.YesNo);
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].isReplaced = true;
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].Replacement = replace.Title;
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].ReplacementIndex = replace.Index;
+            locationCheckList.Update();
+            locationCheckList.Refresh();
+            /*DialogResult = MessageBox.Show("Are you sure you want to replace " + location.Original + " with " + replace.Title + "?", "Replace Confirmation", MessageBoxButtons.YesNo);
             if(DialogResult == DialogResult.Yes)
             {
-                rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].isReplaced = true;
-                rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].Replacement = replace.Title;
-                rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].ReplacementIndex = replace.Index;
-                locationCheckList.Update();
-                locationCheckList.Refresh();
-            }
+            }*/
         }
 
         private void fileSaveButton_Click(object sender, EventArgs e)
