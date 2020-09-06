@@ -17,13 +17,8 @@ namespace Plandomizer
     {
         private List<List<Reward>> rewards;
         private List<List<rewardLocation>> rewardLocations;
-        private List<Replacement> replacements;
         // private string finalOutput;
-
-        enum World
-        {
-
-        }
+                
         enum RewardType
         {
             Ability,
@@ -48,6 +43,11 @@ namespace Plandomizer
 
         enum RewardLocation
         {
+            // Total: 22
+            // Level
+            // Donald
+            // Goofy
+            // Keyblade
             AbsentSilhouttes, //5
             Agrabah, //32
             Atlantica, //4
@@ -71,14 +71,13 @@ namespace Plandomizer
             TwilightTown, //50
             TheWorldThatNeverWas //30
         }
-
+        
         public Form1()
         {
             InitializeComponent();
 
             rewards = Load_Rewards();
             rewardLocations = Load_Locations();
-            replacements = new List<Replacement>();
             worldSelectorDropDown.DataSource = Enum.GetValues(typeof(RewardLocation));
             rewardTypeDropDown.DataSource = Enum.GetValues(typeof(RewardType));
             specificRewardDropDown.DisplayMember = "Title";
@@ -417,29 +416,48 @@ namespace Plandomizer
             locationCheckList.DataSource = rewardLocations[worldSelectorDropDown.SelectedIndex];
             locationCheckList.AutoGenerateColumns = false;
             locationCheckList.Columns["Index"].Visible = false;
+            locationCheckList.Columns["ReplacementIndex"].Visible = false;
         }
 
         private void replaceButton_Click(object sender, EventArgs e)
         {
+            rewardLocation location = rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index];
             Reward replace = rewards[rewardTypeDropDown.SelectedIndex][specificRewardDropDown.SelectedIndex];
-            DialogResult = MessageBox.Show("Are you sure you want to replace " + locationCheckList.SelectedRows[0].Cells[1].Value.ToString() + " with " + replace.Title + "?", "Replace Confirmation", MessageBoxButtons.YesNo);
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].isReplaced = true;
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].Replacement = replace.Title;
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].ReplacementIndex = replace.Index;
+            locationCheckList.Update();
+            locationCheckList.Refresh();
+            /*DialogResult = MessageBox.Show("Are you sure you want to replace " + location.Original + " with " + replace.Title + "?", "Replace Confirmation", MessageBoxButtons.YesNo);
             if(DialogResult == DialogResult.Yes)
             {
-                // Add replacement to file
-                replacements.Add(new Replacement(locationCheckList.SelectedRows[0].Cells[2].Value.ToString(), replace.Index, locationCheckList.SelectedRows[0].Cells[0].Value.ToString() + ", " + locationCheckList.SelectedRows[0].Cells[1].Value.ToString(), replace.Title));
-            }
+            }*/
         }
 
         private void fileSaveButton_Click(object sender, EventArgs e)
         {
            using (System.IO.StreamWriter file = new System.IO.StreamWriter("F266B00B.pnach"))
             {
-                foreach (Replacement r in replacements)
+                foreach(List<rewardLocation> rList in rewardLocations)
                 {
-                    //patch=1,EE,21D0BCB8,extended,0008C68C
-                    file.WriteLine("patch=1,EE," + r.LocationIndex + ",extended,0000" + r.ReplacementIndex + "// " + r.OriginalLocation + " has been replaced with " + r.ReplacedReward);
+                    foreach(rewardLocation r in rList)
+                    {
+                        //patch=1,EE,21D0BCB8,extended,0008C68C
+                        if(r.isReplaced)
+                            file.WriteLine("patch=1,EE," + r.Index + ",extended,0000" + r.ReplacementIndex + "// " + r.Location + ", " + r.Original + " has been replaced with " + r.Replacement);
+                    }
                 }
             }
+            MessageBox.Show("File saved as F266B00B.pnach");
+        }
+
+        private void defaultButton_Click(object sender, EventArgs e)
+        {
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].isReplaced = false;
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].Replacement = "DEFAULT";
+            rewardLocations[worldSelectorDropDown.SelectedIndex][locationCheckList.SelectedRows[0].Index].ReplacementIndex = "";
+            locationCheckList.Update();
+            locationCheckList.Refresh();
         }
     }
 }
