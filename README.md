@@ -1,16 +1,20 @@
 # Plandomizer
 
-Download entire folder as zip
+BONUS MODIFIERS DO NOT FUNCTION CURRENTLY. REPLACING ANYTHING WITH A BONUS REWARD WILL NOT WORK!
 
-Run executable in this exact file structure
+Download entire folder as zip.
 
-Select a world to view its checks
+Run executable in this exact file structure.
 
-Select the check to replace
+Select a world to view its checks.
 
-Click replace and reply with yes to replaced the selected location with the chosen reward
+Select the row with the check to replace.
 
-Click save to save all replacements in a pnach file
+Click replace to replace the original reward with the selected reward.
+
+Click Default to return the selected check back to its original reward.
+
+Click save to save all replacements in a pnach file.
 
 # TODO
 
@@ -18,6 +22,10 @@ Add weapon abilities and stats
 
 Add level up location
 
-Restrict handing out bonus modifiers
+Change Bonus entirely
 
-Add logic to prevent softlocking without proofs?
+Define location types (popup, chest, etc.)
+
+Add logic to prevent softlocking without proofs
+
+Search Functionality
