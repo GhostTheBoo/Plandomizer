@@ -17,6 +17,9 @@ Click replace to replaced the selected location with the chosen reward.
 Click default to return location to original reward.
 
 Choose which patch type to save too and click save.
+## Bonus
+
+-1 is a default value. If all values are left as default then the entire bonus level will give default rewards. If even 1 reward is changed, everything else will give nothing.
 
 # Warnings
 
