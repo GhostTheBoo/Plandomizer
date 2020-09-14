@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            /*
             this.worldSelectorDropDown = new System.Windows.Forms.ComboBox();
             this.fileSaveButton = new System.Windows.Forms.Button();
             this.checkLabel = new System.Windows.Forms.Label();
@@ -149,13 +150,13 @@
             this.Controls.Add(this.defaultButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.locationCheckList);
             this.Controls.Add(this.replaceButton);
             this.Controls.Add(this.specificRewardDropDown);
             this.Controls.Add(this.rewardTypeDropDown);
             this.Controls.Add(this.checkLabel);
             this.Controls.Add(this.fileSaveButton);
             this.Controls.Add(this.worldSelectorDropDown);
+            this.Controls.Add(this.locationCheckList);
             this.Name = "Form1";
             this.Text = "Plandomizer";
             ((System.ComponentModel.ISupportInitialize)(this.locationCheckList)).EndInit();
@@ -164,7 +165,6 @@
 
         }
 
-        #endregion
         private System.Windows.Forms.ComboBox worldSelectorDropDown;
         private System.Windows.Forms.Button fileSaveButton;
         private System.Windows.Forms.Label checkLabel;
@@ -174,7 +174,9 @@
         private System.Windows.Forms.DataGridView locationCheckList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button defaultButton;
+        private System.Windows.Forms.Button defaultButton;*/
+            #endregion
+        }
     }
 }
 

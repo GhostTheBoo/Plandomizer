@@ -1,4 +1,4 @@
-﻿// Abilities
+// Abilities
 Guard
 0052
 Upper Slash
@@ -295,19 +295,6 @@ Ribbon
 0130
 Grand Ribbon
 009D
-// Bonus Modifiers
-HP Up
-05
-MP Up
-0A
-Armor Slot Up
-01
-Accessory Slot Up
-01
-Item Slot Up
-01
-Drive Gauge Up
-01
 // Forms
 Valor Form
 001A

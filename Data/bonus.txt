@@ -1,0 +1,318 @@
+// Agrabah
+Escort Abu
+11D10DB2
+21D10DB4
+21D10DB8
+Summon Boost
+Treasure Room Heartless
+11D10E52
+21D10E54
+21D10E58
+
+Volcanic Lord & Blizzard Lord
+11D10CE2
+21D10CE4
+21D10CE8
+Finishing Leap
+Genie Jafar
+11D10972
+21D10974
+21D10978
+Fire
+Lexaeus (Absent Silhouette)
+11D11122
+21D11124
+21D11128
+
+// Atlantica
+// Beast's Castle
+Thresholder
+11D10752
+21D10754
+21D10758
+Upper Slash
+The Beast
+11D10942
+21D10944
+21D10948
+
+Dark Thorn
+11D10782
+21D10784
+21D10788
+Retaliating Slash
+Xaldin
+11D107C2
+21D107C4
+21D107C8
+Reflect
+// Cavern of Remembrance
+Transport to Remembrance Nobodies III
+11D11242
+21D11244
+21D11248
+
+// Disney Castle
+Escort Queen Minnie
+11D10D22
+21D10D24
+21D10D28
+Auto Smmon
+Marluxia (Absent Silhouette)
+11D11182
+21D11184
+21D11188
+
+Lingering Will
+11D111F2
+21D111F4
+21D111F8
+
+// Halloween Town
+Prison Keeper
+11D109E2
+21D109E4
+21D109E8
+Flash Step
+Oogie Boogie
+11D10A22
+21D10A24
+21D10A28
+
+Lock/Shock/Barrel
+11D10D72
+21D10D74
+21D10D78
+
+The Experiment
+11D10A62
+21D10A64
+21D10A68
+
+Vexen (Absent Silhouette)
+11D110F2
+21D110F4
+21D110F8
+
+// Hollow Bastion
+Bailey Nobodies
+11D10E92
+21D10E94
+21D10E98
+Fire
+Demyx (Hollow Bastion)
+11D10BA2
+21D10BA4
+21D10BA8
+Blizzard
+1,000 Heartless
+11D11062
+21D11064
+21D11068
+Guard Break
+Sephiroth
+11D10CD2
+21D10CD4
+21D10CD8
+
+// Land of Dragons
+Village Cave Heartless
+11D10DF2
+21D10DF4
+21D10DF8
+Slide Dash
+Shan-Yu
+11D108C2
+21D108C4
+21D108C8
+Aerial Sweep
+Storm Rider
+11D10902
+21D10904
+21D10908
+Thunder
+// Olympus Coliseum
+Cerberus
+11D10802
+21D10804
+21D10808
+Countergaurd
+Phil's Training (Story)
+11D10FE2
+21D10FE4
+21D10FE8
+Aerial Dive
+Demyx (Olympus Coliseum)
+11D10FF2
+21D10FF4
+21D10FF8
+
+Pete (Olympus Coliseum)
+11D10822
+21D10824
+21D10828
+Trinity Limit
+The Hydra
+11D10852
+21D10854
+21D10858
+Thunder
+Hades
+11D10882
+21D10884
+21D10888
+Magnet Burst
+Zexion (Absent Silhouette)
+11D11152
+21D11154
+21D11158
+
+// Olympus Cups
+// 100 Acre Wood
+// Port Royal
+The Interceptor Pirates
+11D110B2
+21D110B4
+21D110B8
+Aerial Spiral
+The Interceptor Barrels
+11D10D32
+21D10D34
+21D10D38
+
+Captain Barbossa
+11D10AA2
+21D10AA4
+21D10AA8
+Aerial Finish
+Grim Reaper I
+11D11022
+21D11024
+21D11028
+Horizontal Slash
+Grim Reaper II
+11D10AE2
+21D10AE4
+21D10AE8
+Magnet
+// Pride Lands
+Hyenas I
+11D10EA2
+21D10EA4
+21D10EA8
+
+Scar
+11D10BD2
+21D10BD4
+21D10BD8
+
+Hyenas II
+11D10ED2
+21D10ED4
+21D10ED8
+
+Groundshaker
+11D10C12
+21D10C14
+21D10C18
+Thunder
+// Simulated Twilight Town
+Station of Serenity Nobodies
+11D10FA2
+21D10FA4
+21D10FA8
+Aerial Recovery
+Twilight Thorn
+11D10CB2
+21D10CB4
+21D10CB8
+Guard
+Axel I
+11D11272
+21D11274
+21D11278
+Scan
+Axel II
+11D10CC2
+21D10CC4
+21D10CC8
+
+// Space Paranoids
+Dataspace Computers
+11D10E12
+21D10E14
+21D10E18
+
+Hostile Program
+11D10C32
+21D10C34
+21D10C38
+Vicinity Break
+Solar Sailor Heartless
+11D11072
+21D11074
+21D11078
+Explosion
+MCP
+11D10C72
+21D10C74
+21D10C78
+Reflect
+Larxene (Absent Silhouette)
+11D111B2
+21D111B4
+21D111B8
+
+// Timeless River
+Pete (Steamboat Fight)
+11D10982
+21D10984
+21D10988
+Dodge Slash
+Pete (Timeless River)
+11D109B2
+21D109B4
+21D109B8
+Reflect
+// Twilight Town
+The Old Mansion Nobodies
+11D10FB2
+21D10FB4
+21D10FB8
+
+Betwixt & Between Nobodies
+11D110E2
+21D110E4
+21D110E8
+Slapshot
+// The World that Never Was
+Roxas
+11D111E2
+21D111E4
+21D111E8
+Combo Master
+Xigbar
+11D10B22
+21D10B24
+21D10B28
+
+Luxord
+11D10B52
+21D10B54
+21D10B58
+Magnet
+Saix
+11D10B62
+21D10B64
+21D10B68
+
+Xemnas
+11D10B92
+21D10B94
+21D10B98
+
+Final Xemnas
+11D11222
+21D11224
+21D11228
+

@@ -46,17 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bonus.cs" />
+    <Compile Include="Chest.cs" />
+    <Compile Include="DriveForm.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Keyblade.cs" />
+    <Compile Include="Popup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Replacement.cs" />
     <Compile Include="Reward.cs" />
-    <Compile Include="rewardLocation.cs" />
+    <Compile Include="TabViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabViewForm.Designer.cs">
+      <DependentUpon>TabViewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -69,6 +78,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TabViewForm.resx">
+      <DependentUpon>TabViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,6 +95,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\bonus.txt" />
+    <Content Include="Data\keyblades.txt" />
     <Content Include="Data\rewardLocations.txt" />
     <Content Include="Data\rewards.txt" />
   </ItemGroup>

@@ -15,8 +15,10 @@ namespace Plandomizer
 {
     public partial class Form1 : Form
     {
-        private List<List<Reward>> rewards;
+        /*private List<List<Reward>> rewards;
         private List<List<rewardLocation>> rewardLocations;
+        private List<Keyblade> keybladeList;
+        private List<Bonus> bonusList;
         // private string finalOutput;
                 
         enum RewardType
@@ -47,7 +49,7 @@ namespace Plandomizer
             // Level
             // Donald
             // Goofy
-            // Keyblade
+            // Keyblade //27
             AbsentSilhouttes, //5
             Agrabah, //32
             Atlantica, //4
@@ -71,19 +73,22 @@ namespace Plandomizer
             TwilightTown, //50
             TheWorldThatNeverWas //30
         }
-        
+        */
         public Form1()
         {
             InitializeComponent();
-
+            /*
             rewards = Load_Rewards();
             rewardLocations = Load_Locations();
+            keybladeList = Load_Keyblades();
+            bonusList = Load_Bonuses();
+
             worldSelectorDropDown.DataSource = Enum.GetValues(typeof(RewardLocation));
             rewardTypeDropDown.DataSource = Enum.GetValues(typeof(RewardType));
-            specificRewardDropDown.DisplayMember = "Title";
+            specificRewardDropDown.DisplayMember = "Title";*/
         }
-
-        public List<List<Reward>> Load_Rewards()
+        /*
+        private List<List<Reward>> Load_Rewards()
         {
             // Loads all rewards and returns list of lists
 
@@ -202,7 +207,7 @@ namespace Plandomizer
             return ret;
         }
 
-        public List<List<rewardLocation>> Load_Locations()
+        private List<List<rewardLocation>> Load_Locations()
         {
             // Loads all reward locations and returns list of lists
             int skip = 1;
@@ -345,6 +350,27 @@ namespace Plandomizer
             return ret;
         }
 
+        private List<Keyblade> Load_Keyblades()
+        {
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\keyblades.txt");
+            List<Keyblade> ret = new List<Keyblade>();
+
+            for(int i = 0; i < 27; i++)
+                ret.Add(new Keyblade(data[(6 * i) + 0], data[(6 * i) + 1], data[(6 * i) + 2], data[(6 * i) + 3], Int32.Parse(data[(6 * i) + 4]), Int32.Parse(data[(6 * i) + 5])));
+
+            return ret;
+        }
+
+        private List<Bonus> Load_Bonuses()
+        {
+            List<Bonus> ret = new List<Bonus>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\bonus.txt");
+
+            for(int i = 0; i < 60; i++)
+                ret.Add(new Bonus(data[(5 * i) + 0], data[(5 * i) + 1], data[(5 * i) + 2], data[(5 * i) + 3], data[(5 * i) + 4]));
+
+            return ret;
+        }
         public void Populate_Rewards(IEnumerable<string> data, List<Reward> toPopulate)
         {
             string title = "";
@@ -432,8 +458,8 @@ namespace Plandomizer
             if(DialogResult == DialogResult.Yes)
             {
             }*/
-        }
-
+        //}
+    /*
         private void fileSaveButton_Click(object sender, EventArgs e)
         {
            using (System.IO.StreamWriter file = new System.IO.StreamWriter("F266B00B.pnach"))
@@ -459,5 +485,6 @@ namespace Plandomizer
             locationCheckList.Update();
             locationCheckList.Refresh();
         }
+    */
     }
 }
