@@ -17,11 +17,11 @@ Click replace to replaced the selected location with the chosen reward.
 Click default to return location to original reward.
 
 Choose which patch type to save too and click save.
-## Bonus
+### Bonus
 
 -1 is a default stat value. If all stats are left at -1 and rewards are both set to default, the bonus level will give vanilla stats, slots, and rewards. If even 1 thing is changed, all others will be assumed to be 0.
 
-## Equipment
+### Equipment
 
 If the replace button is pressed, the equipment will be set to exactly what values have been entered. If left alone or pressed default, the equipment will have Vanilla stats and abilities. FAKE, Detection Saber, and Edge of Ultima do not have default stats so they will be 0's and no abilities if they are not replaced.
 
