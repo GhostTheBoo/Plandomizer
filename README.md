@@ -21,6 +21,10 @@ Choose which patch type to save too and click save.
 
 -1 is a default value. If all values are left as default then the entire bonus level will give default rewards. If even 1 reward is changed, everything else will give nothing.
 
+## Equipment
+
+If the replace button is pressed, the equipment will be set to exactly what values have been entered. If left alone or pressed default, the equipment will have Vanilla stats and abilities. FAKE, Detection Saber, and Edge of Ultima do not have default stats so they will be 0's and no abilities if they are not replaced.
+
 # Warnings
 
 This tool allows the replacement of almost anything with almost anything else. The game however does not usually enjoy doing such. Here are some warnings for each section. If anything is unclear, please ask me in Discord so I can help explain.
@@ -48,8 +52,6 @@ Function normally and can contain almost anything.
 ### Equipment
 
 #### Very Jank!
-
-If the replace button is pressed, the equipment will be set to exactly what values have been entered. If left alone or pressed default, the equipment will have Vanilla stats and abilities. FAKE, Detection Saber, and Edge of Ultima do not have default stats so they will be 0's and no abilities if they are not replaced.
 
 The game does not enjoy having too many things modified for equipment. Keyblades can accept almost all edits while accessories and armor have some caveats. Accessories do not like to have more than 2 additional lines in the game menu. That means either 2 visible resistance stats can be added or 1 resistance stat and a Defense stat. Light, Physical, and Universal resistances are not shown so do not affect this cap. Armor also works similarly but has more lines to begin with so just be careful. Point is, this tool asks the game very nicely to do most things but the game does not always feel obligated to listen.
 
