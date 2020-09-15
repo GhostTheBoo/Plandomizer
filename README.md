@@ -19,7 +19,7 @@ Click default to return location to original reward.
 Choose which patch type to save too and click save.
 ## Bonus
 
--1 is a default value. If all values are left as default then the entire bonus level will give default rewards. If even 1 reward is changed, everything else will give nothing.
+-1 is a default stat value. If all stats are left at -1 and rewards are both set to default, the bonus level will give vanilla stats, slots, and rewards. If even 1 thing is changed, all others will be assumed to be 0.
 
 ## Equipment
 
@@ -40,8 +40,6 @@ Does not particularly enjoy holding abilities.
 Replace with abilities at your own risk!
 
 ### Bonuses
-
--1 is a default stat value. If all stats are left at -1 and rewards are both set to default, the bonus level will give vanilla stats, slots, and rewards. If even 1 thing is changed, all others will be assumed to be 0.
 
 While bonuses can be replaced with HP+, MP+, armor slot+, accessory slot+, item slot+, drive slot+, or rewards. Only 2 of the above will popup when finishing the fight and while sometimes all rewards can be recieved, the game also enjoys crashing when there are more than 2 things appearing. Absolutely use caution with replacement.
 
