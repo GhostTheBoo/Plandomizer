@@ -1,0 +1,162 @@
+Kingdom Key
+11CDF1D6
+21CDF1D8
+Damage Control
+3
+1
+Oathkeeper
+11CDF1E6
+21CDF1E8
+Form Boost
+3
+3
+Oblivion
+11CDF1F6
+21CDF1F8
+Drive Boost
+6
+2
+Star Seeker
+11CDF466
+21CDF468
+Air Combo Plus
+3
+1
+Hidden Dragon
+11CDF476
+21CDF478
+MP Rage
+2
+2
+Hero's Crest
+11CDF4A6
+21CDF4A8
+Air Combo Boost
+4
+0
+Monochrome
+11CDF4B6
+21CDF4B8
+Item Boost
+3
+2
+Follow the Wind
+11CDF4C6
+21CDF4C8
+Draw
+3
+1
+Circle of Life
+11CDF4D6
+21CDF4D8
+MP Haste
+4
+1
+Photon Debugger
+11CDF4E6
+21CDF4E8
+Thunder Boost
+3
+2
+Gull Wing
+11CDF4F6
+21CDF4F8
+Experience Boost
+2
+3
+Rumbling Rose
+11CDF506
+21CDF508
+Finishing Plus
+5
+0
+Guardian Soul
+11CDF516
+21CDF518
+Reaction Boost
+5
+1
+Wishing Lamp
+11CDF526
+21CDF528
+Jackpot
+4
+3
+Decisive Pumpkin
+11CDF536
+21CDF538
+Combo Boost
+6
+1
+Sweet Memories
+11CDF556
+21CDF558
+Drive Converter
+0
+4
+Mysterious Abyss
+11CDF566
+21CDF568
+Blizzard Boost
+3
+3
+Sleeping Lion
+11CDF546
+21CDF548
+Combo Plus
+5
+3
+Bond of Flame
+11CDF586
+21CDF588
+Fire Boost
+4
+4
+Fatal Crest
+11CDF576
+21CDF578
+Berserk Charge
+3
+5
+Two Become One
+11CDF5F6
+21CDF5F8
+Light And Darkness
+5
+4
+Fenrir
+11CDF596
+21CDF598
+Negative Combo
+7
+1
+Ultima Weapon
+11CDF5A6
+21CDF5A8
+MP Hastega
+6
+4
+Winner's Proof
+11CDF606
+21CDF608
+No Experience
+5
+7
+FAKE
+11CDF3F6
+21CDF3F8
+Defender
+3
+1
+Detection Saber
+11CDF206
+21CDF208
+Scan
+4
+2
+Edge of Ultima
+11CDF216
+21CDF218
+Mp Hastera
+5
+4

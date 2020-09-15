@@ -1,0 +1,95 @@
+// Valor
+Valor LV2
+Auto Valor
+11D1A22E
+Valor LV3
+High Jump LV 1
+11D1A236
+Valor LV4
+Combo Plus
+11D1A23E
+Valor LV5
+High Jump LV 2
+11D1A246
+Valor LV6
+Combo Plus
+11D1A24E
+Valor LV7
+High Jump LV 3
+11D1A256
+// Wisdom
+Wisdom LV2
+Auto Wisdom
+11D1A266
+Wisdom LV3
+Quick Run LV 1
+11D1A26E
+Wisdom LV4
+MP Rage
+11D1A276
+Wisdom LV5
+Quick Run LV 2
+11D1A27E
+Wisdom LV6
+MP Haste
+11D1A286
+Wisdom LV7
+Quick Run LV 3
+11D1A28E
+// Limit
+Limit LV2
+Auto Limit
+11D1A29E
+Limit LV3
+Dodge Roll LV 1
+11D1A2A6
+Limit LV4
+Draw
+11D1A2AE
+Limit LV5
+Dodge Roll LV 2
+11D1A2B6
+Limit LV6
+Lucky Lucky
+11D1A2BE
+Limit LV7
+Dodge Roll LV 3
+11D1A2C6
+// Master
+Master LV2
+Auto Master
+11D1A2D6
+Master LV3
+Aerial Dodge LV 1
+11D1A2DE
+Master LV4
+Air Combo Plus
+11D1A2E6
+Master LV5
+Aerial Dodge LV 2
+11D1A2EE
+Master LV6
+Air Combo Plus
+11D1A2F6
+Master LV7
+Aerial Dodge LV 3
+11D1A2FE
+// Final
+Final LV2
+Auto Final
+11D1A30E
+Final LV3
+Glide LV 1
+11D1A316
+Final LV4
+Form Boost
+11D1A31E
+Final LV5
+Glide LV 2
+11D1A326
+Final LV6
+Form Boost
+11D1A32E
+Final LV7
+Glide LV 3
+11D1A336

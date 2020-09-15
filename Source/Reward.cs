@@ -8,15 +8,15 @@ namespace Plandomizer
 {
     public class Reward
     {
-        public string Title
+        public string reward
         { get; set; }
-        public string Index
+        public string rewardAddress
         { get; set; }
 
-        public Reward(string title, string index)
+        public Reward(string r, string rA)
         {
-            Title = title;
-            Index = index;
+            reward = r;
+            rewardAddress = rA;
         }
     }
 }
