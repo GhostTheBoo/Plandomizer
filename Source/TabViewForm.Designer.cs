@@ -50,23 +50,40 @@
             this.popupWorldSelectorBox = new System.Windows.Forms.GroupBox();
             this.popupWorldSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.equipmentPage = new System.Windows.Forms.TabPage();
+            this.elementalOtherResistanceBox = new System.Windows.Forms.GroupBox();
+            this.physicalResistanceLabel = new System.Windows.Forms.Label();
+            this.physicalResistanceCounter = new System.Windows.Forms.NumericUpDown();
+            this.lightResistanceLabel = new System.Windows.Forms.Label();
+            this.lightResistanceCounter = new System.Windows.Forms.NumericUpDown();
+            this.universalResistanceLabel = new System.Windows.Forms.Label();
+            this.universalResistanceCounter = new System.Windows.Forms.NumericUpDown();
+            this.equipmentElementalResistanceBox = new System.Windows.Forms.GroupBox();
+            this.fireResistanceLabel = new System.Windows.Forms.Label();
+            this.fireResistanceCounter = new System.Windows.Forms.NumericUpDown();
+            this.blizzardResistanceLabel = new System.Windows.Forms.Label();
+            this.blizzardResistanceCounter = new System.Windows.Forms.NumericUpDown();
+            this.thunderResistanceLabel = new System.Windows.Forms.Label();
+            this.thunderResistanceCounter = new System.Windows.Forms.NumericUpDown();
+            this.darkResistanceLabel = new System.Windows.Forms.Label();
+            this.darkResistanceCounter = new System.Windows.Forms.NumericUpDown();
+            this.equipmentStatBox = new System.Windows.Forms.GroupBox();
+            this.equipmentAPLabel = new System.Windows.Forms.Label();
+            this.equipmentAPCounter = new System.Windows.Forms.NumericUpDown();
+            this.equipmentMagicLabel = new System.Windows.Forms.Label();
+            this.equipmentMagicCounter = new System.Windows.Forms.NumericUpDown();
+            this.equipmentDefenseLabel = new System.Windows.Forms.Label();
+            this.equipmentDefenseCounter = new System.Windows.Forms.NumericUpDown();
+            this.equipmentStrengthLabel = new System.Windows.Forms.Label();
+            this.equipmentStrengthCounter = new System.Windows.Forms.NumericUpDown();
             this.equipmentRewardComboBox = new System.Windows.Forms.ComboBox();
             this.equipmentRewardLabel = new System.Windows.Forms.Label();
             this.equipmentRewardTypeComboBox = new System.Windows.Forms.ComboBox();
             this.equipmentRewardTypeLabel = new System.Windows.Forms.Label();
             this.equipmentDefaultButton = new System.Windows.Forms.Button();
             this.equipmentReplaceButton = new System.Windows.Forms.Button();
-            this.equipmentStrengthCounter = new System.Windows.Forms.NumericUpDown();
-            this.equipmentStrengthLabel = new System.Windows.Forms.Label();
-            this.equipmentDefenseCounter = new System.Windows.Forms.NumericUpDown();
-            this.equipmentDefenseLabel = new System.Windows.Forms.Label();
-            this.equipmentMPCounter = new System.Windows.Forms.NumericUpDown();
-            this.equipmentMPLabel = new System.Windows.Forms.Label();
-            this.equipmentAPCounter = new System.Windows.Forms.NumericUpDown();
-            this.equipmentAPLabel = new System.Windows.Forms.Label();
             this.equipmentDataGridView = new System.Windows.Forms.DataGridView();
             this.equipmentTypeBox = new System.Windows.Forms.GroupBox();
-            this.equipmentTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.equipmentTypeSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.bonusPage = new System.Windows.Forms.TabPage();
             this.bonusDriveCounter = new System.Windows.Forms.NumericUpDown();
             this.bonusDriveLabel = new System.Windows.Forms.Label();
@@ -115,10 +132,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupDataGridView)).BeginInit();
             this.popupWorldSelectorBox.SuspendLayout();
             this.equipmentPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentStrengthCounter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentDefenseCounter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentMPCounter)).BeginInit();
+            this.elementalOtherResistanceBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.physicalResistanceCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lightResistanceCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universalResistanceCounter)).BeginInit();
+            this.equipmentElementalResistanceBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fireResistanceCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blizzardResistanceCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thunderResistanceCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darkResistanceCounter)).BeginInit();
+            this.equipmentStatBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentAPCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentMagicCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentDefenseCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentStrengthCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataGridView)).BeginInit();
             this.equipmentTypeBox.SuspendLayout();
             this.bonusPage.SuspendLayout();
@@ -373,20 +400,15 @@
             // 
             // equipmentPage
             // 
+            this.equipmentPage.Controls.Add(this.elementalOtherResistanceBox);
+            this.equipmentPage.Controls.Add(this.equipmentElementalResistanceBox);
+            this.equipmentPage.Controls.Add(this.equipmentStatBox);
             this.equipmentPage.Controls.Add(this.equipmentRewardComboBox);
             this.equipmentPage.Controls.Add(this.equipmentRewardLabel);
             this.equipmentPage.Controls.Add(this.equipmentRewardTypeComboBox);
             this.equipmentPage.Controls.Add(this.equipmentRewardTypeLabel);
             this.equipmentPage.Controls.Add(this.equipmentDefaultButton);
             this.equipmentPage.Controls.Add(this.equipmentReplaceButton);
-            this.equipmentPage.Controls.Add(this.equipmentStrengthCounter);
-            this.equipmentPage.Controls.Add(this.equipmentStrengthLabel);
-            this.equipmentPage.Controls.Add(this.equipmentDefenseCounter);
-            this.equipmentPage.Controls.Add(this.equipmentDefenseLabel);
-            this.equipmentPage.Controls.Add(this.equipmentMPCounter);
-            this.equipmentPage.Controls.Add(this.equipmentMPLabel);
-            this.equipmentPage.Controls.Add(this.equipmentAPCounter);
-            this.equipmentPage.Controls.Add(this.equipmentAPLabel);
             this.equipmentPage.Controls.Add(this.equipmentDataGridView);
             this.equipmentPage.Controls.Add(this.equipmentTypeBox);
             this.equipmentPage.Location = new System.Drawing.Point(4, 22);
@@ -396,6 +418,306 @@
             this.equipmentPage.TabIndex = 2;
             this.equipmentPage.Text = "Equipment";
             this.equipmentPage.UseVisualStyleBackColor = true;
+            // 
+            // elementalOtherResistanceBox
+            // 
+            this.elementalOtherResistanceBox.Controls.Add(this.physicalResistanceLabel);
+            this.elementalOtherResistanceBox.Controls.Add(this.physicalResistanceCounter);
+            this.elementalOtherResistanceBox.Controls.Add(this.lightResistanceLabel);
+            this.elementalOtherResistanceBox.Controls.Add(this.lightResistanceCounter);
+            this.elementalOtherResistanceBox.Controls.Add(this.universalResistanceLabel);
+            this.elementalOtherResistanceBox.Controls.Add(this.universalResistanceCounter);
+            this.elementalOtherResistanceBox.Location = new System.Drawing.Point(766, 254);
+            this.elementalOtherResistanceBox.Name = "elementalOtherResistanceBox";
+            this.elementalOtherResistanceBox.Size = new System.Drawing.Size(125, 143);
+            this.elementalOtherResistanceBox.TabIndex = 22;
+            this.elementalOtherResistanceBox.TabStop = false;
+            this.elementalOtherResistanceBox.Text = "Other Resistance";
+            // 
+            // physicalResistanceLabel
+            // 
+            this.physicalResistanceLabel.AutoSize = true;
+            this.physicalResistanceLabel.Location = new System.Drawing.Point(6, 16);
+            this.physicalResistanceLabel.Name = "physicalResistanceLabel";
+            this.physicalResistanceLabel.Size = new System.Drawing.Size(46, 13);
+            this.physicalResistanceLabel.TabIndex = 6;
+            this.physicalResistanceLabel.Text = "Physical";
+            // 
+            // physicalResistanceCounter
+            // 
+            this.physicalResistanceCounter.Location = new System.Drawing.Point(9, 33);
+            this.physicalResistanceCounter.Minimum = new decimal(new int[] {
+            155,
+            0,
+            0,
+            -2147483648});
+            this.physicalResistanceCounter.Name = "physicalResistanceCounter";
+            this.physicalResistanceCounter.Size = new System.Drawing.Size(51, 20);
+            this.physicalResistanceCounter.TabIndex = 7;
+            // 
+            // lightResistanceLabel
+            // 
+            this.lightResistanceLabel.AutoSize = true;
+            this.lightResistanceLabel.Location = new System.Drawing.Point(6, 56);
+            this.lightResistanceLabel.Name = "lightResistanceLabel";
+            this.lightResistanceLabel.Size = new System.Drawing.Size(30, 13);
+            this.lightResistanceLabel.TabIndex = 8;
+            this.lightResistanceLabel.Text = "Light";
+            // 
+            // lightResistanceCounter
+            // 
+            this.lightResistanceCounter.Location = new System.Drawing.Point(9, 73);
+            this.lightResistanceCounter.Minimum = new decimal(new int[] {
+            155,
+            0,
+            0,
+            -2147483648});
+            this.lightResistanceCounter.Name = "lightResistanceCounter";
+            this.lightResistanceCounter.Size = new System.Drawing.Size(51, 20);
+            this.lightResistanceCounter.TabIndex = 9;
+            // 
+            // universalResistanceLabel
+            // 
+            this.universalResistanceLabel.AutoSize = true;
+            this.universalResistanceLabel.Location = new System.Drawing.Point(6, 96);
+            this.universalResistanceLabel.Name = "universalResistanceLabel";
+            this.universalResistanceLabel.Size = new System.Drawing.Size(51, 13);
+            this.universalResistanceLabel.TabIndex = 10;
+            this.universalResistanceLabel.Text = "Universal";
+            // 
+            // universalResistanceCounter
+            // 
+            this.universalResistanceCounter.Location = new System.Drawing.Point(9, 113);
+            this.universalResistanceCounter.Minimum = new decimal(new int[] {
+            155,
+            0,
+            0,
+            -2147483648});
+            this.universalResistanceCounter.Name = "universalResistanceCounter";
+            this.universalResistanceCounter.Size = new System.Drawing.Size(51, 20);
+            this.universalResistanceCounter.TabIndex = 11;
+            // 
+            // equipmentElementalResistanceBox
+            // 
+            this.equipmentElementalResistanceBox.Controls.Add(this.fireResistanceLabel);
+            this.equipmentElementalResistanceBox.Controls.Add(this.fireResistanceCounter);
+            this.equipmentElementalResistanceBox.Controls.Add(this.blizzardResistanceLabel);
+            this.equipmentElementalResistanceBox.Controls.Add(this.blizzardResistanceCounter);
+            this.equipmentElementalResistanceBox.Controls.Add(this.thunderResistanceLabel);
+            this.equipmentElementalResistanceBox.Controls.Add(this.thunderResistanceCounter);
+            this.equipmentElementalResistanceBox.Controls.Add(this.darkResistanceLabel);
+            this.equipmentElementalResistanceBox.Controls.Add(this.darkResistanceCounter);
+            this.equipmentElementalResistanceBox.Location = new System.Drawing.Point(901, 63);
+            this.equipmentElementalResistanceBox.Name = "equipmentElementalResistanceBox";
+            this.equipmentElementalResistanceBox.Size = new System.Drawing.Size(125, 185);
+            this.equipmentElementalResistanceBox.TabIndex = 21;
+            this.equipmentElementalResistanceBox.TabStop = false;
+            this.equipmentElementalResistanceBox.Text = "Elemental Resistance";
+            // 
+            // fireResistanceLabel
+            // 
+            this.fireResistanceLabel.AutoSize = true;
+            this.fireResistanceLabel.Location = new System.Drawing.Point(6, 16);
+            this.fireResistanceLabel.Name = "fireResistanceLabel";
+            this.fireResistanceLabel.Size = new System.Drawing.Size(24, 13);
+            this.fireResistanceLabel.TabIndex = 6;
+            this.fireResistanceLabel.Text = "Fire";
+            // 
+            // fireResistanceCounter
+            // 
+            this.fireResistanceCounter.Location = new System.Drawing.Point(9, 33);
+            this.fireResistanceCounter.Minimum = new decimal(new int[] {
+            155,
+            0,
+            0,
+            -2147483648});
+            this.fireResistanceCounter.Name = "fireResistanceCounter";
+            this.fireResistanceCounter.Size = new System.Drawing.Size(51, 20);
+            this.fireResistanceCounter.TabIndex = 7;
+            // 
+            // blizzardResistanceLabel
+            // 
+            this.blizzardResistanceLabel.AutoSize = true;
+            this.blizzardResistanceLabel.Location = new System.Drawing.Point(6, 56);
+            this.blizzardResistanceLabel.Name = "blizzardResistanceLabel";
+            this.blizzardResistanceLabel.Size = new System.Drawing.Size(43, 13);
+            this.blizzardResistanceLabel.TabIndex = 8;
+            this.blizzardResistanceLabel.Text = "Blizzard";
+            // 
+            // blizzardResistanceCounter
+            // 
+            this.blizzardResistanceCounter.Location = new System.Drawing.Point(9, 73);
+            this.blizzardResistanceCounter.Minimum = new decimal(new int[] {
+            155,
+            0,
+            0,
+            -2147483648});
+            this.blizzardResistanceCounter.Name = "blizzardResistanceCounter";
+            this.blizzardResistanceCounter.Size = new System.Drawing.Size(51, 20);
+            this.blizzardResistanceCounter.TabIndex = 9;
+            // 
+            // thunderResistanceLabel
+            // 
+            this.thunderResistanceLabel.AutoSize = true;
+            this.thunderResistanceLabel.Location = new System.Drawing.Point(6, 96);
+            this.thunderResistanceLabel.Name = "thunderResistanceLabel";
+            this.thunderResistanceLabel.Size = new System.Drawing.Size(47, 13);
+            this.thunderResistanceLabel.TabIndex = 10;
+            this.thunderResistanceLabel.Text = "Thunder";
+            // 
+            // thunderResistanceCounter
+            // 
+            this.thunderResistanceCounter.Location = new System.Drawing.Point(9, 113);
+            this.thunderResistanceCounter.Minimum = new decimal(new int[] {
+            155,
+            0,
+            0,
+            -2147483648});
+            this.thunderResistanceCounter.Name = "thunderResistanceCounter";
+            this.thunderResistanceCounter.Size = new System.Drawing.Size(51, 20);
+            this.thunderResistanceCounter.TabIndex = 11;
+            // 
+            // darkResistanceLabel
+            // 
+            this.darkResistanceLabel.AutoSize = true;
+            this.darkResistanceLabel.Location = new System.Drawing.Point(6, 136);
+            this.darkResistanceLabel.Name = "darkResistanceLabel";
+            this.darkResistanceLabel.Size = new System.Drawing.Size(30, 13);
+            this.darkResistanceLabel.TabIndex = 12;
+            this.darkResistanceLabel.Text = "Dark";
+            // 
+            // darkResistanceCounter
+            // 
+            this.darkResistanceCounter.Location = new System.Drawing.Point(9, 153);
+            this.darkResistanceCounter.Minimum = new decimal(new int[] {
+            155,
+            0,
+            0,
+            -2147483648});
+            this.darkResistanceCounter.Name = "darkResistanceCounter";
+            this.darkResistanceCounter.Size = new System.Drawing.Size(51, 20);
+            this.darkResistanceCounter.TabIndex = 13;
+            // 
+            // equipmentStatBox
+            // 
+            this.equipmentStatBox.Controls.Add(this.equipmentAPLabel);
+            this.equipmentStatBox.Controls.Add(this.equipmentAPCounter);
+            this.equipmentStatBox.Controls.Add(this.equipmentMagicLabel);
+            this.equipmentStatBox.Controls.Add(this.equipmentMagicCounter);
+            this.equipmentStatBox.Controls.Add(this.equipmentDefenseLabel);
+            this.equipmentStatBox.Controls.Add(this.equipmentDefenseCounter);
+            this.equipmentStatBox.Controls.Add(this.equipmentStrengthLabel);
+            this.equipmentStatBox.Controls.Add(this.equipmentStrengthCounter);
+            this.equipmentStatBox.Location = new System.Drawing.Point(766, 63);
+            this.equipmentStatBox.Name = "equipmentStatBox";
+            this.equipmentStatBox.Size = new System.Drawing.Size(125, 185);
+            this.equipmentStatBox.TabIndex = 20;
+            this.equipmentStatBox.TabStop = false;
+            this.equipmentStatBox.Text = "Stats";
+            // 
+            // equipmentAPLabel
+            // 
+            this.equipmentAPLabel.AutoSize = true;
+            this.equipmentAPLabel.Location = new System.Drawing.Point(6, 16);
+            this.equipmentAPLabel.Name = "equipmentAPLabel";
+            this.equipmentAPLabel.Size = new System.Drawing.Size(21, 13);
+            this.equipmentAPLabel.TabIndex = 6;
+            this.equipmentAPLabel.Text = "AP";
+            // 
+            // equipmentAPCounter
+            // 
+            this.equipmentAPCounter.Location = new System.Drawing.Point(9, 33);
+            this.equipmentAPCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.equipmentAPCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.equipmentAPCounter.Name = "equipmentAPCounter";
+            this.equipmentAPCounter.Size = new System.Drawing.Size(51, 20);
+            this.equipmentAPCounter.TabIndex = 7;
+            // 
+            // equipmentMagicLabel
+            // 
+            this.equipmentMagicLabel.AutoSize = true;
+            this.equipmentMagicLabel.Location = new System.Drawing.Point(6, 56);
+            this.equipmentMagicLabel.Name = "equipmentMagicLabel";
+            this.equipmentMagicLabel.Size = new System.Drawing.Size(36, 13);
+            this.equipmentMagicLabel.TabIndex = 8;
+            this.equipmentMagicLabel.Text = "Magic";
+            // 
+            // equipmentMagicCounter
+            // 
+            this.equipmentMagicCounter.Location = new System.Drawing.Point(9, 73);
+            this.equipmentMagicCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.equipmentMagicCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.equipmentMagicCounter.Name = "equipmentMagicCounter";
+            this.equipmentMagicCounter.Size = new System.Drawing.Size(51, 20);
+            this.equipmentMagicCounter.TabIndex = 9;
+            // 
+            // equipmentDefenseLabel
+            // 
+            this.equipmentDefenseLabel.AutoSize = true;
+            this.equipmentDefenseLabel.Location = new System.Drawing.Point(6, 96);
+            this.equipmentDefenseLabel.Name = "equipmentDefenseLabel";
+            this.equipmentDefenseLabel.Size = new System.Drawing.Size(47, 13);
+            this.equipmentDefenseLabel.TabIndex = 10;
+            this.equipmentDefenseLabel.Text = "Defense";
+            // 
+            // equipmentDefenseCounter
+            // 
+            this.equipmentDefenseCounter.Location = new System.Drawing.Point(9, 113);
+            this.equipmentDefenseCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.equipmentDefenseCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.equipmentDefenseCounter.Name = "equipmentDefenseCounter";
+            this.equipmentDefenseCounter.Size = new System.Drawing.Size(51, 20);
+            this.equipmentDefenseCounter.TabIndex = 11;
+            // 
+            // equipmentStrengthLabel
+            // 
+            this.equipmentStrengthLabel.AutoSize = true;
+            this.equipmentStrengthLabel.Location = new System.Drawing.Point(6, 136);
+            this.equipmentStrengthLabel.Name = "equipmentStrengthLabel";
+            this.equipmentStrengthLabel.Size = new System.Drawing.Size(47, 13);
+            this.equipmentStrengthLabel.TabIndex = 12;
+            this.equipmentStrengthLabel.Text = "Strength";
+            // 
+            // equipmentStrengthCounter
+            // 
+            this.equipmentStrengthCounter.Location = new System.Drawing.Point(9, 153);
+            this.equipmentStrengthCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.equipmentStrengthCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.equipmentStrengthCounter.Name = "equipmentStrengthCounter";
+            this.equipmentStrengthCounter.Size = new System.Drawing.Size(51, 20);
+            this.equipmentStrengthCounter.TabIndex = 13;
             // 
             // equipmentRewardComboBox
             // 
@@ -440,6 +762,7 @@
             this.equipmentDefaultButton.TabIndex = 15;
             this.equipmentDefaultButton.Text = "Default";
             this.equipmentDefaultButton.UseVisualStyleBackColor = true;
+            this.equipmentDefaultButton.Click += new System.EventHandler(this.equipmentDefaultButton_Click);
             // 
             // equipmentReplaceButton
             // 
@@ -449,70 +772,7 @@
             this.equipmentReplaceButton.TabIndex = 14;
             this.equipmentReplaceButton.Text = "Replace";
             this.equipmentReplaceButton.UseVisualStyleBackColor = true;
-            // 
-            // equipmentStrengthCounter
-            // 
-            this.equipmentStrengthCounter.Location = new System.Drawing.Point(770, 200);
-            this.equipmentStrengthCounter.Name = "equipmentStrengthCounter";
-            this.equipmentStrengthCounter.Size = new System.Drawing.Size(51, 20);
-            this.equipmentStrengthCounter.TabIndex = 13;
-            // 
-            // equipmentStrengthLabel
-            // 
-            this.equipmentStrengthLabel.AutoSize = true;
-            this.equipmentStrengthLabel.Location = new System.Drawing.Point(767, 183);
-            this.equipmentStrengthLabel.Name = "equipmentStrengthLabel";
-            this.equipmentStrengthLabel.Size = new System.Drawing.Size(47, 13);
-            this.equipmentStrengthLabel.TabIndex = 12;
-            this.equipmentStrengthLabel.Text = "Strength";
-            // 
-            // equipmentDefenseCounter
-            // 
-            this.equipmentDefenseCounter.Location = new System.Drawing.Point(770, 160);
-            this.equipmentDefenseCounter.Name = "equipmentDefenseCounter";
-            this.equipmentDefenseCounter.Size = new System.Drawing.Size(51, 20);
-            this.equipmentDefenseCounter.TabIndex = 11;
-            // 
-            // equipmentDefenseLabel
-            // 
-            this.equipmentDefenseLabel.AutoSize = true;
-            this.equipmentDefenseLabel.Location = new System.Drawing.Point(767, 143);
-            this.equipmentDefenseLabel.Name = "equipmentDefenseLabel";
-            this.equipmentDefenseLabel.Size = new System.Drawing.Size(47, 13);
-            this.equipmentDefenseLabel.TabIndex = 10;
-            this.equipmentDefenseLabel.Text = "Defense";
-            // 
-            // equipmentMPCounter
-            // 
-            this.equipmentMPCounter.Location = new System.Drawing.Point(770, 120);
-            this.equipmentMPCounter.Name = "equipmentMPCounter";
-            this.equipmentMPCounter.Size = new System.Drawing.Size(51, 20);
-            this.equipmentMPCounter.TabIndex = 9;
-            // 
-            // equipmentMPLabel
-            // 
-            this.equipmentMPLabel.AutoSize = true;
-            this.equipmentMPLabel.Location = new System.Drawing.Point(767, 103);
-            this.equipmentMPLabel.Name = "equipmentMPLabel";
-            this.equipmentMPLabel.Size = new System.Drawing.Size(23, 13);
-            this.equipmentMPLabel.TabIndex = 8;
-            this.equipmentMPLabel.Text = "MP";
-            // 
-            // equipmentAPCounter
-            // 
-            this.equipmentAPCounter.Location = new System.Drawing.Point(770, 80);
-            this.equipmentAPCounter.Name = "equipmentAPCounter";
-            this.equipmentAPCounter.Size = new System.Drawing.Size(51, 20);
-            this.equipmentAPCounter.TabIndex = 7;
-            // 
-            // equipmentAPLabel
-            // 
-            this.equipmentAPLabel.AutoSize = true;
-            this.equipmentAPLabel.Location = new System.Drawing.Point(767, 63);
-            this.equipmentAPLabel.Name = "equipmentAPLabel";
-            this.equipmentAPLabel.Size = new System.Drawing.Size(21, 13);
-            this.equipmentAPLabel.TabIndex = 6;
-            this.equipmentAPLabel.Text = "AP";
+            this.equipmentReplaceButton.Click += new System.EventHandler(this.equipmentReplaceButton_Click);
             // 
             // equipmentDataGridView
             // 
@@ -533,7 +793,7 @@
             // 
             // equipmentTypeBox
             // 
-            this.equipmentTypeBox.Controls.Add(this.equipmentTypeComboBox);
+            this.equipmentTypeBox.Controls.Add(this.equipmentTypeSelectorComboBox);
             this.equipmentTypeBox.Location = new System.Drawing.Point(6, 6);
             this.equipmentTypeBox.Name = "equipmentTypeBox";
             this.equipmentTypeBox.Size = new System.Drawing.Size(263, 50);
@@ -541,13 +801,14 @@
             this.equipmentTypeBox.TabStop = false;
             this.equipmentTypeBox.Text = "Equipment Type";
             // 
-            // equipmentTypeComboBox
+            // equipmentTypeSelectorComboBox
             // 
-            this.equipmentTypeComboBox.FormattingEnabled = true;
-            this.equipmentTypeComboBox.Location = new System.Drawing.Point(7, 20);
-            this.equipmentTypeComboBox.Name = "equipmentTypeComboBox";
-            this.equipmentTypeComboBox.Size = new System.Drawing.Size(250, 21);
-            this.equipmentTypeComboBox.TabIndex = 0;
+            this.equipmentTypeSelectorComboBox.FormattingEnabled = true;
+            this.equipmentTypeSelectorComboBox.Location = new System.Drawing.Point(7, 20);
+            this.equipmentTypeSelectorComboBox.Name = "equipmentTypeSelectorComboBox";
+            this.equipmentTypeSelectorComboBox.Size = new System.Drawing.Size(250, 21);
+            this.equipmentTypeSelectorComboBox.TabIndex = 0;
+            this.equipmentTypeSelectorComboBox.SelectedIndexChanged += new System.EventHandler(this.equipmentTypeSelectorComboBox_SelectedIndexChanged);
             // 
             // bonusPage
             // 
@@ -1033,10 +1294,23 @@
             this.popupWorldSelectorBox.ResumeLayout(false);
             this.equipmentPage.ResumeLayout(false);
             this.equipmentPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentStrengthCounter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentDefenseCounter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentMPCounter)).EndInit();
+            this.elementalOtherResistanceBox.ResumeLayout(false);
+            this.elementalOtherResistanceBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.physicalResistanceCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lightResistanceCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universalResistanceCounter)).EndInit();
+            this.equipmentElementalResistanceBox.ResumeLayout(false);
+            this.equipmentElementalResistanceBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fireResistanceCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blizzardResistanceCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thunderResistanceCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darkResistanceCounter)).EndInit();
+            this.equipmentStatBox.ResumeLayout(false);
+            this.equipmentStatBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentAPCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentMagicCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentDefenseCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentStrengthCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataGridView)).EndInit();
             this.equipmentTypeBox.ResumeLayout(false);
             this.bonusPage.ResumeLayout(false);
@@ -1089,13 +1363,13 @@
         private System.Windows.Forms.Button popupReplaceButton;
         private System.Windows.Forms.DataGridView equipmentDataGridView;
         private System.Windows.Forms.GroupBox equipmentTypeBox;
-        private System.Windows.Forms.ComboBox equipmentTypeComboBox;
+        private System.Windows.Forms.ComboBox equipmentTypeSelectorComboBox;
         private System.Windows.Forms.NumericUpDown equipmentStrengthCounter;
         private System.Windows.Forms.Label equipmentStrengthLabel;
         private System.Windows.Forms.NumericUpDown equipmentDefenseCounter;
         private System.Windows.Forms.Label equipmentDefenseLabel;
-        private System.Windows.Forms.NumericUpDown equipmentMPCounter;
-        private System.Windows.Forms.Label equipmentMPLabel;
+        private System.Windows.Forms.NumericUpDown equipmentMagicCounter;
+        private System.Windows.Forms.Label equipmentMagicLabel;
         private System.Windows.Forms.NumericUpDown equipmentAPCounter;
         private System.Windows.Forms.Label equipmentAPLabel;
         private System.Windows.Forms.ComboBox equipmentRewardComboBox;
@@ -1142,5 +1416,22 @@
         private System.Windows.Forms.Label bonusItemLabel;
         private System.Windows.Forms.ComboBox patchSelectorComboBox;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.GroupBox equipmentStatBox;
+        private System.Windows.Forms.GroupBox elementalOtherResistanceBox;
+        private System.Windows.Forms.Label physicalResistanceLabel;
+        private System.Windows.Forms.NumericUpDown physicalResistanceCounter;
+        private System.Windows.Forms.Label lightResistanceLabel;
+        private System.Windows.Forms.NumericUpDown lightResistanceCounter;
+        private System.Windows.Forms.Label universalResistanceLabel;
+        private System.Windows.Forms.NumericUpDown universalResistanceCounter;
+        private System.Windows.Forms.GroupBox equipmentElementalResistanceBox;
+        private System.Windows.Forms.Label fireResistanceLabel;
+        private System.Windows.Forms.NumericUpDown fireResistanceCounter;
+        private System.Windows.Forms.Label blizzardResistanceLabel;
+        private System.Windows.Forms.NumericUpDown blizzardResistanceCounter;
+        private System.Windows.Forms.Label thunderResistanceLabel;
+        private System.Windows.Forms.NumericUpDown thunderResistanceCounter;
+        private System.Windows.Forms.Label darkResistanceLabel;
+        private System.Windows.Forms.NumericUpDown darkResistanceCounter;
     }
 }

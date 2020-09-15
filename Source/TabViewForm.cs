@@ -15,16 +15,18 @@ namespace Plandomizer
 {
     public partial class TabViewForm : Form
     {
-        //keyblade list
         internal List<string> worldList;
         internal List<string> rewardTypeList;
+        internal List<string> equipmentRewardTypeList;
         internal List<string> formTypeList;
+        internal List<string> equipmentTypeList;
         internal List<string> patchList;
 
         internal List<List<Bonus>> bonusList;
         internal List<List<Chest>> chestList;
         internal List<List<DriveForm>> driveFormList;
         internal List<List<Popup>> popupList;
+        internal List<List<Equipment>> equipmentList;
         internal List<List<Reward>> rewardList;
 
         public TabViewForm()
@@ -34,12 +36,14 @@ namespace Plandomizer
             populateWorldList();
             populateRewardTypeList();
             populateFormTypeList();
+            populateEquipmentTypeList();
             populatePatchList();
 
             loadBonuses();
             loadChests();
             loadDriveForms();
             loadPopups();
+            loadEquipment();
             loadRewards();
 
             #region Data Sources and Display Members
@@ -49,6 +53,7 @@ namespace Plandomizer
             popupWorldSelectorComboBox.BindingContext = new BindingContext();
             popupWorldSelectorComboBox.DataSource = worldList;
             formSelectorComboBox.DataSource = formTypeList;
+            equipmentTypeSelectorComboBox.DataSource = equipmentTypeList;
             patchSelectorComboBox.DataSource = patchList;
 
             bonusRewardTypeComboBox1.BindingContext = new BindingContext();
@@ -65,8 +70,7 @@ namespace Plandomizer
             chestRewardTypeComboBox.SelectedIndex = 17;
             equipmentRewardTypeComboBox.BindingContext = new BindingContext();
             equipmentRewardComboBox.BindingContext = new BindingContext();
-            equipmentRewardTypeComboBox.DataSource = rewardTypeList;
-            equipmentRewardTypeComboBox.SelectedIndex = 17;
+            equipmentRewardTypeComboBox.DataSource = equipmentRewardTypeList;
             formRewardTypeComboBox.BindingContext = new BindingContext();
             formRewardComboBox.BindingContext = new BindingContext();
             formRewardTypeComboBox.DataSource = rewardTypeList;
@@ -112,6 +116,16 @@ namespace Plandomizer
             formDataGridView.Columns["originalAddress"].Visible = false;
             formDataGridView.Columns["replacementAddress"].Visible = false;
             formDataGridView.Columns["changed"].Visible = false;
+
+            equipmentDataGridView.Columns["equipmentName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            equipmentDataGridView.Columns["ability"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            equipmentDataGridView.Columns["equipmentType"].Visible = false;
+            equipmentDataGridView.Columns["abilityAddress"].Visible = false;
+            equipmentDataGridView.Columns["statAddress"].Visible = false;
+            equipmentDataGridView.Columns["elementalResistanceAddress"].Visible = false;
+            equipmentDataGridView.Columns["otherResistanceAddress"].Visible = false;
+            equipmentDataGridView.Columns["changed"].Visible = false;
+            equipmentDataGridView.Columns["replacementAbilityAddress"].Visible = false;
 
             popupDataGridView.Columns["locationAddress"].Visible = false;
             popupDataGridView.Columns["replacementAddress"].Visible = false;
@@ -486,6 +500,51 @@ namespace Plandomizer
             populatePopupList(temp, data.Skip(skip).Take(entryCount * twtnwCount).ToArray(), twtnwCount);
             popupList.Add(temp);
         }
+        public void loadEquipment()
+        {
+            int entryCount = 5;
+            int skip = 1;
+
+            int kbCount = 27;
+            int dsCount = 20;
+            int gsCount = 20;
+            int awCount = 8;
+            int armCount = 33;
+            int accCount = 33;
+
+            equipmentList = new List<List<Equipment>>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\equipment.txt");
+
+            List<Equipment> temp = new List<Equipment>();
+            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * kbCount).ToArray(), kbCount, equipmentTypeList[0]);
+            equipmentList.Add(temp);
+            skip += 1 + (entryCount * kbCount);
+            temp = new List<Equipment>();
+
+            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * dsCount).ToArray(), dsCount, equipmentTypeList[1]);
+            equipmentList.Add(temp);
+            skip += 1 + (entryCount * dsCount);
+            temp = new List<Equipment>();
+
+            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * gsCount).ToArray(), gsCount, equipmentTypeList[2]);
+            equipmentList.Add(temp);
+            skip += 1 + (entryCount * gsCount);
+            temp = new List<Equipment>();
+
+            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * awCount).ToArray(), awCount, equipmentTypeList[3]);
+            equipmentList.Add(temp);
+            skip += 1 + (entryCount * awCount);
+            temp = new List<Equipment>();
+
+            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * armCount).ToArray(), armCount, equipmentTypeList[4]);
+            equipmentList.Add(temp);
+            skip += 1 + (entryCount * armCount);
+            temp = new List<Equipment>();
+
+            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * accCount).ToArray(), accCount, equipmentTypeList[5]);
+            equipmentList.Add(temp);
+
+        }
         public void loadRewards()
         {
             int entryCount = 2;
@@ -649,6 +708,19 @@ namespace Plandomizer
                 pList.Add(new Popup(entries[0], entries[1], entries[2]));
             }
         }
+        internal void populateEquipmentList(List<Equipment> eList, string[] data, int typeCount, string equipmentType)
+        {
+            string[] entries = new string[5];
+
+            for (int i = 0; i < typeCount; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    entries[j] = data[(5 * i) + j];
+                }
+                eList.Add(new Equipment(equipmentType, entries[0], entries[1], entries[2], entries[3], entries[4]));
+            }
+        }
         internal void populateRewardList(List<Reward> rList, string[] data, int rewardTypeCount)
         {
             string[] entries = new string[2];
@@ -688,6 +760,7 @@ namespace Plandomizer
         }
         public void populateRewardTypeList()
         {
+            equipmentRewardTypeList = new List<string>();
             rewardTypeList = new List<string>();
 
             rewardTypeList.Add("Abilities");
@@ -707,6 +780,23 @@ namespace Plandomizer
             rewardTypeList.Add("Magic Spells");
             rewardTypeList.Add("Summons");
             rewardTypeList.Add("Synth Materials");
+            equipmentRewardTypeList.Add("Abilities");
+            equipmentRewardTypeList.Add("Accessories");
+            equipmentRewardTypeList.Add("Armor");
+            equipmentRewardTypeList.Add("Forms");
+            equipmentRewardTypeList.Add("Growth Abilities");
+            equipmentRewardTypeList.Add("Items");
+            equipmentRewardTypeList.Add("Key Items");
+            equipmentRewardTypeList.Add("Keyblades");
+            equipmentRewardTypeList.Add("Area Maps");
+            equipmentRewardTypeList.Add("Proofs");
+            equipmentRewardTypeList.Add("Recipes");
+            equipmentRewardTypeList.Add("Secret Reports");
+            equipmentRewardTypeList.Add("Goofy's Shields");
+            equipmentRewardTypeList.Add("Donald's Staves");
+            equipmentRewardTypeList.Add("Magic Spells");
+            equipmentRewardTypeList.Add("Summons");
+            equipmentRewardTypeList.Add("Synth Materials");
             rewardTypeList.Add("Default");
         }
         public void populateFormTypeList()
@@ -718,6 +808,17 @@ namespace Plandomizer
             formTypeList.Add("Limit");
             formTypeList.Add("Master");
             formTypeList.Add("Final");
+        }
+        public void populateEquipmentTypeList()
+        {
+            equipmentTypeList = new List<string>();
+
+            equipmentTypeList.Add("Keyblade");
+            equipmentTypeList.Add("Donald Staff");
+            equipmentTypeList.Add("Goofy Shield");
+            equipmentTypeList.Add("Ally Weapon");
+            equipmentTypeList.Add("Armor");
+            equipmentTypeList.Add("Accessory");
         }
         public void populatePatchList()
         {
@@ -741,6 +842,11 @@ namespace Plandomizer
         private void bonusWorldSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             bonusDataGridView.DataSource = bonusList[bonusWorldSelectorComboBox.SelectedIndex];
+        }
+        
+        private void equipmentTypeSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            equipmentDataGridView.DataSource = equipmentList[equipmentTypeSelectorComboBox.SelectedIndex];
         }
 
         private void formSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -957,6 +1063,51 @@ namespace Plandomizer
             formDataGridView.Update();
             formDataGridView.Refresh();
         }
+        private void equipmentReplaceButton_Click(object sender, EventArgs e)
+        {
+            int equipmentType = equipmentTypeSelectorComboBox.SelectedIndex;
+            int equipment = equipmentDataGridView.SelectedRows[0].Index;
+            Reward temp = rewardList[equipmentRewardTypeComboBox.SelectedIndex][equipmentRewardComboBox.SelectedIndex];
+            equipmentList[equipmentType][equipment].ap = Convert.ToInt32(equipmentAPCounter.Value);
+            equipmentList[equipmentType][equipment].strength = Convert.ToInt32(equipmentStrengthCounter.Value);
+            equipmentList[equipmentType][equipment].magic = Convert.ToInt32(equipmentMagicCounter.Value);
+            equipmentList[equipmentType][equipment].defense = Convert.ToInt32(equipmentDefenseCounter.Value);
+            equipmentList[equipmentType][equipment].physicalResistance = Convert.ToInt32(physicalResistanceCounter.Value);
+            equipmentList[equipmentType][equipment].fireResistance = Convert.ToInt32(fireResistanceCounter.Value);
+            equipmentList[equipmentType][equipment].blizzardResistance = Convert.ToInt32(blizzardResistanceCounter.Value);
+            equipmentList[equipmentType][equipment].thunderResistance = Convert.ToInt32(thunderResistanceCounter.Value);
+            equipmentList[equipmentType][equipment].darkResistance = Convert.ToInt32(darkResistanceCounter.Value);
+            equipmentList[equipmentType][equipment].lightResistance = Convert.ToInt32(lightResistanceCounter.Value);
+            equipmentList[equipmentType][equipment].allResistance = Convert.ToInt32(universalResistanceCounter.Value);
+            equipmentList[equipmentType][equipment].replacementAbilityAddress = temp.rewardAddress;
+            equipmentList[equipmentType][equipment].ability = temp.reward;
+            equipmentList[equipmentType][equipment].changed = true;
+            equipmentDataGridView.Update();
+            equipmentDataGridView.Refresh();
+        }
+        private void equipmentDefaultButton_Click(object sender, EventArgs e)
+        {
+            int equipmentType = equipmentTypeSelectorComboBox.SelectedIndex;
+            int equipment = equipmentDataGridView.SelectedRows[0].Index;
+
+            equipmentList[equipmentType][equipment].ap = 0;
+            equipmentList[equipmentType][equipment].strength = 0;
+            equipmentList[equipmentType][equipment].magic = 0;
+            equipmentList[equipmentType][equipment].defense = 0;
+            equipmentList[equipmentType][equipment].physicalResistance = 0;
+            equipmentList[equipmentType][equipment].fireResistance = 0;
+            equipmentList[equipmentType][equipment].blizzardResistance = 0;
+            equipmentList[equipmentType][equipment].thunderResistance = 0;
+            equipmentList[equipmentType][equipment].darkResistance = 0;
+            equipmentList[equipmentType][equipment].lightResistance = 0;
+            equipmentList[equipmentType][equipment].allResistance = 0;
+            equipmentList[equipmentType][equipment].replacementAbilityAddress = "";
+            equipmentList[equipmentType][equipment].ability = "";
+            equipmentList[equipmentTypeSelectorComboBox.SelectedIndex][equipmentDataGridView.SelectedRows[0].Index].changed = false;
+
+            equipmentDataGridView.Update();
+            equipmentDataGridView.Refresh();
+        }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -1014,9 +1165,18 @@ namespace Plandomizer
                             file.Write(p.toString());
                     }
                 }
+                foreach (List<Equipment> eList in equipmentList)
+                {
+                    foreach (Equipment eq in eList)
+                    {
+                        if (eq.changed)
+                            file.Write(eq.toString());
+                    }
+                }
             }
             MessageBox.Show("File saved as " + patchFileName);
         }
         #endregion
+
     }
 }

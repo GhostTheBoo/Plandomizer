@@ -75,11 +75,11 @@ namespace Plandomizer
 				string word = "";
 				// Stats
 				if (mpIncrease != -1)
-					word += mpIncrease.ToString("2X");
+					word += mpIncrease.ToString("X2");
 				else
 					word += "00";
 				if (hpIncrease != -1)
-					word += hpIncrease.ToString("2X");
+					word += hpIncrease.ToString("X2");
 				else
 					word += "00";
 				ret += "patch=1,EE," + statAddress + ",extended,0000" + word + "// MP+ and HP+\n";
@@ -87,19 +87,19 @@ namespace Plandomizer
 				// Slots
 				word = "";
 				if (armorSlotIncrease != -1)
-					word += armorSlotIncrease.ToString("2X");
+					word += armorSlotIncrease.ToString("X2");
 				else
 					word += "00";
 				if (accessorySlotIncrease != -1)
-					word += accessorySlotIncrease.ToString("2X");
+					word += accessorySlotIncrease.ToString("X2");
 				else
 					word += "00";
 				if (itemSlotIncrease != -1)
-					word += itemSlotIncrease.ToString("2X");
+					word += itemSlotIncrease.ToString("X2");
 				else
 					word += "00";
 				if (driveGaugeIncrease != -1)
-					word += driveGaugeIncrease.ToString("2X");
+					word += driveGaugeIncrease.ToString("X2");
 				else
 					word += "00";
 				ret += "patch=1,EE," + statAddress + ",extended," + word + "// Armor Slot+ Accessory Slot+ Item Slot+ Drive Gauge+\n";
