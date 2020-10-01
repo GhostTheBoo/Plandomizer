@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="levelHelpTextBox.Text" xml:space="preserve">
+    <value>Experience and stats on levels work very differently from stats on bonuses and equipment.
+
+The stats entered for each level will be your stats for that level.
+
+An input of 10 Magic for level 5 does not give you +10 Magic. It will ensure that your Magic stat is at 10 at level 5.
+
+Similarly, entering 500 for Total Experience to Next Level at level 5 does not mean there is a 500 experience difference between level 5 and level 6. If you reach level 6 with no extra experience, you will have exactly 500 total experience gained.
+
+If this explanation seems convoluted, that is because it is. Click the help button for a more detailed explanation.</value>
+  </data>
 </root>

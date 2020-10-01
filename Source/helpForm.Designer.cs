@@ -32,14 +32,14 @@
             this.chestPage = new System.Windows.Forms.TabPage();
             this.chestHelpTextBox = new System.Windows.Forms.RichTextBox();
             this.popupPage = new System.Windows.Forms.TabPage();
-            this.formPage = new System.Windows.Forms.TabPage();
-            this.equipmentPage = new System.Windows.Forms.TabPage();
-            this.bonusPage = new System.Windows.Forms.TabPage();
-            this.levelPage = new System.Windows.Forms.TabPage();
             this.popupHelpTextBox = new System.Windows.Forms.RichTextBox();
+            this.formPage = new System.Windows.Forms.TabPage();
             this.formHelpTextBox = new System.Windows.Forms.RichTextBox();
+            this.equipmentPage = new System.Windows.Forms.TabPage();
             this.equipmentHelpTextBox = new System.Windows.Forms.RichTextBox();
+            this.bonusPage = new System.Windows.Forms.TabPage();
             this.bonusHelpTextBox = new System.Windows.Forms.RichTextBox();
+            this.levelPage = new System.Windows.Forms.TabPage();
             this.levelHelpTextBox = new System.Windows.Forms.RichTextBox();
             this.helpTabControl.SuspendLayout();
             this.chestPage.SuspendLayout();
@@ -52,6 +52,9 @@
             // 
             // helpTabControl
             // 
+            this.helpTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.helpTabControl.Controls.Add(this.chestPage);
             this.helpTabControl.Controls.Add(this.popupPage);
             this.helpTabControl.Controls.Add(this.formPage);
@@ -97,50 +100,6 @@
             this.popupPage.Text = "Popups";
             this.popupPage.UseVisualStyleBackColor = true;
             // 
-            // formPage
-            // 
-            this.formPage.Controls.Add(this.formHelpTextBox);
-            this.formPage.Location = new System.Drawing.Point(4, 22);
-            this.formPage.Name = "formPage";
-            this.formPage.Padding = new System.Windows.Forms.Padding(3);
-            this.formPage.Size = new System.Drawing.Size(776, 399);
-            this.formPage.TabIndex = 4;
-            this.formPage.Text = "Forms";
-            this.formPage.UseVisualStyleBackColor = true;
-            // 
-            // equipmentPage
-            // 
-            this.equipmentPage.Controls.Add(this.equipmentHelpTextBox);
-            this.equipmentPage.Location = new System.Drawing.Point(4, 22);
-            this.equipmentPage.Name = "equipmentPage";
-            this.equipmentPage.Padding = new System.Windows.Forms.Padding(3);
-            this.equipmentPage.Size = new System.Drawing.Size(776, 399);
-            this.equipmentPage.TabIndex = 3;
-            this.equipmentPage.Text = "Equipment";
-            this.equipmentPage.UseVisualStyleBackColor = true;
-            // 
-            // bonusPage
-            // 
-            this.bonusPage.Controls.Add(this.bonusHelpTextBox);
-            this.bonusPage.Location = new System.Drawing.Point(4, 22);
-            this.bonusPage.Name = "bonusPage";
-            this.bonusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.bonusPage.Size = new System.Drawing.Size(776, 399);
-            this.bonusPage.TabIndex = 2;
-            this.bonusPage.Text = "Bonus Levels";
-            this.bonusPage.UseVisualStyleBackColor = true;
-            // 
-            // levelPage
-            // 
-            this.levelPage.Controls.Add(this.levelHelpTextBox);
-            this.levelPage.Location = new System.Drawing.Point(4, 22);
-            this.levelPage.Name = "levelPage";
-            this.levelPage.Padding = new System.Windows.Forms.Padding(3);
-            this.levelPage.Size = new System.Drawing.Size(776, 399);
-            this.levelPage.TabIndex = 5;
-            this.levelPage.Text = "Levels";
-            this.levelPage.UseVisualStyleBackColor = true;
-            // 
             // popupHelpTextBox
             // 
             this.popupHelpTextBox.Cursor = System.Windows.Forms.Cursors.Default;
@@ -151,6 +110,17 @@
             this.popupHelpTextBox.Size = new System.Drawing.Size(770, 393);
             this.popupHelpTextBox.TabIndex = 1;
             this.popupHelpTextBox.Text = "";
+            // 
+            // formPage
+            // 
+            this.formPage.Controls.Add(this.formHelpTextBox);
+            this.formPage.Location = new System.Drawing.Point(4, 22);
+            this.formPage.Name = "formPage";
+            this.formPage.Padding = new System.Windows.Forms.Padding(3);
+            this.formPage.Size = new System.Drawing.Size(776, 399);
+            this.formPage.TabIndex = 4;
+            this.formPage.Text = "Forms";
+            this.formPage.UseVisualStyleBackColor = true;
             // 
             // formHelpTextBox
             // 
@@ -163,6 +133,17 @@
             this.formHelpTextBox.TabIndex = 1;
             this.formHelpTextBox.Text = "";
             // 
+            // equipmentPage
+            // 
+            this.equipmentPage.Controls.Add(this.equipmentHelpTextBox);
+            this.equipmentPage.Location = new System.Drawing.Point(4, 22);
+            this.equipmentPage.Name = "equipmentPage";
+            this.equipmentPage.Padding = new System.Windows.Forms.Padding(3);
+            this.equipmentPage.Size = new System.Drawing.Size(776, 399);
+            this.equipmentPage.TabIndex = 3;
+            this.equipmentPage.Text = "Equipment";
+            this.equipmentPage.UseVisualStyleBackColor = true;
+            // 
             // equipmentHelpTextBox
             // 
             this.equipmentHelpTextBox.Cursor = System.Windows.Forms.Cursors.Default;
@@ -174,6 +155,17 @@
             this.equipmentHelpTextBox.TabIndex = 1;
             this.equipmentHelpTextBox.Text = "";
             // 
+            // bonusPage
+            // 
+            this.bonusPage.Controls.Add(this.bonusHelpTextBox);
+            this.bonusPage.Location = new System.Drawing.Point(4, 22);
+            this.bonusPage.Name = "bonusPage";
+            this.bonusPage.Padding = new System.Windows.Forms.Padding(3);
+            this.bonusPage.Size = new System.Drawing.Size(776, 399);
+            this.bonusPage.TabIndex = 2;
+            this.bonusPage.Text = "Bonus Levels";
+            this.bonusPage.UseVisualStyleBackColor = true;
+            // 
             // bonusHelpTextBox
             // 
             this.bonusHelpTextBox.Cursor = System.Windows.Forms.Cursors.Default;
@@ -184,6 +176,17 @@
             this.bonusHelpTextBox.Size = new System.Drawing.Size(770, 393);
             this.bonusHelpTextBox.TabIndex = 1;
             this.bonusHelpTextBox.Text = "";
+            // 
+            // levelPage
+            // 
+            this.levelPage.Controls.Add(this.levelHelpTextBox);
+            this.levelPage.Location = new System.Drawing.Point(4, 22);
+            this.levelPage.Name = "levelPage";
+            this.levelPage.Padding = new System.Windows.Forms.Padding(3);
+            this.levelPage.Size = new System.Drawing.Size(776, 399);
+            this.levelPage.TabIndex = 5;
+            this.levelPage.Text = "Levels";
+            this.levelPage.UseVisualStyleBackColor = true;
             // 
             // levelHelpTextBox
             // 

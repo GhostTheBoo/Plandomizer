@@ -11,7 +11,7 @@ namespace Plandomizer
 		[System.ComponentModel.DisplayName("Level")]
 		public int level
 		{ get; set; }
-		[System.ComponentModel.DisplayName("EXP to Next Level")]
+		[System.ComponentModel.DisplayName("Total EXP to Next Level")]
 		public int expToNext
 		{ get; set; }
 		public string expToNextAddress

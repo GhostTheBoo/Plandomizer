@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabViewForm));
             this.tabControlContainer = new System.Windows.Forms.TabControl();
             this.chestPage = new System.Windows.Forms.TabPage();
             this.chestRewardComboBox = new System.Windows.Forms.ComboBox();
@@ -125,6 +126,7 @@
             this.levelPage = new System.Windows.Forms.TabPage();
             this.levelDataGridView = new System.Windows.Forms.DataGridView();
             this.soraLevelBox = new System.Windows.Forms.GroupBox();
+            this.levelHelpTextBox = new System.Windows.Forms.TextBox();
             this.nextEXPCounter = new System.Windows.Forms.NumericUpDown();
             this.nextEXPLabel = new System.Windows.Forms.Label();
             this.levelSwordBox = new System.Windows.Forms.GroupBox();
@@ -314,6 +316,7 @@
             this.chestDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chestDataGridView.Size = new System.Drawing.Size(747, 484);
             this.chestDataGridView.TabIndex = 1;
+            this.chestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.chestDataGridView_CellFormatting);
             this.chestDataGridView.SelectionChanged += new System.EventHandler(this.chestDataGridView_SelectionChanged);
             // 
             // chestsWorldSelectorBox
@@ -424,6 +427,7 @@
             this.popupDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.popupDataGridView.Size = new System.Drawing.Size(747, 484);
             this.popupDataGridView.TabIndex = 3;
+            this.popupDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.popupDataGridView_CellFormatting);
             this.popupDataGridView.SelectionChanged += new System.EventHandler(this.popupDataGridView_SelectionChanged);
             // 
             // popupWorldSelectorBox
@@ -534,6 +538,7 @@
             this.formDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.formDataGridView.Size = new System.Drawing.Size(747, 484);
             this.formDataGridView.TabIndex = 21;
+            this.formDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.formDataGridView_CellFormatting);
             this.formDataGridView.SelectionChanged += new System.EventHandler(this.formDataGridView_SelectionChanged);
             // 
             // formSelectorBox
@@ -927,6 +932,7 @@
             this.equipmentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.equipmentDataGridView.Size = new System.Drawing.Size(747, 484);
             this.equipmentDataGridView.TabIndex = 5;
+            this.equipmentDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.equipmentDataGridView_CellFormatting);
             this.equipmentDataGridView.SelectionChanged += new System.EventHandler(this.equipmentDataGridView_SelectionChanged);
             // 
             // equipmentTypeBox
@@ -1234,6 +1240,7 @@
             this.bonusDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bonusDataGridView.Size = new System.Drawing.Size(747, 484);
             this.bonusDataGridView.TabIndex = 9;
+            this.bonusDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.bonusDataGridView_CellFormatting);
             this.bonusDataGridView.SelectionChanged += new System.EventHandler(this.bonusDataGridView_SelectionChanged);
             // 
             // bonusWorldSelectorBox
@@ -1283,45 +1290,56 @@
             this.levelDataGridView.ReadOnly = true;
             this.levelDataGridView.RowHeadersVisible = false;
             this.levelDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.levelDataGridView.Size = new System.Drawing.Size(830, 441);
+            this.levelDataGridView.Size = new System.Drawing.Size(721, 441);
             this.levelDataGridView.TabIndex = 32;
+            this.levelDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.levelDataGridView_CellFormatting);
             this.levelDataGridView.SelectionChanged += new System.EventHandler(this.levelDataGridView_SelectionChanged);
             // 
             // soraLevelBox
             // 
+            this.soraLevelBox.Controls.Add(this.levelHelpTextBox);
             this.soraLevelBox.Controls.Add(this.nextEXPCounter);
             this.soraLevelBox.Controls.Add(this.nextEXPLabel);
             this.soraLevelBox.Controls.Add(this.levelSwordBox);
             this.soraLevelBox.Controls.Add(this.levelStatBox);
             this.soraLevelBox.Controls.Add(this.levelShieldBox);
             this.soraLevelBox.Controls.Add(this.levelStaffBox);
-            this.soraLevelBox.Location = new System.Drawing.Point(878, 49);
+            this.soraLevelBox.Location = new System.Drawing.Point(730, 49);
             this.soraLevelBox.Name = "soraLevelBox";
-            this.soraLevelBox.Size = new System.Drawing.Size(347, 441);
+            this.soraLevelBox.Size = new System.Drawing.Size(485, 441);
             this.soraLevelBox.TabIndex = 30;
             this.soraLevelBox.TabStop = false;
             this.soraLevelBox.Text = "Sora";
             // 
+            // levelHelpTextBox
+            // 
+            this.levelHelpTextBox.Location = new System.Drawing.Point(212, 167);
+            this.levelHelpTextBox.Multiline = true;
+            this.levelHelpTextBox.Name = "levelHelpTextBox";
+            this.levelHelpTextBox.Size = new System.Drawing.Size(267, 265);
+            this.levelHelpTextBox.TabIndex = 33;
+            this.levelHelpTextBox.Text = resources.GetString("levelHelpTextBox.Text");
+            // 
             // nextEXPCounter
             // 
-            this.nextEXPCounter.Location = new System.Drawing.Point(216, 228);
+            this.nextEXPCounter.Location = new System.Drawing.Point(217, 141);
             this.nextEXPCounter.Maximum = new decimal(new int[] {
             -1,
             0,
             0,
             0});
             this.nextEXPCounter.Name = "nextEXPCounter";
-            this.nextEXPCounter.Size = new System.Drawing.Size(120, 20);
+            this.nextEXPCounter.Size = new System.Drawing.Size(154, 20);
             this.nextEXPCounter.TabIndex = 32;
             // 
             // nextEXPLabel
             // 
             this.nextEXPLabel.AutoSize = true;
-            this.nextEXPLabel.Location = new System.Drawing.Point(213, 211);
+            this.nextEXPLabel.Location = new System.Drawing.Point(214, 124);
             this.nextEXPLabel.Name = "nextEXPLabel";
-            this.nextEXPLabel.Size = new System.Drawing.Size(129, 13);
+            this.nextEXPLabel.Size = new System.Drawing.Size(156, 13);
             this.nextEXPLabel.TabIndex = 30;
-            this.nextEXPLabel.Text = "Experience to Next Level ";
+            this.nextEXPLabel.Text = "Total Experience to Next Level ";
             // 
             // levelSwordBox
             // 
@@ -1383,7 +1401,7 @@
             this.levelStatBox.Controls.Add(this.levelStrengthCounter);
             this.levelStatBox.Location = new System.Drawing.Point(212, 19);
             this.levelStatBox.Name = "levelStatBox";
-            this.levelStatBox.Size = new System.Drawing.Size(125, 185);
+            this.levelStatBox.Size = new System.Drawing.Size(158, 102);
             this.levelStatBox.TabIndex = 29;
             this.levelStatBox.TabStop = false;
             this.levelStatBox.Text = "Stats";
@@ -1433,7 +1451,7 @@
             // levelDefenseLabel
             // 
             this.levelDefenseLabel.AutoSize = true;
-            this.levelDefenseLabel.Location = new System.Drawing.Point(6, 96);
+            this.levelDefenseLabel.Location = new System.Drawing.Point(84, 16);
             this.levelDefenseLabel.Name = "levelDefenseLabel";
             this.levelDefenseLabel.Size = new System.Drawing.Size(47, 13);
             this.levelDefenseLabel.TabIndex = 10;
@@ -1441,7 +1459,7 @@
             // 
             // levelDefenseCounter
             // 
-            this.levelDefenseCounter.Location = new System.Drawing.Point(9, 113);
+            this.levelDefenseCounter.Location = new System.Drawing.Point(87, 33);
             this.levelDefenseCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1454,7 +1472,7 @@
             // levelStrengthLabel
             // 
             this.levelStrengthLabel.AutoSize = true;
-            this.levelStrengthLabel.Location = new System.Drawing.Point(6, 136);
+            this.levelStrengthLabel.Location = new System.Drawing.Point(84, 56);
             this.levelStrengthLabel.Name = "levelStrengthLabel";
             this.levelStrengthLabel.Size = new System.Drawing.Size(47, 13);
             this.levelStrengthLabel.TabIndex = 12;
@@ -1462,7 +1480,7 @@
             // 
             // levelStrengthCounter
             // 
-            this.levelStrengthCounter.Location = new System.Drawing.Point(9, 153);
+            this.levelStrengthCounter.Location = new System.Drawing.Point(87, 73);
             this.levelStrengthCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1826,5 +1844,6 @@
         private System.Windows.Forms.Label nextEXPLabel;
         private System.Windows.Forms.DataGridView levelDataGridView;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.TextBox levelHelpTextBox;
     }
 }

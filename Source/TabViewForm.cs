@@ -987,7 +987,6 @@ namespace Plandomizer
                 chestList[world][chest].replacementAddress = temp.rewardAddress;
                 chestList[world][chest].changed = true;
                 chestReplaced = true;
-                chestDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 chestDataGridView.Update();
                 chestDataGridView.Refresh();
             }
@@ -1000,7 +999,6 @@ namespace Plandomizer
             chestList[world][chest].replacement = "";
             chestList[world][chest].replacementAddress = "";
             chestList[world][chest].changed = false;
-            chestDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             chestDataGridView.Update();
             chestDataGridView.Refresh();
         }
@@ -1016,7 +1014,6 @@ namespace Plandomizer
                 popupList[world][popup].replacementAddress = temp.rewardAddress;
                 popupList[world][popup].changed = true;
                 popupReplaced = true;
-                popupDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 popupDataGridView.Update();
                 popupDataGridView.Refresh();
             }
@@ -1029,7 +1026,6 @@ namespace Plandomizer
             popupList[world][popup].replacement = "";
             popupList[world][popup].replacementAddress = "";
             popupList[world][popup].changed = false;
-            popupDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             popupDataGridView.Update();
             popupDataGridView.Refresh();
         }
@@ -1069,10 +1065,7 @@ namespace Plandomizer
             }
 
             if(bonusList[world][bonus].changeCount + (hp + mp + armor + accessory + item + drive) > 0)
-            {
-                bonusDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 bonusReplaced = true;
-            }
 
             bonusDataGridView.Update();
             bonusDataGridView.Refresh();
@@ -1093,10 +1086,8 @@ namespace Plandomizer
             bonusList[world][bonus].replacementReward2 = "";
             bonusList[world][bonus].replacementRewardAddress2 = "";
             bonusList[world][bonus].changeCount = 0;
-            bonusDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             bonusDataGridView.Update();
             bonusDataGridView.Refresh();
-
         }
 
         private void formReplaceButton_Click(object sender, EventArgs e)
@@ -1110,7 +1101,6 @@ namespace Plandomizer
                 driveFormList[form][level].replacementAddress = temp.rewardAddress;
                 driveFormList[form][level].changed = true;
                 formReplaced = true;
-                formDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 formDataGridView.Update();
                 formDataGridView.Refresh();
             }
@@ -1123,7 +1113,6 @@ namespace Plandomizer
             driveFormList[form][level].replacement = "";
             driveFormList[form][level].replacementAddress = "";
             driveFormList[form][level].changed = false;
-            formDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             formDataGridView.Update();
             formDataGridView.Refresh();
         }
@@ -1151,7 +1140,6 @@ namespace Plandomizer
             equipmentList[equipmentType][equipment].allResistance = Convert.ToInt32(universalResistanceCounter.Value);
             equipmentList[equipmentType][equipment].changed = true;
             equipmentReplaced = true;
-            equipmentDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
             equipmentDataGridView.Update();
             equipmentDataGridView.Refresh();
         }
@@ -1174,8 +1162,7 @@ namespace Plandomizer
             equipmentList[equipmentType][equipment].allResistance = 0;
             equipmentList[equipmentType][equipment].replacementAbilityAddress = "";
             equipmentList[equipmentType][equipment].ability = "";
-            equipmentList[equipmentTypeSelectorComboBox.SelectedIndex][equipmentDataGridView.SelectedRows[0].Index].changed = false;
-            equipmentDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
+            equipmentList[equipmentType][equipment].changed = false;
             equipmentDataGridView.Update();
             equipmentDataGridView.Refresh();
         }
@@ -1214,7 +1201,6 @@ namespace Plandomizer
                 levelList[level].staffReplacementAddress = temp.rewardAddress;
             }
 
-            levelDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
             levelDataGridView.Update();
             levelDataGridView.Refresh();
         }
@@ -1236,7 +1222,6 @@ namespace Plandomizer
             levelList[level].staffReplacementAddress = "";
             levelList[level].changed = true;
 
-            levelDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             levelDataGridView.Update();
             levelDataGridView.Refresh();
         }
@@ -1402,6 +1387,75 @@ namespace Plandomizer
             levelMagicCounter.Value = 0;
             levelDefenseCounter.Value = 0;
             levelStrengthCounter.Value = 0;
+        }
+        #endregion
+
+        #region Formatting Data Grid Views
+        private void chestDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow r in chestDataGridView.Rows)
+            {
+                if (Convert.ToBoolean(r.Cells["changed"].Value))
+                    r.DefaultCellStyle.BackColor = replacedBackground;
+                else
+                    r.DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void popupDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow r in popupDataGridView.Rows)
+            {
+                if (Convert.ToBoolean(r.Cells["changed"].Value))
+                    r.DefaultCellStyle.BackColor = replacedBackground;
+                else
+                    r.DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void formDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow r in formDataGridView.Rows)
+            {
+                if (Convert.ToBoolean(r.Cells["changed"].Value))
+                    r.DefaultCellStyle.BackColor = replacedBackground;
+                else
+                    r.DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void equipmentDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow r in equipmentDataGridView.Rows)
+            {
+                if (Convert.ToBoolean(r.Cells["changed"].Value))
+                    r.DefaultCellStyle.BackColor = replacedBackground;
+                else
+                    r.DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void bonusDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow r in bonusDataGridView.Rows)
+            {
+                int temp = Convert.ToInt32(r.Cells["changeCount"].Value);
+                if (temp > 0)
+                    r.DefaultCellStyle.BackColor = replacedBackground;
+                else
+                    r.DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void levelDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow r in levelDataGridView.Rows)
+            {
+                if (Convert.ToBoolean(r.Cells["changed"].Value))
+                    r.DefaultCellStyle.BackColor = replacedBackground;
+                else
+                    r.DefaultCellStyle.BackColor = Color.White;
+            }
         }
         #endregion
     }
