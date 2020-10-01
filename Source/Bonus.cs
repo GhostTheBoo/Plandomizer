@@ -72,49 +72,49 @@ namespace Plandomizer
 			if(changeCount != 0)
 			{
 				ret += "// " + fight + "\n";
-				string word = "";
+				ret += "patch=1,EE," + statAddress + ",extended,0000";
 				// Stats
 				if (mpIncrease != -1)
-					word += mpIncrease.ToString("X2");
+					ret += mpIncrease.ToString("X2");
 				else
-					word += "00";
+					ret += "00";
 				if (hpIncrease != -1)
-					word += hpIncrease.ToString("X2");
+					ret += hpIncrease.ToString("X2");
 				else
-					word += "00";
-				ret += "patch=1,EE," + statAddress + ",extended,0000" + word + "// MP+ and HP+\n";
+					ret += "00";
+				ret += " // MP:" + mpIncrease + " HP:" + hpIncrease + "\n";
 
 				// Slots
-				word = "";
+				ret += "patch=1,EE," + slotAddress + ",extended,";
 				if (armorSlotIncrease != -1)
-					word += armorSlotIncrease.ToString("X2");
+					ret += armorSlotIncrease.ToString("X2");
 				else
-					word += "00";
+					ret += "00";
 				if (accessorySlotIncrease != -1)
-					word += accessorySlotIncrease.ToString("X2");
+					ret += accessorySlotIncrease.ToString("X2");
 				else
-					word += "00";
+					ret += "00";
 				if (itemSlotIncrease != -1)
-					word += itemSlotIncrease.ToString("X2");
+					ret += itemSlotIncrease.ToString("X2");
 				else
-					word += "00";
+					ret += "00";
 				if (driveGaugeIncrease != -1)
-					word += driveGaugeIncrease.ToString("X2");
+					ret += driveGaugeIncrease.ToString("X2");
 				else
-					word += "00";
-				ret += "patch=1,EE," + statAddress + ",extended," + word + "// Armor Slot+ Accessory Slot+ Item Slot+ Drive Gauge+\n";
+					ret += "00";
+				ret += " // Armor Slot:+" + armorSlotIncrease + " Accessory Slot:+" + accessorySlotIncrease + " Item Slot:+" + itemSlotIncrease + " Drive Gauge:+" + driveGaugeIncrease + "\n";
 
 				// Rewards
-				word = "";
+				ret += "patch=1,EE," + rewardAddress + ",extended,";
 				if (replacementReward2 != "")
-					word += replacementRewardAddress2;
+					ret += replacementRewardAddress2;
 				else
-					word += "0000";
+					ret += "0000";
 				if (replacementReward1 != "")
-					word += replacementRewardAddress1;
+					ret += replacementRewardAddress1;
 				else
-					word += "0000";
-				ret += "patch=1,EE," + rewardAddress + ",extended," + word + "// Reward 2 and Reward 1\n";
+					ret += "0000";
+				ret += " // " + replacementReward2 + " " + replacementReward1 + "\n";
 			}
 
 			return ret;

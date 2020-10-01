@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabViewForm));
             this.tabControlContainer = new System.Windows.Forms.TabControl();
             this.chestPage = new System.Windows.Forms.TabPage();
             this.chestRewardComboBox = new System.Windows.Forms.ComboBox();
@@ -49,6 +50,16 @@
             this.popupDataGridView = new System.Windows.Forms.DataGridView();
             this.popupWorldSelectorBox = new System.Windows.Forms.GroupBox();
             this.popupWorldSelectorComboBox = new System.Windows.Forms.ComboBox();
+            this.formPage = new System.Windows.Forms.TabPage();
+            this.formRewardComboBox = new System.Windows.Forms.ComboBox();
+            this.formRewardLabel = new System.Windows.Forms.Label();
+            this.formRewardTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.formRewardTypeLabel = new System.Windows.Forms.Label();
+            this.formDefaultButton = new System.Windows.Forms.Button();
+            this.formReplaceButton = new System.Windows.Forms.Button();
+            this.formDataGridView = new System.Windows.Forms.DataGridView();
+            this.formSelectorBox = new System.Windows.Forms.GroupBox();
+            this.formSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.equipmentPage = new System.Windows.Forms.TabPage();
             this.elementalOtherResistanceBox = new System.Windows.Forms.GroupBox();
             this.physicalResistanceLabel = new System.Windows.Forms.Label();
@@ -112,18 +123,41 @@
             this.bonusDataGridView = new System.Windows.Forms.DataGridView();
             this.bonusWorldSelectorBox = new System.Windows.Forms.GroupBox();
             this.bonusWorldSelectorComboBox = new System.Windows.Forms.ComboBox();
-            this.formPage = new System.Windows.Forms.TabPage();
-            this.formRewardComboBox = new System.Windows.Forms.ComboBox();
-            this.formRewardLabel = new System.Windows.Forms.Label();
-            this.formRewardTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.formRewardTypeLabel = new System.Windows.Forms.Label();
-            this.formDefaultButton = new System.Windows.Forms.Button();
-            this.formReplaceButton = new System.Windows.Forms.Button();
-            this.formDataGridView = new System.Windows.Forms.DataGridView();
-            this.formSelectorBox = new System.Windows.Forms.GroupBox();
-            this.formSelectorComboBox = new System.Windows.Forms.ComboBox();
+            this.levelPage = new System.Windows.Forms.TabPage();
+            this.levelDataGridView = new System.Windows.Forms.DataGridView();
+            this.soraLevelBox = new System.Windows.Forms.GroupBox();
+            this.levelHelpTextBox = new System.Windows.Forms.TextBox();
+            this.nextEXPCounter = new System.Windows.Forms.NumericUpDown();
+            this.nextEXPLabel = new System.Windows.Forms.Label();
+            this.levelSwordBox = new System.Windows.Forms.GroupBox();
+            this.swordRewardLabel = new System.Windows.Forms.Label();
+            this.swordRewardComboBox = new System.Windows.Forms.ComboBox();
+            this.swordRewardTypeLabel = new System.Windows.Forms.Label();
+            this.swordRewardTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.levelStatBox = new System.Windows.Forms.GroupBox();
+            this.levelAPLabel = new System.Windows.Forms.Label();
+            this.levelAPCounter = new System.Windows.Forms.NumericUpDown();
+            this.levelMagicLabel = new System.Windows.Forms.Label();
+            this.levelMagicCounter = new System.Windows.Forms.NumericUpDown();
+            this.levelDefenseLabel = new System.Windows.Forms.Label();
+            this.levelDefenseCounter = new System.Windows.Forms.NumericUpDown();
+            this.levelStrengthLabel = new System.Windows.Forms.Label();
+            this.levelStrengthCounter = new System.Windows.Forms.NumericUpDown();
+            this.levelShieldBox = new System.Windows.Forms.GroupBox();
+            this.shieldRewardLabel = new System.Windows.Forms.Label();
+            this.shieldRewardComboBox = new System.Windows.Forms.ComboBox();
+            this.shieldRewardTypeLabel = new System.Windows.Forms.Label();
+            this.shieldRewardTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.levelStaffBox = new System.Windows.Forms.GroupBox();
+            this.staffRewardLabel = new System.Windows.Forms.Label();
+            this.staffRewardComboBox = new System.Windows.Forms.ComboBox();
+            this.staffRewardTypeLabel = new System.Windows.Forms.Label();
+            this.staffRewardTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.levelDefaultButton = new System.Windows.Forms.Button();
+            this.levelReplaceButton = new System.Windows.Forms.Button();
             this.patchSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.saveButton = new System.Windows.Forms.Button();
+            this.helpButton = new System.Windows.Forms.Button();
             this.tabControlContainer.SuspendLayout();
             this.chestPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chestDataGridView)).BeginInit();
@@ -131,6 +165,9 @@
             this.popupPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupDataGridView)).BeginInit();
             this.popupWorldSelectorBox.SuspendLayout();
+            this.formPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.formDataGridView)).BeginInit();
+            this.formSelectorBox.SuspendLayout();
             this.equipmentPage.SuspendLayout();
             this.elementalOtherResistanceBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.physicalResistanceCounter)).BeginInit();
@@ -159,9 +196,18 @@
             this.bonusRewardBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bonusDataGridView)).BeginInit();
             this.bonusWorldSelectorBox.SuspendLayout();
-            this.formPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.formDataGridView)).BeginInit();
-            this.formSelectorBox.SuspendLayout();
+            this.levelPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.levelDataGridView)).BeginInit();
+            this.soraLevelBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nextEXPCounter)).BeginInit();
+            this.levelSwordBox.SuspendLayout();
+            this.levelStatBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.levelAPCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.levelMagicCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.levelDefenseCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.levelStrengthCounter)).BeginInit();
+            this.levelShieldBox.SuspendLayout();
+            this.levelStaffBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlContainer
@@ -171,9 +217,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlContainer.Controls.Add(this.chestPage);
             this.tabControlContainer.Controls.Add(this.popupPage);
+            this.tabControlContainer.Controls.Add(this.formPage);
             this.tabControlContainer.Controls.Add(this.equipmentPage);
             this.tabControlContainer.Controls.Add(this.bonusPage);
-            this.tabControlContainer.Controls.Add(this.formPage);
+            this.tabControlContainer.Controls.Add(this.levelPage);
             this.tabControlContainer.Location = new System.Drawing.Point(13, 13);
             this.tabControlContainer.Name = "tabControlContainer";
             this.tabControlContainer.SelectedIndex = 0;
@@ -269,6 +316,8 @@
             this.chestDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chestDataGridView.Size = new System.Drawing.Size(747, 484);
             this.chestDataGridView.TabIndex = 1;
+            this.chestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.chestDataGridView_CellFormatting);
+            this.chestDataGridView.SelectionChanged += new System.EventHandler(this.chestDataGridView_SelectionChanged);
             // 
             // chestsWorldSelectorBox
             // 
@@ -378,6 +427,8 @@
             this.popupDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.popupDataGridView.Size = new System.Drawing.Size(747, 484);
             this.popupDataGridView.TabIndex = 3;
+            this.popupDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.popupDataGridView_CellFormatting);
+            this.popupDataGridView.SelectionChanged += new System.EventHandler(this.popupDataGridView_SelectionChanged);
             // 
             // popupWorldSelectorBox
             // 
@@ -397,6 +448,117 @@
             this.popupWorldSelectorComboBox.Size = new System.Drawing.Size(250, 21);
             this.popupWorldSelectorComboBox.TabIndex = 0;
             this.popupWorldSelectorComboBox.SelectedIndexChanged += new System.EventHandler(this.popupWorldSelectorComboBox_SelectedIndexChanged);
+            // 
+            // formPage
+            // 
+            this.formPage.Controls.Add(this.formRewardComboBox);
+            this.formPage.Controls.Add(this.formRewardLabel);
+            this.formPage.Controls.Add(this.formRewardTypeComboBox);
+            this.formPage.Controls.Add(this.formRewardTypeLabel);
+            this.formPage.Controls.Add(this.formDefaultButton);
+            this.formPage.Controls.Add(this.formReplaceButton);
+            this.formPage.Controls.Add(this.formDataGridView);
+            this.formPage.Controls.Add(this.formSelectorBox);
+            this.formPage.Location = new System.Drawing.Point(4, 22);
+            this.formPage.Name = "formPage";
+            this.formPage.Padding = new System.Windows.Forms.Padding(3);
+            this.formPage.Size = new System.Drawing.Size(1231, 554);
+            this.formPage.TabIndex = 4;
+            this.formPage.Text = "Forms";
+            this.formPage.UseVisualStyleBackColor = true;
+            // 
+            // formRewardComboBox
+            // 
+            this.formRewardComboBox.FormattingEnabled = true;
+            this.formRewardComboBox.Location = new System.Drawing.Point(1032, 139);
+            this.formRewardComboBox.Name = "formRewardComboBox";
+            this.formRewardComboBox.Size = new System.Drawing.Size(193, 21);
+            this.formRewardComboBox.TabIndex = 27;
+            // 
+            // formRewardLabel
+            // 
+            this.formRewardLabel.AutoSize = true;
+            this.formRewardLabel.Location = new System.Drawing.Point(1029, 122);
+            this.formRewardLabel.Name = "formRewardLabel";
+            this.formRewardLabel.Size = new System.Drawing.Size(44, 13);
+            this.formRewardLabel.TabIndex = 26;
+            this.formRewardLabel.Text = "Reward";
+            // 
+            // formRewardTypeComboBox
+            // 
+            this.formRewardTypeComboBox.FormattingEnabled = true;
+            this.formRewardTypeComboBox.Location = new System.Drawing.Point(1032, 79);
+            this.formRewardTypeComboBox.Name = "formRewardTypeComboBox";
+            this.formRewardTypeComboBox.Size = new System.Drawing.Size(193, 21);
+            this.formRewardTypeComboBox.TabIndex = 25;
+            this.formRewardTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.formRewardTypeComboBox_SelectedIndexChanged);
+            // 
+            // formRewardTypeLabel
+            // 
+            this.formRewardTypeLabel.AutoSize = true;
+            this.formRewardTypeLabel.Location = new System.Drawing.Point(1029, 63);
+            this.formRewardTypeLabel.Name = "formRewardTypeLabel";
+            this.formRewardTypeLabel.Size = new System.Drawing.Size(71, 13);
+            this.formRewardTypeLabel.TabIndex = 24;
+            this.formRewardTypeLabel.Text = "Reward Type";
+            // 
+            // formDefaultButton
+            // 
+            this.formDefaultButton.Location = new System.Drawing.Point(1088, 525);
+            this.formDefaultButton.Name = "formDefaultButton";
+            this.formDefaultButton.Size = new System.Drawing.Size(137, 23);
+            this.formDefaultButton.TabIndex = 23;
+            this.formDefaultButton.Text = "Default";
+            this.formDefaultButton.UseVisualStyleBackColor = true;
+            this.formDefaultButton.Click += new System.EventHandler(this.formDefaultButton_Click);
+            // 
+            // formReplaceButton
+            // 
+            this.formReplaceButton.Location = new System.Drawing.Point(1088, 496);
+            this.formReplaceButton.Name = "formReplaceButton";
+            this.formReplaceButton.Size = new System.Drawing.Size(137, 23);
+            this.formReplaceButton.TabIndex = 22;
+            this.formReplaceButton.Text = "Replace";
+            this.formReplaceButton.UseVisualStyleBackColor = true;
+            this.formReplaceButton.Click += new System.EventHandler(this.formReplaceButton_Click);
+            // 
+            // formDataGridView
+            // 
+            this.formDataGridView.AllowUserToAddRows = false;
+            this.formDataGridView.AllowUserToDeleteRows = false;
+            this.formDataGridView.AllowUserToResizeColumns = false;
+            this.formDataGridView.AllowUserToResizeRows = false;
+            this.formDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.formDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.formDataGridView.Location = new System.Drawing.Point(13, 63);
+            this.formDataGridView.MultiSelect = false;
+            this.formDataGridView.Name = "formDataGridView";
+            this.formDataGridView.ReadOnly = true;
+            this.formDataGridView.RowHeadersVisible = false;
+            this.formDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.formDataGridView.Size = new System.Drawing.Size(747, 484);
+            this.formDataGridView.TabIndex = 21;
+            this.formDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.formDataGridView_CellFormatting);
+            this.formDataGridView.SelectionChanged += new System.EventHandler(this.formDataGridView_SelectionChanged);
+            // 
+            // formSelectorBox
+            // 
+            this.formSelectorBox.Controls.Add(this.formSelectorComboBox);
+            this.formSelectorBox.Location = new System.Drawing.Point(6, 6);
+            this.formSelectorBox.Name = "formSelectorBox";
+            this.formSelectorBox.Size = new System.Drawing.Size(263, 50);
+            this.formSelectorBox.TabIndex = 20;
+            this.formSelectorBox.TabStop = false;
+            this.formSelectorBox.Text = "Form Selector";
+            // 
+            // formSelectorComboBox
+            // 
+            this.formSelectorComboBox.FormattingEnabled = true;
+            this.formSelectorComboBox.Location = new System.Drawing.Point(7, 20);
+            this.formSelectorComboBox.Name = "formSelectorComboBox";
+            this.formSelectorComboBox.Size = new System.Drawing.Size(250, 21);
+            this.formSelectorComboBox.TabIndex = 0;
+            this.formSelectorComboBox.SelectedIndexChanged += new System.EventHandler(this.formSelectorComboBox_SelectedIndexChanged);
             // 
             // equipmentPage
             // 
@@ -632,11 +794,6 @@
             0,
             0,
             0});
-            this.equipmentAPCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.equipmentAPCounter.Name = "equipmentAPCounter";
             this.equipmentAPCounter.Size = new System.Drawing.Size(51, 20);
             this.equipmentAPCounter.TabIndex = 7;
@@ -658,11 +815,6 @@
             0,
             0,
             0});
-            this.equipmentMagicCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.equipmentMagicCounter.Name = "equipmentMagicCounter";
             this.equipmentMagicCounter.Size = new System.Drawing.Size(51, 20);
             this.equipmentMagicCounter.TabIndex = 9;
@@ -684,11 +836,6 @@
             0,
             0,
             0});
-            this.equipmentDefenseCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.equipmentDefenseCounter.Name = "equipmentDefenseCounter";
             this.equipmentDefenseCounter.Size = new System.Drawing.Size(51, 20);
             this.equipmentDefenseCounter.TabIndex = 11;
@@ -710,11 +857,6 @@
             0,
             0,
             0});
-            this.equipmentStrengthCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.equipmentStrengthCounter.Name = "equipmentStrengthCounter";
             this.equipmentStrengthCounter.Size = new System.Drawing.Size(51, 20);
             this.equipmentStrengthCounter.TabIndex = 13;
@@ -790,6 +932,8 @@
             this.equipmentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.equipmentDataGridView.Size = new System.Drawing.Size(747, 484);
             this.equipmentDataGridView.TabIndex = 5;
+            this.equipmentDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.equipmentDataGridView_CellFormatting);
+            this.equipmentDataGridView.SelectionChanged += new System.EventHandler(this.equipmentDataGridView_SelectionChanged);
             // 
             // equipmentTypeBox
             // 
@@ -799,7 +943,7 @@
             this.equipmentTypeBox.Size = new System.Drawing.Size(263, 50);
             this.equipmentTypeBox.TabIndex = 4;
             this.equipmentTypeBox.TabStop = false;
-            this.equipmentTypeBox.Text = "Equipment Type";
+            this.equipmentTypeBox.Text = "Equipment Type Selector";
             // 
             // equipmentTypeSelectorComboBox
             // 
@@ -846,11 +990,6 @@
             0,
             0,
             0});
-            this.bonusDriveCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.bonusDriveCounter.Name = "bonusDriveCounter";
             this.bonusDriveCounter.Size = new System.Drawing.Size(51, 20);
             this.bonusDriveCounter.TabIndex = 33;
@@ -872,11 +1011,6 @@
             0,
             0,
             0});
-            this.bonusItemCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.bonusItemCounter.Name = "bonusItemCounter";
             this.bonusItemCounter.Size = new System.Drawing.Size(51, 20);
             this.bonusItemCounter.TabIndex = 31;
@@ -898,11 +1032,6 @@
             0,
             0,
             0});
-            this.bonusAccessoryCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.bonusAccessoryCounter.Name = "bonusAccessoryCounter";
             this.bonusAccessoryCounter.Size = new System.Drawing.Size(51, 20);
             this.bonusAccessoryCounter.TabIndex = 29;
@@ -924,11 +1053,6 @@
             0,
             0,
             0});
-            this.bonusArmorCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.bonusArmorCounter.Name = "bonusArmorCounter";
             this.bonusArmorCounter.Size = new System.Drawing.Size(51, 20);
             this.bonusArmorCounter.TabIndex = 27;
@@ -950,11 +1074,6 @@
             0,
             0,
             0});
-            this.bonusMPCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.bonusMPCounter.Name = "bonusMPCounter";
             this.bonusMPCounter.Size = new System.Drawing.Size(51, 20);
             this.bonusMPCounter.TabIndex = 25;
@@ -976,11 +1095,6 @@
             0,
             0,
             0});
-            this.bonusHPCounter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.bonusHPCounter.Name = "bonusHPCounter";
             this.bonusHPCounter.Size = new System.Drawing.Size(51, 20);
             this.bonusHPCounter.TabIndex = 23;
@@ -1126,6 +1240,8 @@
             this.bonusDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bonusDataGridView.Size = new System.Drawing.Size(747, 484);
             this.bonusDataGridView.TabIndex = 9;
+            this.bonusDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.bonusDataGridView_CellFormatting);
+            this.bonusDataGridView.SelectionChanged += new System.EventHandler(this.bonusDataGridView_SelectionChanged);
             // 
             // bonusWorldSelectorBox
             // 
@@ -1146,114 +1262,349 @@
             this.bonusWorldSelectorComboBox.TabIndex = 0;
             this.bonusWorldSelectorComboBox.SelectedIndexChanged += new System.EventHandler(this.bonusWorldSelectorComboBox_SelectedIndexChanged);
             // 
-            // formPage
+            // levelPage
             // 
-            this.formPage.Controls.Add(this.formRewardComboBox);
-            this.formPage.Controls.Add(this.formRewardLabel);
-            this.formPage.Controls.Add(this.formRewardTypeComboBox);
-            this.formPage.Controls.Add(this.formRewardTypeLabel);
-            this.formPage.Controls.Add(this.formDefaultButton);
-            this.formPage.Controls.Add(this.formReplaceButton);
-            this.formPage.Controls.Add(this.formDataGridView);
-            this.formPage.Controls.Add(this.formSelectorBox);
-            this.formPage.Location = new System.Drawing.Point(4, 22);
-            this.formPage.Name = "formPage";
-            this.formPage.Padding = new System.Windows.Forms.Padding(3);
-            this.formPage.Size = new System.Drawing.Size(1231, 554);
-            this.formPage.TabIndex = 4;
-            this.formPage.Text = "Forms";
-            this.formPage.UseVisualStyleBackColor = true;
+            this.levelPage.Controls.Add(this.levelDataGridView);
+            this.levelPage.Controls.Add(this.soraLevelBox);
+            this.levelPage.Controls.Add(this.levelDefaultButton);
+            this.levelPage.Controls.Add(this.levelReplaceButton);
+            this.levelPage.Location = new System.Drawing.Point(4, 22);
+            this.levelPage.Name = "levelPage";
+            this.levelPage.Padding = new System.Windows.Forms.Padding(3);
+            this.levelPage.Size = new System.Drawing.Size(1231, 554);
+            this.levelPage.TabIndex = 5;
+            this.levelPage.Text = "Levels";
+            this.levelPage.UseVisualStyleBackColor = true;
             // 
-            // formRewardComboBox
+            // levelDataGridView
             // 
-            this.formRewardComboBox.FormattingEnabled = true;
-            this.formRewardComboBox.Location = new System.Drawing.Point(1032, 139);
-            this.formRewardComboBox.Name = "formRewardComboBox";
-            this.formRewardComboBox.Size = new System.Drawing.Size(193, 21);
-            this.formRewardComboBox.TabIndex = 27;
+            this.levelDataGridView.AllowUserToAddRows = false;
+            this.levelDataGridView.AllowUserToDeleteRows = false;
+            this.levelDataGridView.AllowUserToResizeColumns = false;
+            this.levelDataGridView.AllowUserToResizeRows = false;
+            this.levelDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.levelDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.levelDataGridView.Location = new System.Drawing.Point(3, 49);
+            this.levelDataGridView.MultiSelect = false;
+            this.levelDataGridView.Name = "levelDataGridView";
+            this.levelDataGridView.ReadOnly = true;
+            this.levelDataGridView.RowHeadersVisible = false;
+            this.levelDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.levelDataGridView.Size = new System.Drawing.Size(721, 441);
+            this.levelDataGridView.TabIndex = 32;
+            this.levelDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.levelDataGridView_CellFormatting);
+            this.levelDataGridView.SelectionChanged += new System.EventHandler(this.levelDataGridView_SelectionChanged);
             // 
-            // formRewardLabel
+            // soraLevelBox
             // 
-            this.formRewardLabel.AutoSize = true;
-            this.formRewardLabel.Location = new System.Drawing.Point(1029, 122);
-            this.formRewardLabel.Name = "formRewardLabel";
-            this.formRewardLabel.Size = new System.Drawing.Size(44, 13);
-            this.formRewardLabel.TabIndex = 26;
-            this.formRewardLabel.Text = "Reward";
+            this.soraLevelBox.Controls.Add(this.levelHelpTextBox);
+            this.soraLevelBox.Controls.Add(this.nextEXPCounter);
+            this.soraLevelBox.Controls.Add(this.nextEXPLabel);
+            this.soraLevelBox.Controls.Add(this.levelSwordBox);
+            this.soraLevelBox.Controls.Add(this.levelStatBox);
+            this.soraLevelBox.Controls.Add(this.levelShieldBox);
+            this.soraLevelBox.Controls.Add(this.levelStaffBox);
+            this.soraLevelBox.Location = new System.Drawing.Point(730, 49);
+            this.soraLevelBox.Name = "soraLevelBox";
+            this.soraLevelBox.Size = new System.Drawing.Size(485, 441);
+            this.soraLevelBox.TabIndex = 30;
+            this.soraLevelBox.TabStop = false;
+            this.soraLevelBox.Text = "Sora";
             // 
-            // formRewardTypeComboBox
+            // levelHelpTextBox
             // 
-            this.formRewardTypeComboBox.FormattingEnabled = true;
-            this.formRewardTypeComboBox.Location = new System.Drawing.Point(1032, 79);
-            this.formRewardTypeComboBox.Name = "formRewardTypeComboBox";
-            this.formRewardTypeComboBox.Size = new System.Drawing.Size(193, 21);
-            this.formRewardTypeComboBox.TabIndex = 25;
-            this.formRewardTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.formRewardTypeComboBox_SelectedIndexChanged);
+            this.levelHelpTextBox.Location = new System.Drawing.Point(212, 167);
+            this.levelHelpTextBox.Multiline = true;
+            this.levelHelpTextBox.Name = "levelHelpTextBox";
+            this.levelHelpTextBox.Size = new System.Drawing.Size(267, 265);
+            this.levelHelpTextBox.TabIndex = 33;
+            this.levelHelpTextBox.Text = resources.GetString("levelHelpTextBox.Text");
             // 
-            // formRewardTypeLabel
+            // nextEXPCounter
             // 
-            this.formRewardTypeLabel.AutoSize = true;
-            this.formRewardTypeLabel.Location = new System.Drawing.Point(1029, 63);
-            this.formRewardTypeLabel.Name = "formRewardTypeLabel";
-            this.formRewardTypeLabel.Size = new System.Drawing.Size(71, 13);
-            this.formRewardTypeLabel.TabIndex = 24;
-            this.formRewardTypeLabel.Text = "Reward Type";
+            this.nextEXPCounter.Location = new System.Drawing.Point(217, 141);
+            this.nextEXPCounter.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nextEXPCounter.Name = "nextEXPCounter";
+            this.nextEXPCounter.Size = new System.Drawing.Size(154, 20);
+            this.nextEXPCounter.TabIndex = 32;
             // 
-            // formDefaultButton
+            // nextEXPLabel
             // 
-            this.formDefaultButton.Location = new System.Drawing.Point(1088, 525);
-            this.formDefaultButton.Name = "formDefaultButton";
-            this.formDefaultButton.Size = new System.Drawing.Size(137, 23);
-            this.formDefaultButton.TabIndex = 23;
-            this.formDefaultButton.Text = "Default";
-            this.formDefaultButton.UseVisualStyleBackColor = true;
-            this.formDefaultButton.Click += new System.EventHandler(this.formDefaultButton_Click);
+            this.nextEXPLabel.AutoSize = true;
+            this.nextEXPLabel.Location = new System.Drawing.Point(214, 124);
+            this.nextEXPLabel.Name = "nextEXPLabel";
+            this.nextEXPLabel.Size = new System.Drawing.Size(156, 13);
+            this.nextEXPLabel.TabIndex = 30;
+            this.nextEXPLabel.Text = "Total Experience to Next Level ";
             // 
-            // formReplaceButton
+            // levelSwordBox
             // 
-            this.formReplaceButton.Location = new System.Drawing.Point(1088, 496);
-            this.formReplaceButton.Name = "formReplaceButton";
-            this.formReplaceButton.Size = new System.Drawing.Size(137, 23);
-            this.formReplaceButton.TabIndex = 22;
-            this.formReplaceButton.Text = "Replace";
-            this.formReplaceButton.UseVisualStyleBackColor = true;
-            this.formReplaceButton.Click += new System.EventHandler(this.formReplaceButton_Click);
+            this.levelSwordBox.Controls.Add(this.swordRewardLabel);
+            this.levelSwordBox.Controls.Add(this.swordRewardComboBox);
+            this.levelSwordBox.Controls.Add(this.swordRewardTypeLabel);
+            this.levelSwordBox.Controls.Add(this.swordRewardTypeComboBox);
+            this.levelSwordBox.Location = new System.Drawing.Point(6, 19);
+            this.levelSwordBox.Name = "levelSwordBox";
+            this.levelSwordBox.Size = new System.Drawing.Size(200, 133);
+            this.levelSwordBox.TabIndex = 24;
+            this.levelSwordBox.TabStop = false;
+            this.levelSwordBox.Text = "Sword Reward";
             // 
-            // formDataGridView
+            // swordRewardLabel
             // 
-            this.formDataGridView.AllowUserToAddRows = false;
-            this.formDataGridView.AllowUserToDeleteRows = false;
-            this.formDataGridView.AllowUserToResizeColumns = false;
-            this.formDataGridView.AllowUserToResizeRows = false;
-            this.formDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.formDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.formDataGridView.Location = new System.Drawing.Point(13, 63);
-            this.formDataGridView.MultiSelect = false;
-            this.formDataGridView.Name = "formDataGridView";
-            this.formDataGridView.ReadOnly = true;
-            this.formDataGridView.RowHeadersVisible = false;
-            this.formDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.formDataGridView.Size = new System.Drawing.Size(747, 484);
-            this.formDataGridView.TabIndex = 21;
+            this.swordRewardLabel.AutoSize = true;
+            this.swordRewardLabel.Location = new System.Drawing.Point(6, 79);
+            this.swordRewardLabel.Name = "swordRewardLabel";
+            this.swordRewardLabel.Size = new System.Drawing.Size(44, 13);
+            this.swordRewardLabel.TabIndex = 18;
+            this.swordRewardLabel.Text = "Reward";
             // 
-            // formSelectorBox
+            // swordRewardComboBox
             // 
-            this.formSelectorBox.Controls.Add(this.formSelectorComboBox);
-            this.formSelectorBox.Location = new System.Drawing.Point(6, 6);
-            this.formSelectorBox.Name = "formSelectorBox";
-            this.formSelectorBox.Size = new System.Drawing.Size(263, 50);
-            this.formSelectorBox.TabIndex = 20;
-            this.formSelectorBox.TabStop = false;
-            this.formSelectorBox.Text = "Form";
+            this.swordRewardComboBox.FormattingEnabled = true;
+            this.swordRewardComboBox.Location = new System.Drawing.Point(6, 95);
+            this.swordRewardComboBox.Name = "swordRewardComboBox";
+            this.swordRewardComboBox.Size = new System.Drawing.Size(188, 21);
+            this.swordRewardComboBox.TabIndex = 19;
             // 
-            // formSelectorComboBox
+            // swordRewardTypeLabel
             // 
-            this.formSelectorComboBox.FormattingEnabled = true;
-            this.formSelectorComboBox.Location = new System.Drawing.Point(7, 20);
-            this.formSelectorComboBox.Name = "formSelectorComboBox";
-            this.formSelectorComboBox.Size = new System.Drawing.Size(250, 21);
-            this.formSelectorComboBox.TabIndex = 0;
-            this.formSelectorComboBox.SelectedIndexChanged += new System.EventHandler(this.formSelectorComboBox_SelectedIndexChanged);
+            this.swordRewardTypeLabel.AutoSize = true;
+            this.swordRewardTypeLabel.Location = new System.Drawing.Point(6, 26);
+            this.swordRewardTypeLabel.Name = "swordRewardTypeLabel";
+            this.swordRewardTypeLabel.Size = new System.Drawing.Size(71, 13);
+            this.swordRewardTypeLabel.TabIndex = 16;
+            this.swordRewardTypeLabel.Text = "Reward Type";
+            // 
+            // swordRewardTypeComboBox
+            // 
+            this.swordRewardTypeComboBox.FormattingEnabled = true;
+            this.swordRewardTypeComboBox.Location = new System.Drawing.Point(6, 42);
+            this.swordRewardTypeComboBox.Name = "swordRewardTypeComboBox";
+            this.swordRewardTypeComboBox.Size = new System.Drawing.Size(188, 21);
+            this.swordRewardTypeComboBox.TabIndex = 17;
+            this.swordRewardTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.swordRewardTypeComboBox_SelectedIndexChanged);
+            // 
+            // levelStatBox
+            // 
+            this.levelStatBox.Controls.Add(this.levelAPLabel);
+            this.levelStatBox.Controls.Add(this.levelAPCounter);
+            this.levelStatBox.Controls.Add(this.levelMagicLabel);
+            this.levelStatBox.Controls.Add(this.levelMagicCounter);
+            this.levelStatBox.Controls.Add(this.levelDefenseLabel);
+            this.levelStatBox.Controls.Add(this.levelDefenseCounter);
+            this.levelStatBox.Controls.Add(this.levelStrengthLabel);
+            this.levelStatBox.Controls.Add(this.levelStrengthCounter);
+            this.levelStatBox.Location = new System.Drawing.Point(212, 19);
+            this.levelStatBox.Name = "levelStatBox";
+            this.levelStatBox.Size = new System.Drawing.Size(158, 102);
+            this.levelStatBox.TabIndex = 29;
+            this.levelStatBox.TabStop = false;
+            this.levelStatBox.Text = "Stats";
+            // 
+            // levelAPLabel
+            // 
+            this.levelAPLabel.AutoSize = true;
+            this.levelAPLabel.Location = new System.Drawing.Point(6, 16);
+            this.levelAPLabel.Name = "levelAPLabel";
+            this.levelAPLabel.Size = new System.Drawing.Size(21, 13);
+            this.levelAPLabel.TabIndex = 6;
+            this.levelAPLabel.Text = "AP";
+            // 
+            // levelAPCounter
+            // 
+            this.levelAPCounter.Location = new System.Drawing.Point(9, 33);
+            this.levelAPCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.levelAPCounter.Name = "levelAPCounter";
+            this.levelAPCounter.Size = new System.Drawing.Size(51, 20);
+            this.levelAPCounter.TabIndex = 7;
+            // 
+            // levelMagicLabel
+            // 
+            this.levelMagicLabel.AutoSize = true;
+            this.levelMagicLabel.Location = new System.Drawing.Point(6, 56);
+            this.levelMagicLabel.Name = "levelMagicLabel";
+            this.levelMagicLabel.Size = new System.Drawing.Size(36, 13);
+            this.levelMagicLabel.TabIndex = 8;
+            this.levelMagicLabel.Text = "Magic";
+            // 
+            // levelMagicCounter
+            // 
+            this.levelMagicCounter.Location = new System.Drawing.Point(9, 73);
+            this.levelMagicCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.levelMagicCounter.Name = "levelMagicCounter";
+            this.levelMagicCounter.Size = new System.Drawing.Size(51, 20);
+            this.levelMagicCounter.TabIndex = 9;
+            // 
+            // levelDefenseLabel
+            // 
+            this.levelDefenseLabel.AutoSize = true;
+            this.levelDefenseLabel.Location = new System.Drawing.Point(84, 16);
+            this.levelDefenseLabel.Name = "levelDefenseLabel";
+            this.levelDefenseLabel.Size = new System.Drawing.Size(47, 13);
+            this.levelDefenseLabel.TabIndex = 10;
+            this.levelDefenseLabel.Text = "Defense";
+            // 
+            // levelDefenseCounter
+            // 
+            this.levelDefenseCounter.Location = new System.Drawing.Point(87, 33);
+            this.levelDefenseCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.levelDefenseCounter.Name = "levelDefenseCounter";
+            this.levelDefenseCounter.Size = new System.Drawing.Size(51, 20);
+            this.levelDefenseCounter.TabIndex = 11;
+            // 
+            // levelStrengthLabel
+            // 
+            this.levelStrengthLabel.AutoSize = true;
+            this.levelStrengthLabel.Location = new System.Drawing.Point(84, 56);
+            this.levelStrengthLabel.Name = "levelStrengthLabel";
+            this.levelStrengthLabel.Size = new System.Drawing.Size(47, 13);
+            this.levelStrengthLabel.TabIndex = 12;
+            this.levelStrengthLabel.Text = "Strength";
+            // 
+            // levelStrengthCounter
+            // 
+            this.levelStrengthCounter.Location = new System.Drawing.Point(87, 73);
+            this.levelStrengthCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.levelStrengthCounter.Name = "levelStrengthCounter";
+            this.levelStrengthCounter.Size = new System.Drawing.Size(51, 20);
+            this.levelStrengthCounter.TabIndex = 13;
+            // 
+            // levelShieldBox
+            // 
+            this.levelShieldBox.Controls.Add(this.shieldRewardLabel);
+            this.levelShieldBox.Controls.Add(this.shieldRewardComboBox);
+            this.levelShieldBox.Controls.Add(this.shieldRewardTypeLabel);
+            this.levelShieldBox.Controls.Add(this.shieldRewardTypeComboBox);
+            this.levelShieldBox.Location = new System.Drawing.Point(6, 160);
+            this.levelShieldBox.Name = "levelShieldBox";
+            this.levelShieldBox.Size = new System.Drawing.Size(200, 133);
+            this.levelShieldBox.TabIndex = 25;
+            this.levelShieldBox.TabStop = false;
+            this.levelShieldBox.Text = "Shield Reward";
+            // 
+            // shieldRewardLabel
+            // 
+            this.shieldRewardLabel.AutoSize = true;
+            this.shieldRewardLabel.Location = new System.Drawing.Point(6, 79);
+            this.shieldRewardLabel.Name = "shieldRewardLabel";
+            this.shieldRewardLabel.Size = new System.Drawing.Size(44, 13);
+            this.shieldRewardLabel.TabIndex = 18;
+            this.shieldRewardLabel.Text = "Reward";
+            // 
+            // shieldRewardComboBox
+            // 
+            this.shieldRewardComboBox.FormattingEnabled = true;
+            this.shieldRewardComboBox.Location = new System.Drawing.Point(6, 95);
+            this.shieldRewardComboBox.Name = "shieldRewardComboBox";
+            this.shieldRewardComboBox.Size = new System.Drawing.Size(188, 21);
+            this.shieldRewardComboBox.TabIndex = 19;
+            // 
+            // shieldRewardTypeLabel
+            // 
+            this.shieldRewardTypeLabel.AutoSize = true;
+            this.shieldRewardTypeLabel.Location = new System.Drawing.Point(6, 26);
+            this.shieldRewardTypeLabel.Name = "shieldRewardTypeLabel";
+            this.shieldRewardTypeLabel.Size = new System.Drawing.Size(71, 13);
+            this.shieldRewardTypeLabel.TabIndex = 16;
+            this.shieldRewardTypeLabel.Text = "Reward Type";
+            // 
+            // shieldRewardTypeComboBox
+            // 
+            this.shieldRewardTypeComboBox.FormattingEnabled = true;
+            this.shieldRewardTypeComboBox.Location = new System.Drawing.Point(6, 42);
+            this.shieldRewardTypeComboBox.Name = "shieldRewardTypeComboBox";
+            this.shieldRewardTypeComboBox.Size = new System.Drawing.Size(188, 21);
+            this.shieldRewardTypeComboBox.TabIndex = 17;
+            this.shieldRewardTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.shieldRewardTypeComboBox_SelectedIndexChanged);
+            // 
+            // levelStaffBox
+            // 
+            this.levelStaffBox.Controls.Add(this.staffRewardLabel);
+            this.levelStaffBox.Controls.Add(this.staffRewardComboBox);
+            this.levelStaffBox.Controls.Add(this.staffRewardTypeLabel);
+            this.levelStaffBox.Controls.Add(this.staffRewardTypeComboBox);
+            this.levelStaffBox.Location = new System.Drawing.Point(6, 299);
+            this.levelStaffBox.Name = "levelStaffBox";
+            this.levelStaffBox.Size = new System.Drawing.Size(200, 133);
+            this.levelStaffBox.TabIndex = 26;
+            this.levelStaffBox.TabStop = false;
+            this.levelStaffBox.Text = "Staff Reward";
+            // 
+            // staffRewardLabel
+            // 
+            this.staffRewardLabel.AutoSize = true;
+            this.staffRewardLabel.Location = new System.Drawing.Point(6, 79);
+            this.staffRewardLabel.Name = "staffRewardLabel";
+            this.staffRewardLabel.Size = new System.Drawing.Size(44, 13);
+            this.staffRewardLabel.TabIndex = 18;
+            this.staffRewardLabel.Text = "Reward";
+            // 
+            // staffRewardComboBox
+            // 
+            this.staffRewardComboBox.FormattingEnabled = true;
+            this.staffRewardComboBox.Location = new System.Drawing.Point(6, 95);
+            this.staffRewardComboBox.Name = "staffRewardComboBox";
+            this.staffRewardComboBox.Size = new System.Drawing.Size(188, 21);
+            this.staffRewardComboBox.TabIndex = 19;
+            // 
+            // staffRewardTypeLabel
+            // 
+            this.staffRewardTypeLabel.AutoSize = true;
+            this.staffRewardTypeLabel.Location = new System.Drawing.Point(6, 26);
+            this.staffRewardTypeLabel.Name = "staffRewardTypeLabel";
+            this.staffRewardTypeLabel.Size = new System.Drawing.Size(71, 13);
+            this.staffRewardTypeLabel.TabIndex = 16;
+            this.staffRewardTypeLabel.Text = "Reward Type";
+            // 
+            // staffRewardTypeComboBox
+            // 
+            this.staffRewardTypeComboBox.FormattingEnabled = true;
+            this.staffRewardTypeComboBox.Location = new System.Drawing.Point(6, 42);
+            this.staffRewardTypeComboBox.Name = "staffRewardTypeComboBox";
+            this.staffRewardTypeComboBox.Size = new System.Drawing.Size(188, 21);
+            this.staffRewardTypeComboBox.TabIndex = 17;
+            this.staffRewardTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.staffRewardTypeComboBox_SelectedIndexChanged);
+            // 
+            // levelDefaultButton
+            // 
+            this.levelDefaultButton.Location = new System.Drawing.Point(1088, 525);
+            this.levelDefaultButton.Name = "levelDefaultButton";
+            this.levelDefaultButton.Size = new System.Drawing.Size(137, 23);
+            this.levelDefaultButton.TabIndex = 28;
+            this.levelDefaultButton.Text = "Default";
+            this.levelDefaultButton.UseVisualStyleBackColor = true;
+            this.levelDefaultButton.Click += new System.EventHandler(this.levelDefaultButton_Click);
+            // 
+            // levelReplaceButton
+            // 
+            this.levelReplaceButton.Location = new System.Drawing.Point(1088, 496);
+            this.levelReplaceButton.Name = "levelReplaceButton";
+            this.levelReplaceButton.Size = new System.Drawing.Size(137, 23);
+            this.levelReplaceButton.TabIndex = 27;
+            this.levelReplaceButton.Text = "Replace";
+            this.levelReplaceButton.UseVisualStyleBackColor = true;
+            this.levelReplaceButton.Click += new System.EventHandler(this.levelReplaceButton_Click);
             // 
             // patchSelectorComboBox
             // 
@@ -1273,11 +1624,22 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // helpButton
+            // 
+            this.helpButton.Location = new System.Drawing.Point(13, 607);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(75, 23);
+            this.helpButton.TabIndex = 3;
+            this.helpButton.Text = "Help";
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // TabViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 642);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.patchSelectorComboBox);
             this.Controls.Add(this.tabControlContainer);
@@ -1292,6 +1654,10 @@
             this.popupPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupDataGridView)).EndInit();
             this.popupWorldSelectorBox.ResumeLayout(false);
+            this.formPage.ResumeLayout(false);
+            this.formPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.formDataGridView)).EndInit();
+            this.formSelectorBox.ResumeLayout(false);
             this.equipmentPage.ResumeLayout(false);
             this.equipmentPage.PerformLayout();
             this.elementalOtherResistanceBox.ResumeLayout(false);
@@ -1327,10 +1693,23 @@
             this.bonusRewardBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bonusDataGridView)).EndInit();
             this.bonusWorldSelectorBox.ResumeLayout(false);
-            this.formPage.ResumeLayout(false);
-            this.formPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.formDataGridView)).EndInit();
-            this.formSelectorBox.ResumeLayout(false);
+            this.levelPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.levelDataGridView)).EndInit();
+            this.soraLevelBox.ResumeLayout(false);
+            this.soraLevelBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nextEXPCounter)).EndInit();
+            this.levelSwordBox.ResumeLayout(false);
+            this.levelSwordBox.PerformLayout();
+            this.levelStatBox.ResumeLayout(false);
+            this.levelStatBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.levelAPCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.levelMagicCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.levelDefenseCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.levelStrengthCounter)).EndInit();
+            this.levelShieldBox.ResumeLayout(false);
+            this.levelShieldBox.PerformLayout();
+            this.levelStaffBox.ResumeLayout(false);
+            this.levelStaffBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1433,5 +1812,38 @@
         private System.Windows.Forms.NumericUpDown thunderResistanceCounter;
         private System.Windows.Forms.Label darkResistanceLabel;
         private System.Windows.Forms.NumericUpDown darkResistanceCounter;
+        private System.Windows.Forms.TabPage levelPage;
+        private System.Windows.Forms.GroupBox levelStaffBox;
+        private System.Windows.Forms.Label staffRewardLabel;
+        private System.Windows.Forms.ComboBox staffRewardComboBox;
+        private System.Windows.Forms.Label staffRewardTypeLabel;
+        private System.Windows.Forms.ComboBox staffRewardTypeComboBox;
+        private System.Windows.Forms.GroupBox levelShieldBox;
+        private System.Windows.Forms.Label shieldRewardLabel;
+        private System.Windows.Forms.ComboBox shieldRewardComboBox;
+        private System.Windows.Forms.Label shieldRewardTypeLabel;
+        private System.Windows.Forms.ComboBox shieldRewardTypeComboBox;
+        private System.Windows.Forms.GroupBox levelSwordBox;
+        private System.Windows.Forms.Label swordRewardLabel;
+        private System.Windows.Forms.ComboBox swordRewardComboBox;
+        private System.Windows.Forms.Label swordRewardTypeLabel;
+        private System.Windows.Forms.ComboBox swordRewardTypeComboBox;
+        private System.Windows.Forms.Button levelDefaultButton;
+        private System.Windows.Forms.Button levelReplaceButton;
+        private System.Windows.Forms.GroupBox levelStatBox;
+        private System.Windows.Forms.Label levelAPLabel;
+        private System.Windows.Forms.NumericUpDown levelAPCounter;
+        private System.Windows.Forms.Label levelMagicLabel;
+        private System.Windows.Forms.NumericUpDown levelMagicCounter;
+        private System.Windows.Forms.Label levelDefenseLabel;
+        private System.Windows.Forms.NumericUpDown levelDefenseCounter;
+        private System.Windows.Forms.Label levelStrengthLabel;
+        private System.Windows.Forms.NumericUpDown levelStrengthCounter;
+        private System.Windows.Forms.GroupBox soraLevelBox;
+        private System.Windows.Forms.NumericUpDown nextEXPCounter;
+        private System.Windows.Forms.Label nextEXPLabel;
+        private System.Windows.Forms.DataGridView levelDataGridView;
+        private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.TextBox levelHelpTextBox;
     }
 }

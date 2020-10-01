@@ -94,28 +94,31 @@ namespace Plandomizer
 				string word = "0000";
 				ret += "// " + equipmentName + "\n";
 
-				word += replacementAbilityAddress;
-				ret += "patch=1,EE," + abilityAddress + ",extended," + word + "// Ability\n";
+				word += replacementAbilityAddress + " // " + ability + "\n";
+				ret += "patch=1,EE," + abilityAddress + ",extended," + word;
 				word = "";
 
 				word += ap.ToString("X2");
 				word += defense.ToString("X2");
 				word += magic.ToString("X2");
 				word += strength.ToString("X2");
-				ret += "patch=1,EE," + statAddress + ",extended," + word + "// Stats\n";
+				word += " // AP:" + ap + " Defense:" + defense + " Magic:" + magic + " Strength:" + strength + "\n";
+				ret += "patch=1,EE," + statAddress + ",extended," + word;
 				word = "";
 
 				word += (100 - thunderResistance).ToString("X2");
 				word += (100 - blizzardResistance).ToString("X2");
 				word += (100 - fireResistance).ToString("X2");
 				word += (100 - physicalResistance).ToString("X2");
-				ret += "patch=1,EE," + elementalResistanceAddress + ",extended," + word + "// Physical + Elemental Resistances\n";
+				word += " // Thunder:" + thunderResistance + "% Blizzard:" + blizzardResistance + "% Fire:" + fireResistance + "% Physical:" + physicalResistance + "%\n";
+				ret += "patch=1,EE," + elementalResistanceAddress + ",extended," + word;
 				word = "00";
 
 				word += (100 - allResistance).ToString("X2");
 				word += (100 - lightResistance).ToString("X2");
 				word += (100 - darkResistance).ToString("X2");
-				ret += "patch=1,EE," + otherResistanceAddress + ",extended," + word + "// Universal, Light, and Dark Resistances\n";
+				word += " // Universal:" + allResistance + "% Light:" + lightResistance + "% Dark:" + darkResistance + "%\n";
+				ret += "patch=1,EE," + otherResistanceAddress + ",extended," + word;
 			}
 			return ret;
         }

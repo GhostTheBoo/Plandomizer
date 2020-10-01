@@ -39,7 +39,7 @@ namespace Plandomizer
 			string ret = "";
 			if (changed)
 				// ret += "patch=1,EE," + originalAddress + ",extended,0000" + replacementAddress + "// " + form + ", " + originalAbility + "\n";
-				ret += "patch=1,EE," + originalAddress + ",extended,0000" + replacementAddress + "// " + form + ", " + originalAbility + " is now " + replacement + "\n";
+				ret += "patch=1,EE," + originalAddress + ",extended,0000" + replacementAddress + " // " + form + ", " + originalAbility + " is now " + replacement + "\n";
 			return ret;
 		}
 	}
