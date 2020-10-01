@@ -21,6 +21,7 @@ namespace Plandomizer
         internal List<string> equipmentTypeList;
         internal List<string> patchList;
         internal List<int> levelNumberList;
+        Color replacedBackground;
 
         internal List<List<Bonus>> bonusList;
         internal bool bonusReplaced = false;
@@ -39,6 +40,8 @@ namespace Plandomizer
         public TabViewForm()
         {
             InitializeComponent();
+
+            replacedBackground = Color.FromArgb(255, 150, 200);
 
             populateWorldList();
             populateRewardTypeList();
@@ -984,7 +987,7 @@ namespace Plandomizer
                 chestList[world][chest].replacementAddress = temp.rewardAddress;
                 chestList[world][chest].changed = true;
                 chestReplaced = true;
-                chestDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+                chestDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 chestDataGridView.Update();
                 chestDataGridView.Refresh();
             }
@@ -1013,7 +1016,7 @@ namespace Plandomizer
                 popupList[world][popup].replacementAddress = temp.rewardAddress;
                 popupList[world][popup].changed = true;
                 popupReplaced = true;
-                popupDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+                popupDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 popupDataGridView.Update();
                 popupDataGridView.Refresh();
             }
@@ -1067,7 +1070,7 @@ namespace Plandomizer
 
             if(bonusList[world][bonus].changeCount + (hp + mp + armor + accessory + item + drive) > 0)
             {
-                bonusDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+                bonusDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 bonusReplaced = true;
             }
 
@@ -1107,7 +1110,7 @@ namespace Plandomizer
                 driveFormList[form][level].replacementAddress = temp.rewardAddress;
                 driveFormList[form][level].changed = true;
                 formReplaced = true;
-                formDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+                formDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
                 formDataGridView.Update();
                 formDataGridView.Refresh();
             }
@@ -1148,7 +1151,7 @@ namespace Plandomizer
             equipmentList[equipmentType][equipment].allResistance = Convert.ToInt32(universalResistanceCounter.Value);
             equipmentList[equipmentType][equipment].changed = true;
             equipmentReplaced = true;
-            equipmentDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+            equipmentDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
             equipmentDataGridView.Update();
             equipmentDataGridView.Refresh();
         }
@@ -1211,7 +1214,7 @@ namespace Plandomizer
                 levelList[level].staffReplacementAddress = temp.rewardAddress;
             }
 
-            levelDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+            levelDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = replacedBackground;
             levelDataGridView.Update();
             levelDataGridView.Refresh();
         }
