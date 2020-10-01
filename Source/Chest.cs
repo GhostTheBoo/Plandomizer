@@ -37,9 +37,9 @@ namespace Plandomizer
 		public string toString()
 		{
 			string ret = "";
-			if(changed)
+			if (changed)
 				// ret += "patch=1,EE," + locationAddress + ",extended,0000" + replacementAddress + "// " + room + ", " + originalReward + "\n";
-				ret += "patch=1,EE," + locationAddress + ",extended,0000" + replacementAddress + "// " + room + ", " + originalReward + " is now " + replacement + "\n";
+				ret += "patch=1,EE," + locationAddress + ",extended,0000" + replacementAddress + " // " + room + ", " + originalReward + " is now " + replacement + "\n";
 			return ret;
 		}
 	}

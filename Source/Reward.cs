@@ -18,5 +18,10 @@ namespace Plandomizer
             reward = r;
             rewardAddress = rA;
         }
+
+        public override string ToString()
+        {
+            return reward;
+        }
     }
 }

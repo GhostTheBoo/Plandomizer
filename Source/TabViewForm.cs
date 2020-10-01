@@ -17,16 +17,23 @@ namespace Plandomizer
     {
         internal List<string> worldList;
         internal List<string> rewardTypeList;
-        internal List<string> equipmentRewardTypeList;
         internal List<string> formTypeList;
         internal List<string> equipmentTypeList;
         internal List<string> patchList;
+        internal List<int> levelNumberList;
 
         internal List<List<Bonus>> bonusList;
+        internal bool bonusReplaced = false;
         internal List<List<Chest>> chestList;
+        internal bool chestReplaced = false;
         internal List<List<DriveForm>> driveFormList;
+        internal bool formReplaced = false;
         internal List<List<Popup>> popupList;
+        internal bool popupReplaced = false;
         internal List<List<Equipment>> equipmentList;
+        internal bool equipmentReplaced = false;
+        internal List<Level> levelList;
+        internal bool levelReplaced = false;
         internal List<List<Reward>> rewardList;
 
         public TabViewForm()
@@ -38,6 +45,7 @@ namespace Plandomizer
             populateFormTypeList();
             populateEquipmentTypeList();
             populatePatchList();
+            populateLevelNumberList();
 
             loadBonuses();
             loadChests();
@@ -45,6 +53,7 @@ namespace Plandomizer
             loadPopups();
             loadEquipment();
             loadRewards();
+            loadLevels();
 
             #region Data Sources and Display Members
             bonusWorldSelectorComboBox.DataSource = worldList;
@@ -64,21 +73,40 @@ namespace Plandomizer
             bonusRewardComboBox2.BindingContext = new BindingContext();
             bonusRewardTypeComboBox2.DataSource = rewardTypeList;
             bonusRewardTypeComboBox2.SelectedIndex = 17;
+
             chestRewardTypeComboBox.BindingContext = new BindingContext();
             chestRewardComboBox.BindingContext = new BindingContext();
             chestRewardTypeComboBox.DataSource = rewardTypeList;
             chestRewardTypeComboBox.SelectedIndex = 17;
+
             equipmentRewardTypeComboBox.BindingContext = new BindingContext();
             equipmentRewardComboBox.BindingContext = new BindingContext();
-            equipmentRewardTypeComboBox.DataSource = equipmentRewardTypeList;
+            equipmentRewardTypeComboBox.DataSource = rewardTypeList;
+            equipmentRewardTypeComboBox.SelectedIndex = 17;
+
             formRewardTypeComboBox.BindingContext = new BindingContext();
             formRewardComboBox.BindingContext = new BindingContext();
             formRewardTypeComboBox.DataSource = rewardTypeList;
             formRewardTypeComboBox.SelectedIndex = 17;
+
             popupRewardTypeComboBox.BindingContext = new BindingContext();
             popupRewardComboBox.BindingContext = new BindingContext();
             popupRewardTypeComboBox.DataSource = rewardTypeList;
             popupRewardTypeComboBox.SelectedIndex = 17;
+
+            levelDataGridView.DataSource = levelList;
+            swordRewardTypeComboBox.BindingContext = new BindingContext();
+            swordRewardComboBox.BindingContext = new BindingContext();
+            swordRewardTypeComboBox.DataSource = rewardTypeList;
+            swordRewardTypeComboBox.SelectedIndex = 17;
+            shieldRewardTypeComboBox.BindingContext = new BindingContext();
+            shieldRewardComboBox.BindingContext = new BindingContext();
+            shieldRewardTypeComboBox.DataSource = rewardTypeList;
+            shieldRewardTypeComboBox.SelectedIndex = 17;
+            staffRewardTypeComboBox.BindingContext = new BindingContext();
+            staffRewardComboBox.BindingContext = new BindingContext();
+            staffRewardTypeComboBox.DataSource = rewardTypeList;
+            staffRewardTypeComboBox.SelectedIndex = 17;
 
             bonusRewardComboBox1.DisplayMember = "reward";
             bonusRewardComboBox2.DisplayMember = "reward";
@@ -87,12 +115,12 @@ namespace Plandomizer
             formRewardComboBox.DisplayMember = "reward";
             popupRewardComboBox.DisplayMember = "reward";
 
-            bonusHPCounter.Value = -1;
-            bonusMPCounter.Value = -1;
-            bonusArmorCounter.Value = -1;
-            bonusAccessoryCounter.Value = -1;
-            bonusItemCounter.Value = -1;
-            bonusDriveCounter.Value = -1;
+            bonusHPCounter.Value = 0;
+            bonusMPCounter.Value = 0;
+            bonusArmorCounter.Value = 0;
+            bonusAccessoryCounter.Value = 0;
+            bonusItemCounter.Value = 0;
+            bonusDriveCounter.Value = 0;
             #endregion
 
             #region Column visibility
@@ -130,6 +158,16 @@ namespace Plandomizer
             popupDataGridView.Columns["locationAddress"].Visible = false;
             popupDataGridView.Columns["replacementAddress"].Visible = false;
             popupDataGridView.Columns["changed"].Visible = false;
+
+            levelDataGridView.Columns["expToNextAddress"].Visible = false;
+            levelDataGridView.Columns["statAddress"].Visible = false;
+            levelDataGridView.Columns["swordAddress"].Visible = false;
+            levelDataGridView.Columns["shieldAddress"].Visible = false;
+            levelDataGridView.Columns["staffAddress"].Visible = false;
+            levelDataGridView.Columns["swordReplacementAddress"].Visible = false;
+            levelDataGridView.Columns["shieldReplacementAddress"].Visible = false;
+            levelDataGridView.Columns["staffReplacementAddress"].Visible = false;
+            levelDataGridView.Columns["changed"].Visible = false;
             #endregion
         }
 
@@ -655,6 +693,23 @@ namespace Plandomizer
             populateRewardList(temp, data.Skip(skip).Take(entryCount * synthMatCount).ToArray(), synthMatCount);
             rewardList.Add(temp);
         }
+        public void loadLevels()
+        {
+            string[] entries = new string[5];
+
+            levelList = new List<Level>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\levels.txt");
+
+            for(int i = 1; i < 100; i++)
+            {
+                entries[0] = data[(6 * (i - 1)) + 1];
+                entries[1] = data[(6 * (i - 1)) + 2];
+                entries[2] = data[(6 * (i - 1)) + 3];
+                entries[3] = data[(6 * (i - 1)) + 4];
+                entries[4] = data[(6 * (i - 1)) + 5];
+                levelList.Add(new Level(i, entries[0], entries[1], entries[2], entries[3], entries[4]));
+            }
+        }
 
         internal void populateBonusList(List<Bonus> bList, string[] data, int worldCount)
         {
@@ -760,7 +815,6 @@ namespace Plandomizer
         }
         public void populateRewardTypeList()
         {
-            equipmentRewardTypeList = new List<string>();
             rewardTypeList = new List<string>();
 
             rewardTypeList.Add("Abilities");
@@ -780,24 +834,7 @@ namespace Plandomizer
             rewardTypeList.Add("Magic Spells");
             rewardTypeList.Add("Summons");
             rewardTypeList.Add("Synth Materials");
-            equipmentRewardTypeList.Add("Abilities");
-            equipmentRewardTypeList.Add("Accessories");
-            equipmentRewardTypeList.Add("Armor");
-            equipmentRewardTypeList.Add("Forms");
-            equipmentRewardTypeList.Add("Growth Abilities");
-            equipmentRewardTypeList.Add("Items");
-            equipmentRewardTypeList.Add("Key Items");
-            equipmentRewardTypeList.Add("Keyblades");
-            equipmentRewardTypeList.Add("Area Maps");
-            equipmentRewardTypeList.Add("Proofs");
-            equipmentRewardTypeList.Add("Recipes");
-            equipmentRewardTypeList.Add("Secret Reports");
-            equipmentRewardTypeList.Add("Goofy's Shields");
-            equipmentRewardTypeList.Add("Donald's Staves");
-            equipmentRewardTypeList.Add("Magic Spells");
-            equipmentRewardTypeList.Add("Summons");
-            equipmentRewardTypeList.Add("Synth Materials");
-            rewardTypeList.Add("Default");
+            rewardTypeList.Add("Empty");
         }
         public void populateFormTypeList()
         {
@@ -827,6 +864,13 @@ namespace Plandomizer
             patchList.Add("Xeeynamo's Rev 5/Japanese (F266B00B.pnach)");
             patchList.Add("Sora6645's Rev 6 (B7398B17.pnach)");
             patchList.Add("CrazyCatz's/Sora6645's Rev Final (FAF99301.pnach)");
+        }
+        public void populateLevelNumberList()
+        {
+            levelNumberList = new List<int>();
+
+            for (int i = 1; i < 100; i++)
+                levelNumberList.Add(i);
         }
 
         private void chestsWorldSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -902,8 +946,32 @@ namespace Plandomizer
             else
                 equipmentRewardComboBox.DataSource = rewardList[equipmentRewardTypeComboBox.SelectedIndex];
         }
+
+        private void swordRewardTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (swordRewardTypeComboBox.SelectedIndex == 17)
+                swordRewardComboBox.DataSource = null;
+            else
+                swordRewardComboBox.DataSource = rewardList[swordRewardTypeComboBox.SelectedIndex];
+        }
+
+        private void shieldRewardTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (shieldRewardTypeComboBox.SelectedIndex == 17)
+                shieldRewardComboBox.DataSource = null;
+            else
+                shieldRewardComboBox.DataSource = rewardList[shieldRewardTypeComboBox.SelectedIndex];
+        }
+
+        private void staffRewardTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (staffRewardTypeComboBox.SelectedIndex == 17)
+                staffRewardComboBox.DataSource = null;
+            else
+                staffRewardComboBox.DataSource = rewardList[staffRewardTypeComboBox.SelectedIndex];
+        }
         #endregion
-        
+
         #region Buttons
         private void chestReplaceButton_Click(object sender, EventArgs e)
         {
@@ -915,6 +983,8 @@ namespace Plandomizer
                 chestList[world][chest].replacement = temp.reward;
                 chestList[world][chest].replacementAddress = temp.rewardAddress;
                 chestList[world][chest].changed = true;
+                chestReplaced = true;
+                chestDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
                 chestDataGridView.Update();
                 chestDataGridView.Refresh();
             }
@@ -927,6 +997,7 @@ namespace Plandomizer
             chestList[world][chest].replacement = "";
             chestList[world][chest].replacementAddress = "";
             chestList[world][chest].changed = false;
+            chestDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             chestDataGridView.Update();
             chestDataGridView.Refresh();
         }
@@ -941,6 +1012,8 @@ namespace Plandomizer
                 popupList[world][popup].replacement = temp.reward;
                 popupList[world][popup].replacementAddress = temp.rewardAddress;
                 popupList[world][popup].changed = true;
+                popupReplaced = true;
+                popupDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
                 popupDataGridView.Update();
                 popupDataGridView.Refresh();
             }
@@ -953,6 +1026,7 @@ namespace Plandomizer
             popupList[world][popup].replacement = "";
             popupList[world][popup].replacementAddress = "";
             popupList[world][popup].changed = false;
+            popupDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             popupDataGridView.Update();
             popupDataGridView.Refresh();
         }
@@ -967,37 +1041,15 @@ namespace Plandomizer
             int accessory = Convert.ToInt32(bonusAccessoryCounter.Value);
             int item = Convert.ToInt32(bonusItemCounter.Value);
             int drive = Convert.ToInt32(bonusDriveCounter.Value);
+
+            bonusList[world][bonus].hpIncrease = hp;
+            bonusList[world][bonus].mpIncrease = mp;
+            bonusList[world][bonus].armorSlotIncrease = armor;
+            bonusList[world][bonus].accessorySlotIncrease = accessory;
+            bonusList[world][bonus].itemSlotIncrease = item;
+            bonusList[world][bonus].driveGaugeIncrease = drive;
+
             Reward temp;
-            if (hp != -1)
-            {
-                bonusList[world][bonus].hpIncrease = hp;
-                bonusList[world][bonus].changeCount++;
-            }
-            if (mp != -1)
-            {
-                bonusList[world][bonus].mpIncrease = mp;
-                bonusList[world][bonus].changeCount++;
-            }
-            if(armor != -1)
-            {
-                bonusList[world][bonus].armorSlotIncrease = armor;
-                bonusList[world][bonus].changeCount++;
-            }
-            if(accessory != -1)
-            {
-                bonusList[world][bonus].accessorySlotIncrease = accessory;
-                bonusList[world][bonus].changeCount++;
-            }
-            if(item != -1)
-            {
-                bonusList[world][bonus].itemSlotIncrease = item;
-                bonusList[world][bonus].changeCount++;
-            }
-            if(drive != -1)
-            {
-                bonusList[world][bonus].driveGaugeIncrease = drive;
-                bonusList[world][bonus].changeCount++;
-            }
             if (bonusRewardTypeComboBox1.SelectedIndex != 17)
             {
                 temp = rewardList[bonusRewardTypeComboBox1.SelectedIndex][bonusRewardComboBox1.SelectedIndex];
@@ -1012,8 +1064,13 @@ namespace Plandomizer
                 bonusList[world][bonus].replacementRewardAddress2 = temp.rewardAddress;
                 bonusList[world][bonus].changeCount++;
             }
-            if(bonusList[world][bonus].changeCount > 2)
-                // do something!
+
+            if(bonusList[world][bonus].changeCount + (hp + mp + armor + accessory + item + drive) > 0)
+            {
+                bonusDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+                bonusReplaced = true;
+            }
+
             bonusDataGridView.Update();
             bonusDataGridView.Refresh();
         }
@@ -1022,17 +1079,18 @@ namespace Plandomizer
         {
             int world = bonusWorldSelectorComboBox.SelectedIndex;
             int bonus = bonusDataGridView.SelectedRows[0].Index;
-            bonusList[world][bonus].hpIncrease = -1;
-            bonusList[world][bonus].mpIncrease = -1;
-            bonusList[world][bonus].armorSlotIncrease = -1;
-            bonusList[world][bonus].accessorySlotIncrease = -1;
-            bonusList[world][bonus].itemSlotIncrease = -1;
-            bonusList[world][bonus].driveGaugeIncrease = -1;
+            bonusList[world][bonus].hpIncrease = 0;
+            bonusList[world][bonus].mpIncrease = 0;
+            bonusList[world][bonus].armorSlotIncrease = 0;
+            bonusList[world][bonus].accessorySlotIncrease = 0;
+            bonusList[world][bonus].itemSlotIncrease = 0;
+            bonusList[world][bonus].driveGaugeIncrease = 0;
             bonusList[world][bonus].replacementReward1 = "";
             bonusList[world][bonus].replacementRewardAddress1 = "";
             bonusList[world][bonus].replacementReward2 = "";
             bonusList[world][bonus].replacementRewardAddress2 = "";
             bonusList[world][bonus].changeCount = 0;
+            bonusDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             bonusDataGridView.Update();
             bonusDataGridView.Refresh();
 
@@ -1048,6 +1106,8 @@ namespace Plandomizer
                 driveFormList[form][level].replacement = temp.reward;
                 driveFormList[form][level].replacementAddress = temp.rewardAddress;
                 driveFormList[form][level].changed = true;
+                formReplaced = true;
+                formDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
                 formDataGridView.Update();
                 formDataGridView.Refresh();
             }
@@ -1060,14 +1120,21 @@ namespace Plandomizer
             driveFormList[form][level].replacement = "";
             driveFormList[form][level].replacementAddress = "";
             driveFormList[form][level].changed = false;
+            formDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             formDataGridView.Update();
             formDataGridView.Refresh();
         }
+
         private void equipmentReplaceButton_Click(object sender, EventArgs e)
         {
             int equipmentType = equipmentTypeSelectorComboBox.SelectedIndex;
             int equipment = equipmentDataGridView.SelectedRows[0].Index;
-            Reward temp = rewardList[equipmentRewardTypeComboBox.SelectedIndex][equipmentRewardComboBox.SelectedIndex];
+            if (equipmentRewardTypeComboBox.SelectedIndex != 17)
+            {
+                Reward temp = rewardList[equipmentRewardTypeComboBox.SelectedIndex][equipmentRewardComboBox.SelectedIndex];
+                equipmentList[equipmentType][equipment].ability = temp.reward;
+                equipmentList[equipmentType][equipment].replacementAbilityAddress = temp.rewardAddress;
+            }
             equipmentList[equipmentType][equipment].ap = Convert.ToInt32(equipmentAPCounter.Value);
             equipmentList[equipmentType][equipment].strength = Convert.ToInt32(equipmentStrengthCounter.Value);
             equipmentList[equipmentType][equipment].magic = Convert.ToInt32(equipmentMagicCounter.Value);
@@ -1079,12 +1146,13 @@ namespace Plandomizer
             equipmentList[equipmentType][equipment].darkResistance = Convert.ToInt32(darkResistanceCounter.Value);
             equipmentList[equipmentType][equipment].lightResistance = Convert.ToInt32(lightResistanceCounter.Value);
             equipmentList[equipmentType][equipment].allResistance = Convert.ToInt32(universalResistanceCounter.Value);
-            equipmentList[equipmentType][equipment].replacementAbilityAddress = temp.rewardAddress;
-            equipmentList[equipmentType][equipment].ability = temp.reward;
             equipmentList[equipmentType][equipment].changed = true;
+            equipmentReplaced = true;
+            equipmentDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
             equipmentDataGridView.Update();
             equipmentDataGridView.Refresh();
         }
+
         private void equipmentDefaultButton_Click(object sender, EventArgs e)
         {
             int equipmentType = equipmentTypeSelectorComboBox.SelectedIndex;
@@ -1104,16 +1172,79 @@ namespace Plandomizer
             equipmentList[equipmentType][equipment].replacementAbilityAddress = "";
             equipmentList[equipmentType][equipment].ability = "";
             equipmentList[equipmentTypeSelectorComboBox.SelectedIndex][equipmentDataGridView.SelectedRows[0].Index].changed = false;
-
+            equipmentDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
             equipmentDataGridView.Update();
             equipmentDataGridView.Refresh();
+        }
+        
+        private void levelReplaceButton_Click(object sender, EventArgs e)
+        {
+            int level = levelDataGridView.SelectedRows[0].Index;
+
+            levelList[level].ap = Convert.ToInt32(levelAPCounter.Value);
+            levelList[level].magic = Convert.ToInt32(levelMagicCounter.Value);
+            levelList[level].defense = Convert.ToInt32(levelDefenseCounter.Value);
+            levelList[level].strength = Convert.ToInt32(levelStrengthCounter.Value);
+            levelList[level].expToNext = Convert.ToInt32(nextEXPCounter.Value);
+            levelList[level].changed = true;
+
+            Reward temp;
+
+            if (swordRewardTypeComboBox.SelectedIndex != 17)
+            {
+                temp = rewardList[swordRewardTypeComboBox.SelectedIndex][swordRewardComboBox.SelectedIndex];
+                levelList[level].swordReplacement = temp.reward;
+                levelList[level].swordReplacementAddress = temp.rewardAddress;
+            }
+
+            if (shieldRewardTypeComboBox.SelectedIndex != 17)
+            {
+                temp = rewardList[shieldRewardTypeComboBox.SelectedIndex][shieldRewardComboBox.SelectedIndex];
+                levelList[level].shieldReplacement = temp.reward;
+                levelList[level].shieldReplacementAddress = temp.rewardAddress;
+            }
+
+            if (staffRewardTypeComboBox.SelectedIndex != 17)
+            {
+                temp = rewardList[staffRewardTypeComboBox.SelectedIndex][staffRewardComboBox.SelectedIndex];
+                levelList[level].staffReplacement = temp.reward;
+                levelList[level].staffReplacementAddress = temp.rewardAddress;
+            }
+
+            levelDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+            levelDataGridView.Update();
+            levelDataGridView.Refresh();
+        }
+
+        private void levelDefaultButton_Click(object sender, EventArgs e)
+        {
+            int level = levelDataGridView.SelectedRows[0].Index;
+
+            levelList[level].ap = 0;
+            levelList[level].magic = 0;
+            levelList[level].defense = 0;
+            levelList[level].strength = 0;
+            levelList[level].expToNext = 0;
+            levelList[level].swordReplacement = "";
+            levelList[level].swordReplacementAddress = "";
+            levelList[level].shieldReplacement = "";
+            levelList[level].shieldReplacementAddress = "";
+            levelList[level].staffReplacement = "";
+            levelList[level].staffReplacementAddress = "";
+            levelList[level].changed = true;
+
+            levelDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = Color.White;
+            levelDataGridView.Update();
+            levelDataGridView.Refresh();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            /*
             patchList.Add("Xeeynamo's Rev 5/Japanese (F266B00B.pnach)");
             patchList.Add("Sora6645's Rev 6 (B7398B17.pnach)");
             patchList.Add("CrazyCatz's/Sora6645's Rev Final (FAF99301.pnach)");
+            */
 
             string patchFileName = "";
             switch(patchSelectorComboBox.SelectedIndex)
@@ -1132,51 +1263,143 @@ namespace Plandomizer
             }
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(patchFileName))
             {
+                int i = 0;
                 // Printing!
+                file.WriteLine("//Sora's Bonus Rewards");
                 foreach (List<Bonus> bList in bonusList)
                 {
+                    file.Write("// " + worldList[i] + "\n");
                     foreach(Bonus b in bList)
                     {
                         if(b.changeCount > 0)
                             file.Write(b.toString());
                     }
+                    i++;
                 }
+                i = 0;
+                file.WriteLine("\n//Chest Rewards");
                 foreach (List<Chest> cList in chestList)
                 {
+                    file.Write("// " + worldList[i] + "\n");
                     foreach (Chest c in cList)
                     {
                         if (c.changed)
                             file.Write(c.toString());
                     }
+                    i++;
                 }
-                foreach (List<DriveForm> dfList in driveFormList)
-                {
-                    foreach (DriveForm df in dfList)
-                    {
-                        if (df.changed)
-                            file.Write(df.toString());
-                    }
-                }
+                i = 0;
+                file.WriteLine("\n//Popup Rewards");
                 foreach (List<Popup> pList in popupList)
                 {
+                    file.Write("// " + worldList[i] + "\n");
                     foreach (Popup p in pList)
                     {
                         if (p.changed)
                             file.Write(p.toString());
                     }
+                    i++;
                 }
+                i = 0;
+                file.WriteLine("\n//Drive Level Rewards");
+                foreach (List<DriveForm> dfList in driveFormList)
+                {
+                    file.Write("// " + formTypeList[i] + "\n");
+                    foreach (DriveForm df in dfList)
+                    {
+                        if (df.changed)
+                            file.Write(df.toString());
+                    }
+                    i++;
+                }
+                i = 0;
+                file.WriteLine("\n//Equipment Stats");
                 foreach (List<Equipment> eList in equipmentList)
                 {
+                    file.Write("// " + equipmentTypeList[i] + "\n");
                     foreach (Equipment eq in eList)
                     {
                         if (eq.changed)
                             file.Write(eq.toString());
                     }
+                    i++;
+                }
+                i = 0;
+                file.WriteLine("\n//Level Ups");
+                foreach (Level l in levelList)
+                {
+                    if (l.changed)
+                        file.Write(l.toString());
                 }
             }
             MessageBox.Show("File saved as " + patchFileName);
         }
+        
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            helpForm hForm = new helpForm();
+            hForm.Show();
+        }
         #endregion
 
+        #region Reset Input Fields
+        private void chestDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            chestRewardTypeComboBox.SelectedIndex = 17;
+        }
+
+        private void popupDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            popupRewardTypeComboBox.SelectedIndex = 17;
+        }
+
+        private void equipmentDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            equipmentRewardTypeComboBox.SelectedIndex = 17;
+
+            equipmentAPCounter.Value = 0;
+            equipmentMagicCounter.Value = 0;
+            equipmentDefenseCounter.Value = 0;
+            equipmentStrengthCounter.Value = 0;
+
+            fireResistanceCounter.Value = 0;
+            blizzardResistanceCounter.Value = 0;
+            thunderResistanceCounter.Value = 0;
+            darkResistanceCounter.Value = 0;
+
+            physicalResistanceCounter.Value = 0;
+            lightResistanceCounter.Value = 0;
+            universalResistanceCounter.Value = 0;
+        }
+
+        private void bonusDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            bonusHPCounter.Value = 0;
+            bonusMPCounter.Value = 0;
+            bonusArmorCounter.Value = 0;
+            bonusAccessoryCounter.Value = 0;
+            bonusItemCounter.Value = 0;
+            bonusDriveCounter.Value = 0;
+            bonusRewardTypeComboBox1.SelectedIndex = 17;
+            bonusRewardTypeComboBox2.SelectedIndex = 17;
+        }
+
+        private void formDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            formRewardTypeComboBox.SelectedIndex = 17;
+        }
+        
+        private void levelDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            swordRewardTypeComboBox.SelectedIndex = 17;
+            shieldRewardTypeComboBox.SelectedIndex = 17;
+            staffRewardTypeComboBox.SelectedIndex = 17;
+            nextEXPCounter.Value = 0;
+            levelAPCounter.Value = 0;
+            levelMagicCounter.Value = 0;
+            levelDefenseCounter.Value = 0;
+            levelStrengthCounter.Value = 0;
+        }
+        #endregion
     }
 }
