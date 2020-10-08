@@ -30,16 +30,22 @@ namespace Plandomizer
 		{ get; set; }
 		public string replacementRewardAddress2
 		{ get; set; }
+		[System.ComponentModel.DisplayName("HP Increase")]
 		public int hpIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("MP Increase")]
 		public int mpIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Armor Slot Increase")]
 		public int armorSlotIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Accessory Slot Increase")]
 		public int accessorySlotIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Item Slot Increase")]
 		public int itemSlotIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Drive Gauge Increase")]
 		public int driveGaugeIncrease
 		{ get; set; }
 		public int changeCount
@@ -57,12 +63,12 @@ namespace Plandomizer
 			replacementRewardAddress1 = "";
 			replacementReward2 = "";
 			replacementRewardAddress2 = "";
-			hpIncrease = -1;
-			mpIncrease = -1;
-			armorSlotIncrease = -1;
-			accessorySlotIncrease = -1;
-			itemSlotIncrease = -1;
-			driveGaugeIncrease = -1;
+			hpIncrease = 0;
+			mpIncrease = 0;
+			armorSlotIncrease = 0;
+			accessorySlotIncrease = 0;
+			itemSlotIncrease = 0;
+			driveGaugeIncrease = 0;
 			changeCount = 0;
 		}
 

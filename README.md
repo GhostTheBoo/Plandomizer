@@ -27,17 +27,6 @@ Add Party Bonus Abilities
 
 Add Party Level Ups
 
-Stop forgetting Starting Crit Abilities
+Add more info to form help page about form exp
 
-For the adventurous:
-
-```
-//Crit Bonuses - X the hex value for the item/ability etc
-patch=1,EE,11D18DDE,extended,00000XXX
-patch=1,EE,11D18DDC,extended,00000XXX
-patch=1,EE,11D18DE8,extended,00000XXX
-patch=1,EE,11D18DE4,extended,00000XXX
-patch=1,EE,11D18DE6,extended,00000XXX
-patch=1,EE,11D18DE0,extended,00000XXX
-patch=1,EE,11D18DE2,extended,00000XXX
-```
+Add other help page for crit, starting gear/stats, and cheats
