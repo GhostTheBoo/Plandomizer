@@ -8,6 +8,8 @@ namespace Plandomizer
 {
     class Bonus
 	{
+		public string character
+		{ get; set; }
 		[System.ComponentModel.DisplayName("Fight")]
 		public string fight
 		{ get; set; }
@@ -51,8 +53,9 @@ namespace Plandomizer
 		public int changeCount
 		{ get; set; }
 
-		public Bonus(string f, string stA, string slA, string rA, string oR)
+		public Bonus(string c, string f, string stA, string slA, string rA, string oR)
 		{
+			character = c;
 			fight = f;
 			statAddress = stA;
 			slotAddress = slA;
@@ -70,6 +73,28 @@ namespace Plandomizer
 			itemSlotIncrease = 0;
 			driveGaugeIncrease = 0;
 			changeCount = 0;
+		}
+
+		public Bonus(Bonus other)
+        {
+			character = other.character;
+			fight = other.fight;
+			statAddress = other.statAddress;
+			slotAddress = other.slotAddress;
+			rewardAddress = other.rewardAddress;
+			originalReward = other.originalReward;
+
+			replacementReward1 = other.replacementReward1;
+			replacementRewardAddress1 = other.replacementRewardAddress1;
+			replacementReward2 = other.replacementReward2;
+			replacementRewardAddress2 = other.replacementRewardAddress2;
+			hpIncrease = other.hpIncrease;
+			mpIncrease = other.mpIncrease;
+			armorSlotIncrease = other.armorSlotIncrease;
+			accessorySlotIncrease = other.accessorySlotIncrease;
+			itemSlotIncrease = other.itemSlotIncrease;
+			driveGaugeIncrease = other.driveGaugeIncrease;
+			changeCount = other.changeCount;
 		}
 
 		public string toString()

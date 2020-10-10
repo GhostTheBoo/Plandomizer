@@ -21,10 +21,12 @@ namespace Plandomizer
         internal List<string> formExpList;
         internal List<string> equipmentTypeList;
         internal List<string> patchList;
+        internal List<string> characterList;
         internal List<int> levelNumberList;
         Color replacedBackground;
 
-        internal List<List<Bonus>> bonusList;
+        internal List<Bonus> singleBonusList;
+        internal List<List<List<Bonus>>> bonusList;
         internal bool bonusReplaced = false;
         internal List<List<Chest>> chestList;
         internal bool chestReplaced = false;
@@ -48,6 +50,7 @@ namespace Plandomizer
 
             replacedBackground = Color.FromArgb(255, 150, 200);
             startingStuff = new Starting();
+            singleBonusList = new List<Bonus>();
 
             populateWorldList();
             populateRewardTypeList();
@@ -55,9 +58,14 @@ namespace Plandomizer
             populateFormExpList();
             populateEquipmentTypeList();
             populatePatchList();
+            populateCharacterList();
             populateLevelNumberList();
 
-            loadBonuses();
+            bonusList = new List<List<List<Bonus>>>();
+
+            loadSoraBonuses();
+            loadDonaldBonuses();
+            loadGoofyBonuses();
             loadChests();
             loadDriveForms();
             loadPopups();
@@ -136,9 +144,8 @@ namespace Plandomizer
             startingAccessoryComboBox.DataSource = rewardList[1];
 
             cheatDataGridView.DataSource = cheatList;
-            //((ListBox)otherCheatCheckedList).DataSource = cheatList;
-            //((ListBox)otherCheatCheckedList).DisplayMember = "title";
-            //otherCheatCheckedList;
+
+            bonusCharacterSelectorComboBox.DataSource = characterList;
 
             bonusRewardComboBox1.DisplayMember = "reward";
             bonusRewardComboBox2.DisplayMember = "reward";
@@ -160,11 +167,18 @@ namespace Plandomizer
             chestDataGridView.Columns["replacementAddress"].Visible = false;
             chestDataGridView.Columns["changed"].Visible = false;
 
+            bonusDataGridView.Columns["character"].Visible = false;
             bonusDataGridView.Columns["statAddress"].Visible = false;
             bonusDataGridView.Columns["slotAddress"].Visible = false;
             bonusDataGridView.Columns["rewardAddress"].Visible = false;
             bonusDataGridView.Columns["replacementRewardAddress1"].Visible = false;
             bonusDataGridView.Columns["replacementRewardAddress2"].Visible = false;
+            bonusDataGridView.Columns["hpIncrease"].Visible = false;
+            bonusDataGridView.Columns["mpIncrease"].Visible = false;
+            bonusDataGridView.Columns["armorSlotIncrease"].Visible = false;
+            bonusDataGridView.Columns["accessorySlotIncrease"].Visible = false;
+            bonusDataGridView.Columns["itemSlotIncrease"].Visible = false;
+            bonusDataGridView.Columns["driveGaugeIncrease"].Visible = false;
             bonusDataGridView.Columns["changeCount"].Visible = false;
 
             formDataGridView.Columns["originalAddress"].Visible = false;
@@ -205,7 +219,7 @@ namespace Plandomizer
             #endregion
         }
 
-        public void loadBonuses()
+        public void loadSoraBonuses()
         {
             int entryCount = 5;
             int skip = 1;
@@ -229,97 +243,335 @@ namespace Plandomizer
             int ttCount = 2;
             int twtnwCount = 6;
 
-            bonusList = new List<List<Bonus>>();
-            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\bonus.txt");
+            List<List<Bonus>> soraTemp = new List<List<Bonus>>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\soraBonus.txt");
             
             List<Bonus> temp = new List<Bonus>();
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * agrCount).ToArray(), agrCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * agrCount).ToArray(), agrCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * agrCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * atlCount).ToArray(), atlCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * atlCount).ToArray(), atlCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * atlCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * bcCount).ToArray(), bcCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * bcCount).ToArray(), bcCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * bcCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * corCount).ToArray(), corCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * corCount).ToArray(), corCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * corCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * dcCount).ToArray(), dcCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * dcCount).ToArray(), dcCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * dcCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * htCount).ToArray(), htCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * htCount).ToArray(), htCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * htCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * hbCount).ToArray(), hbCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * hbCount).ToArray(), hbCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * hbCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * lodCount).ToArray(), lodCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * lodCount).ToArray(), lodCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * lodCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * ocCount).ToArray(), ocCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * ocCount).ToArray(), ocCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * ocCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * cupsCount).ToArray(), cupsCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * cupsCount).ToArray(), cupsCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * cupsCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * poohCount).ToArray(), poohCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * poohCount).ToArray(), poohCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * poohCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * prCount).ToArray(), prCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * prCount).ToArray(), prCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * prCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * plCount).ToArray(), plCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * plCount).ToArray(), plCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * plCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * sttCount).ToArray(), sttCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * sttCount).ToArray(), sttCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * sttCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * spCount).ToArray(), spCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * spCount).ToArray(), spCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * spCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * trCount).ToArray(), trCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * trCount).ToArray(), trCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * trCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * ttCount).ToArray(), ttCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * ttCount).ToArray(), ttCount);
+            soraTemp.Add(temp);
             skip += 1 + (entryCount * ttCount);
             temp = new List<Bonus>();
 
-            populateBonusList(temp, data.Skip(skip).Take(entryCount * twtnwCount).ToArray(), twtnwCount);
-            bonusList.Add(temp);
+            populateBonusList(0, temp, data.Skip(skip).Take(entryCount * twtnwCount).ToArray(), twtnwCount);
+            soraTemp.Add(temp);
+
+            bonusList.Add(soraTemp);
+        }
+        public void loadDonaldBonuses()
+        {
+            int entryCount = 5;
+            int skip = 1;
+
+            int agrCount = 4;
+            int atlCount = 0;
+            int bcCount = 4;
+            int corCount = 1;
+            int dcCount = 2;
+            int htCount = 5;
+            int hbCount = 1;
+            int lodCount = 2;
+            int ocCount = 5;
+            int cupsCount = 0;
+            int poohCount = 0;
+            int prCount = 5;
+            int plCount = 3;
+            int sttCount = 0;
+            int spCount = 5;
+            int trCount = 2;
+            int ttCount = 1;
+            int twtnwCount = 2;
+
+            List<List<Bonus>> donaldTemp = new List<List<Bonus>>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\donaldBonus.txt");
+
+            List<Bonus> temp = new List<Bonus>();
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * agrCount).ToArray(), agrCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * agrCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * atlCount).ToArray(), atlCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * atlCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * bcCount).ToArray(), bcCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * bcCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * corCount).ToArray(), corCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * corCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * dcCount).ToArray(), dcCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * dcCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * htCount).ToArray(), htCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * htCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * hbCount).ToArray(), hbCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * hbCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * lodCount).ToArray(), lodCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * lodCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * ocCount).ToArray(), ocCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * ocCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * cupsCount).ToArray(), cupsCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * cupsCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * poohCount).ToArray(), poohCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * poohCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * prCount).ToArray(), prCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * prCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * plCount).ToArray(), plCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * plCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * sttCount).ToArray(), sttCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * sttCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * spCount).ToArray(), spCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * spCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * trCount).ToArray(), trCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * trCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * ttCount).ToArray(), ttCount);
+            donaldTemp.Add(temp);
+            skip += 1 + (entryCount * ttCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(1, temp, data.Skip(skip).Take(entryCount * twtnwCount).ToArray(), twtnwCount);
+            donaldTemp.Add(temp);
+
+            bonusList.Add(donaldTemp);
+        }
+        public void loadGoofyBonuses()
+        {
+            int entryCount = 5;
+            int skip = 1;
+
+            int agrCount = 4;
+            int atlCount = 0;
+            int bcCount = 4;
+            int corCount = 1;
+            int dcCount = 2;
+            int htCount = 5;
+            int hbCount = 1;
+            int lodCount = 2;
+            int ocCount = 5;
+            int cupsCount = 0;
+            int poohCount = 0;
+            int prCount = 5;
+            int plCount = 3;
+            int sttCount = 0;
+            int spCount = 5;
+            int trCount = 2;
+            int ttCount = 1;
+            int twtnwCount = 2;
+
+            List<List<Bonus>> goofyTemp = new List<List<Bonus>>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\goofyBonus.txt");
+
+            List<Bonus> temp = new List<Bonus>();
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * agrCount).ToArray(), agrCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * agrCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * atlCount).ToArray(), atlCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * atlCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * bcCount).ToArray(), bcCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * bcCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * corCount).ToArray(), corCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * corCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * dcCount).ToArray(), dcCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * dcCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * htCount).ToArray(), htCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * htCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * hbCount).ToArray(), hbCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * hbCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * lodCount).ToArray(), lodCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * lodCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * ocCount).ToArray(), ocCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * ocCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * cupsCount).ToArray(), cupsCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * cupsCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * poohCount).ToArray(), poohCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * poohCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * prCount).ToArray(), prCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * prCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * plCount).ToArray(), plCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * plCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * sttCount).ToArray(), sttCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * sttCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * spCount).ToArray(), spCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * spCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * trCount).ToArray(), trCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * trCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * ttCount).ToArray(), ttCount);
+            goofyTemp.Add(temp);
+            skip += 1 + (entryCount * ttCount);
+            temp = new List<Bonus>();
+
+            populateBonusList(2, temp, data.Skip(skip).Take(entryCount * twtnwCount).ToArray(), twtnwCount);
+            goofyTemp.Add(temp);
+
+            bonusList.Add(goofyTemp);
         }
         public void loadChests()
         {
@@ -781,7 +1033,7 @@ namespace Plandomizer
 
         }
 
-        internal void populateBonusList(List<Bonus> bList, string[] data, int worldCount)
+        internal void populateBonusList(int characterID, List<Bonus> bList, string[] data, int worldCount)
         {
             string[] entries = new string[5];
 
@@ -791,7 +1043,7 @@ namespace Plandomizer
                 {
                     entries[j] = data[(5 * i) + j];
                 }
-                bList.Add(new Bonus(entries[0], entries[1], entries[2], entries[3], entries[4]));
+                bList.Add(new Bonus(characterList[characterID], entries[0], entries[1], entries[2], entries[3], entries[4]));
             }
         }
         internal void populateChestList(List<Chest> cList, string[] data, int worldCount)
@@ -950,6 +1202,14 @@ namespace Plandomizer
             patchList.Add("Sora6645's Rev 6 (B7398B17.pnach)");
             patchList.Add("CrazyCatz's/Sora6645's Rev Final (FAF99301.pnach)");
         }
+        public void populateCharacterList()
+        {
+            characterList = new List<string>();
+
+            characterList.Add("Sora");
+            characterList.Add("Donald");
+            characterList.Add("Goofy");
+        }
         public void populateLevelNumberList()
         {
             levelNumberList = new List<int>();
@@ -970,7 +1230,7 @@ namespace Plandomizer
 
         private void bonusWorldSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bonusDataGridView.DataSource = bonusList[bonusWorldSelectorComboBox.SelectedIndex];
+            bonusDataGridView.DataSource = bonusList[bonusCharacterSelectorComboBox.SelectedIndex][bonusWorldSelectorComboBox.SelectedIndex];
         }
         
         private void equipmentTypeSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -983,7 +1243,7 @@ namespace Plandomizer
             formDataGridView.DataSource = driveFormList[formSelectorComboBox.SelectedIndex];
         }
 
-        #region Reward Combo Box
+        #region Selection Changed
         private void formRewardTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (formRewardTypeComboBox.SelectedIndex == 17)
@@ -1077,6 +1337,32 @@ namespace Plandomizer
             else
                 critExtraRewardComboBox.DataSource = rewardList[critExtraRewardTypeComboBox.SelectedIndex];
         }
+
+        private void bonusCharacterSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int cID = bonusCharacterSelectorComboBox.SelectedIndex;
+            int world = bonusWorldSelectorComboBox.SelectedIndex;
+            bonusDataGridView.DataSource = bonusList[cID][world];
+            if (cID != 0)
+                bonusDriveCounter.Enabled = false;
+            else
+                bonusDriveCounter.Enabled = true;
+        }
+
+        private void bonusDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (bonusDataGridView.Focused)
+            {
+                Bonus temp = (Bonus)bonusDataGridView.SelectedRows[0].DataBoundItem;
+
+                bonusCurrentHPTextBox.Text = Convert.ToString(temp.hpIncrease);
+                bonusCurrentMPTextBox.Text = Convert.ToString(temp.mpIncrease);
+                bonusCurrentArmorSlotTextBox.Text = Convert.ToString(temp.armorSlotIncrease);
+                bonusCurrentAccessorySlotTextBox.Text = Convert.ToString(temp.accessorySlotIncrease);
+                bonusCurrentItemSlotTextBox.Text = Convert.ToString(temp.itemSlotIncrease);
+                bonusCurrentDriveTextBox.Text = Convert.ToString(temp.driveGaugeIncrease);
+            }
+        }
         #endregion
 
         #region Buttons
@@ -1138,6 +1424,7 @@ namespace Plandomizer
         {
             int world = bonusWorldSelectorComboBox.SelectedIndex;
             int bonus = bonusDataGridView.SelectedRows[0].Index;
+            int cID = bonusCharacterSelectorComboBox.SelectedIndex;
             int hp = Convert.ToInt32(bonusHPCounter.Value);
             int mp = Convert.ToInt32(bonusMPCounter.Value);
             int armor = Convert.ToInt32(bonusArmorCounter.Value);
@@ -1148,44 +1435,51 @@ namespace Plandomizer
 
             if (hp != 0)
                 cCount++;
-            bonusList[world][bonus].hpIncrease = hp;
+            bonusList[cID][world][bonus].hpIncrease = hp;
 
             if (mp != 0)
                 cCount++;
-            bonusList[world][bonus].mpIncrease = mp;
+            bonusList[cID][world][bonus].mpIncrease = mp;
 
             if (armor != 0)
                 cCount++;
-            bonusList[world][bonus].armorSlotIncrease = armor;
+            bonusList[cID][world][bonus].armorSlotIncrease = armor;
 
             if (accessory != 0)
                 cCount++;
-            bonusList[world][bonus].accessorySlotIncrease = accessory;
+            bonusList[cID][world][bonus].accessorySlotIncrease = accessory;
 
             if (item != 0)
                 cCount++;
-            bonusList[world][bonus].itemSlotIncrease = item;
+            bonusList[cID][world][bonus].itemSlotIncrease = item;
 
             if (drive != 0)
                 cCount++;
-            bonusList[world][bonus].driveGaugeIncrease = drive;
+            bonusList[cID][world][bonus].driveGaugeIncrease = drive;
 
             Reward temp;
             if (bonusRewardTypeComboBox1.SelectedIndex != 17)
             {
                 temp = rewardList[bonusRewardTypeComboBox1.SelectedIndex][bonusRewardComboBox1.SelectedIndex];
-                bonusList[world][bonus].replacementReward1 = temp.reward;
-                bonusList[world][bonus].replacementRewardAddress1 = temp.rewardAddress;
+                bonusList[cID][world][bonus].replacementReward1 = temp.reward;
+                bonusList[cID][world][bonus].replacementRewardAddress1 = temp.rewardAddress;
                 cCount++;
             }
             if(bonusRewardTypeComboBox2.SelectedIndex != 17)
             {
                 temp = rewardList[bonusRewardTypeComboBox2.SelectedIndex][bonusRewardComboBox2.SelectedIndex];
-                bonusList[world][bonus].replacementReward2 = temp.reward;
-                bonusList[world][bonus].replacementRewardAddress2 = temp.rewardAddress;
+                bonusList[cID][world][bonus].replacementReward2 = temp.reward;
+                bonusList[cID][world][bonus].replacementRewardAddress2 = temp.rewardAddress;
                 cCount++;
             }
-            bonusList[world][bonus].changeCount = cCount;
+            bonusList[cID][world][bonus].changeCount = cCount;
+
+            bonusCurrentHPTextBox.Text = Convert.ToString(hp);
+            bonusCurrentMPTextBox.Text = Convert.ToString(mp);
+            bonusCurrentArmorSlotTextBox.Text = Convert.ToString(armor);
+            bonusCurrentAccessorySlotTextBox.Text = Convert.ToString(accessory);
+            bonusCurrentItemSlotTextBox.Text = Convert.ToString(item);
+            bonusCurrentDriveTextBox.Text = Convert.ToString(drive);
 
             if (cCount > 0)
                 bonusReplaced = true;
@@ -1198,17 +1492,26 @@ namespace Plandomizer
         {
             int world = bonusWorldSelectorComboBox.SelectedIndex;
             int bonus = bonusDataGridView.SelectedRows[0].Index;
-            bonusList[world][bonus].hpIncrease = 0;
-            bonusList[world][bonus].mpIncrease = 0;
-            bonusList[world][bonus].armorSlotIncrease = 0;
-            bonusList[world][bonus].accessorySlotIncrease = 0;
-            bonusList[world][bonus].itemSlotIncrease = 0;
-            bonusList[world][bonus].driveGaugeIncrease = 0;
-            bonusList[world][bonus].replacementReward1 = "";
-            bonusList[world][bonus].replacementRewardAddress1 = "";
-            bonusList[world][bonus].replacementReward2 = "";
-            bonusList[world][bonus].replacementRewardAddress2 = "";
-            bonusList[world][bonus].changeCount = 0;
+            int cID = bonusCharacterSelectorComboBox.SelectedIndex;
+            bonusList[cID][world][bonus].hpIncrease = 0;
+            bonusList[cID][world][bonus].mpIncrease = 0;
+            bonusList[cID][world][bonus].armorSlotIncrease = 0;
+            bonusList[cID][world][bonus].accessorySlotIncrease = 0;
+            bonusList[cID][world][bonus].itemSlotIncrease = 0;
+            bonusList[cID][world][bonus].driveGaugeIncrease = 0;
+            bonusList[cID][world][bonus].replacementReward1 = "";
+            bonusList[cID][world][bonus].replacementRewardAddress1 = "";
+            bonusList[cID][world][bonus].replacementReward2 = "";
+            bonusList[cID][world][bonus].replacementRewardAddress2 = "";
+            bonusList[cID][world][bonus].changeCount = 0;
+
+            bonusCurrentHPTextBox.Text = Convert.ToString(0);
+            bonusCurrentMPTextBox.Text = Convert.ToString(0);
+            bonusCurrentArmorSlotTextBox.Text = Convert.ToString(0);
+            bonusCurrentAccessorySlotTextBox.Text = Convert.ToString(0);
+            bonusCurrentItemSlotTextBox.Text = Convert.ToString(0);
+            bonusCurrentDriveTextBox.Text = Convert.ToString(0);
+
             bonusDataGridView.Update();
             bonusDataGridView.Refresh();
         }
@@ -1517,12 +1820,36 @@ namespace Plandomizer
                 file.Write(startingStuff.toString());
                 i = 0;
                 file.WriteLine("\n//Sora's Bonus Rewards");
-                foreach (List<Bonus> bList in bonusList)
+                foreach (List<Bonus> bList in bonusList[0])
                 {
                     file.Write("// " + worldList[i] + "\n");
                     foreach(Bonus b in bList)
                     {
                         if(b.changeCount > 0)
+                            file.Write(b.toString());
+                    }
+                    i++;
+                }
+                i = 0;
+                file.WriteLine("\n//Donald's Bonus Rewards");
+                foreach (List<Bonus> bList in bonusList[1])
+                {
+                    file.Write("// " + worldList[i] + "\n");
+                    foreach (Bonus b in bList)
+                    {
+                        if (b.changeCount > 0)
+                            file.Write(b.toString());
+                    }
+                    i++;
+                }
+                i = 0;
+                file.WriteLine("\n//Goofy's Bonus Rewards");
+                foreach (List<Bonus> bList in bonusList[2])
+                {
+                    file.Write("// " + worldList[i] + "\n");
+                    foreach (Bonus b in bList)
+                    {
+                        if (b.changeCount > 0)
                             file.Write(b.toString());
                     }
                     i++;
@@ -1597,7 +1924,7 @@ namespace Plandomizer
         
         private void helpButton_Click(object sender, EventArgs e)
         {
-            helpForm hForm = new helpForm();
+            helpForm hForm = new helpForm(tabControlContainer.SelectedIndex);
             hForm.Show();
         }
         #endregion

@@ -23,10 +23,6 @@ Click the help button for details on how each tab works and warnings for replace
 
 # TODO
 
-Add Party Bonus Abilities
+Add Party Level Ups? (I don't feel they would be incredibly useful)
 
-Add Party Level Ups
-
-Add more info to form help page about form exp
-
-Add other help page for crit, starting gear/stats, and cheats
+Add Boss Replacement? (Boss rando is already incredibly jank, may not be worth the effort)

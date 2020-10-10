@@ -91,7 +91,7 @@ namespace Plandomizer
 					ret += "// No Level 1 Dream Weapon Rewards\n";
 				else
 				{
-					ret += "patch=1,EE," + swordAddress + ",extended,0000" + swordReplacementAddress + " // Sword Rreward: " + swordReplacement + "\n";
+					ret += "patch=1,EE," + swordAddress + ",extended,0000" + swordReplacementAddress + " // Sword Reward: " + swordReplacement + "\n";
 					ret += "patch=1,EE," + shieldAddress + ",extended,0000" + shieldReplacementAddress + " // Shield Reward: " + shieldReplacement + "\n";
 					ret += "patch=1,EE," + staffAddress + ",extended,0000" + staffReplacementAddress + " // Staff Reward: " + staffReplacement + "\n";
 				}

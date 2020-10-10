@@ -13,7 +13,7 @@ namespace Plandomizer
 {
     public partial class helpForm : Form
     {
-        public helpForm()
+        public helpForm(int page)
         {
             InitializeComponent();
 
@@ -23,6 +23,9 @@ namespace Plandomizer
             formHelpTextBox.LoadFile(Directory.GetCurrentDirectory() + "\\Data\\Form Help.rtf");
             levelHelpTextBox.LoadFile(Directory.GetCurrentDirectory() + "\\Data\\Level Up Help.rtf");
             popupHelpTextBox.LoadFile(Directory.GetCurrentDirectory() + "\\Data\\Popup Help.rtf");
+            otherHelpTextBox.LoadFile(Directory.GetCurrentDirectory() + "\\Data\\Other Help.rtf");
+
+            helpTabControl.SelectedIndex = page;
         }
     }
 }

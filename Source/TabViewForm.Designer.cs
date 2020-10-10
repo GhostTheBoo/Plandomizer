@@ -102,7 +102,15 @@ namespace Plandomizer
             this.equipmentTypeBox = new System.Windows.Forms.GroupBox();
             this.equipmentTypeSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.bonusPage = new System.Windows.Forms.TabPage();
+            this.bonusCharacterSelectorBox = new System.Windows.Forms.GroupBox();
+            this.bonusCharacterSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.bonusStatBox = new System.Windows.Forms.GroupBox();
+            this.bonusCurrentAccessorySlotTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentArmorSlotTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentMPTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentItemSlotTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentDriveTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentHPTextBox = new System.Windows.Forms.TextBox();
             this.bonusDriveCounter = new System.Windows.Forms.NumericUpDown();
             this.bonusDriveLabel = new System.Windows.Forms.Label();
             this.bonusItemCounter = new System.Windows.Forms.NumericUpDown();
@@ -163,6 +171,9 @@ namespace Plandomizer
             this.levelDefaultButton = new System.Windows.Forms.Button();
             this.levelReplaceButton = new System.Windows.Forms.Button();
             this.otherPage = new System.Windows.Forms.TabPage();
+            this.cheatBox = new System.Windows.Forms.GroupBox();
+            this.cheatApplyButton = new System.Windows.Forms.Button();
+            this.cheatDataGridView = new System.Windows.Forms.DataGridView();
             this.startingGearBox = new System.Windows.Forms.GroupBox();
             this.startingAccessoryCheckBox = new System.Windows.Forms.CheckBox();
             this.startingArmorCheckBox = new System.Windows.Forms.CheckBox();
@@ -195,9 +206,6 @@ namespace Plandomizer
             this.patchSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
-            this.cheatBox = new System.Windows.Forms.GroupBox();
-            this.cheatDataGridView = new System.Windows.Forms.DataGridView();
-            this.cheatApplyButton = new System.Windows.Forms.Button();
             this.tabControlContainer.SuspendLayout();
             this.chestPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chestDataGridView)).BeginInit();
@@ -227,6 +235,7 @@ namespace Plandomizer
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataGridView)).BeginInit();
             this.equipmentTypeBox.SuspendLayout();
             this.bonusPage.SuspendLayout();
+            this.bonusCharacterSelectorBox.SuspendLayout();
             this.bonusStatBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bonusDriveCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bonusItemCounter)).BeginInit();
@@ -251,6 +260,8 @@ namespace Plandomizer
             this.levelShieldBox.SuspendLayout();
             this.levelStaffBox.SuspendLayout();
             this.otherPage.SuspendLayout();
+            this.cheatBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cheatDataGridView)).BeginInit();
             this.startingGearBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startingMunnyCounter)).BeginInit();
             this.startingStatsBox.SuspendLayout();
@@ -260,8 +271,6 @@ namespace Plandomizer
             this.critExtraBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.criticalDataGridView)).BeginInit();
             this.critExtraReplacementBox.SuspendLayout();
-            this.cheatBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cheatDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlContainer
@@ -1093,6 +1102,7 @@ namespace Plandomizer
             // 
             // bonusPage
             // 
+            this.bonusPage.Controls.Add(this.bonusCharacterSelectorBox);
             this.bonusPage.Controls.Add(this.bonusStatBox);
             this.bonusPage.Controls.Add(this.bonusRewardBox2);
             this.bonusPage.Controls.Add(this.bonusRewardBox1);
@@ -1108,9 +1118,34 @@ namespace Plandomizer
             this.bonusPage.Text = "Bonus Levels";
             this.bonusPage.UseVisualStyleBackColor = true;
             // 
+            // bonusCharacterSelectorBox
+            // 
+            this.bonusCharacterSelectorBox.Controls.Add(this.bonusCharacterSelectorComboBox);
+            this.bonusCharacterSelectorBox.Location = new System.Drawing.Point(275, 7);
+            this.bonusCharacterSelectorBox.Name = "bonusCharacterSelectorBox";
+            this.bonusCharacterSelectorBox.Size = new System.Drawing.Size(263, 50);
+            this.bonusCharacterSelectorBox.TabIndex = 35;
+            this.bonusCharacterSelectorBox.TabStop = false;
+            this.bonusCharacterSelectorBox.Text = "Character Selector";
+            // 
+            // bonusCharacterSelectorComboBox
+            // 
+            this.bonusCharacterSelectorComboBox.FormattingEnabled = true;
+            this.bonusCharacterSelectorComboBox.Location = new System.Drawing.Point(7, 20);
+            this.bonusCharacterSelectorComboBox.Name = "bonusCharacterSelectorComboBox";
+            this.bonusCharacterSelectorComboBox.Size = new System.Drawing.Size(250, 21);
+            this.bonusCharacterSelectorComboBox.TabIndex = 0;
+            this.bonusCharacterSelectorComboBox.SelectedIndexChanged += new System.EventHandler(this.bonusCharacterSelectorComboBox_SelectedIndexChanged);
+            // 
             // bonusStatBox
             // 
             this.bonusStatBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusStatBox.Controls.Add(this.bonusCurrentAccessorySlotTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentArmorSlotTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentMPTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentItemSlotTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentDriveTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentHPTextBox);
             this.bonusStatBox.Controls.Add(this.bonusDriveCounter);
             this.bonusStatBox.Controls.Add(this.bonusDriveLabel);
             this.bonusStatBox.Controls.Add(this.bonusItemCounter);
@@ -1129,6 +1164,84 @@ namespace Plandomizer
             this.bonusStatBox.TabIndex = 34;
             this.bonusStatBox.TabStop = false;
             this.bonusStatBox.Text = "Stat Increases";
+            // 
+            // bonusCurrentAccessorySlotTextBox
+            // 
+            this.bonusCurrentAccessorySlotTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentAccessorySlotTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentAccessorySlotTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentAccessorySlotTextBox.Location = new System.Drawing.Point(67, 155);
+            this.bonusCurrentAccessorySlotTextBox.Name = "bonusCurrentAccessorySlotTextBox";
+            this.bonusCurrentAccessorySlotTextBox.ReadOnly = true;
+            this.bonusCurrentAccessorySlotTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentAccessorySlotTextBox.TabIndex = 47;
+            this.bonusCurrentAccessorySlotTextBox.Text = "0";
+            this.bonusCurrentAccessorySlotTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentArmorSlotTextBox
+            // 
+            this.bonusCurrentArmorSlotTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentArmorSlotTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentArmorSlotTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentArmorSlotTextBox.Location = new System.Drawing.Point(68, 113);
+            this.bonusCurrentArmorSlotTextBox.Name = "bonusCurrentArmorSlotTextBox";
+            this.bonusCurrentArmorSlotTextBox.ReadOnly = true;
+            this.bonusCurrentArmorSlotTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentArmorSlotTextBox.TabIndex = 47;
+            this.bonusCurrentArmorSlotTextBox.Text = "0";
+            this.bonusCurrentArmorSlotTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentMPTextBox
+            // 
+            this.bonusCurrentMPTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentMPTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentMPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentMPTextBox.Location = new System.Drawing.Point(68, 74);
+            this.bonusCurrentMPTextBox.Name = "bonusCurrentMPTextBox";
+            this.bonusCurrentMPTextBox.ReadOnly = true;
+            this.bonusCurrentMPTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentMPTextBox.TabIndex = 47;
+            this.bonusCurrentMPTextBox.Text = "0";
+            this.bonusCurrentMPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentItemSlotTextBox
+            // 
+            this.bonusCurrentItemSlotTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentItemSlotTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentItemSlotTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentItemSlotTextBox.Location = new System.Drawing.Point(67, 194);
+            this.bonusCurrentItemSlotTextBox.Name = "bonusCurrentItemSlotTextBox";
+            this.bonusCurrentItemSlotTextBox.ReadOnly = true;
+            this.bonusCurrentItemSlotTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentItemSlotTextBox.TabIndex = 47;
+            this.bonusCurrentItemSlotTextBox.Text = "0";
+            this.bonusCurrentItemSlotTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentDriveTextBox
+            // 
+            this.bonusCurrentDriveTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentDriveTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentDriveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentDriveTextBox.Location = new System.Drawing.Point(67, 235);
+            this.bonusCurrentDriveTextBox.Name = "bonusCurrentDriveTextBox";
+            this.bonusCurrentDriveTextBox.ReadOnly = true;
+            this.bonusCurrentDriveTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentDriveTextBox.TabIndex = 47;
+            this.bonusCurrentDriveTextBox.Text = "0";
+            this.bonusCurrentDriveTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentHPTextBox
+            // 
+            this.bonusCurrentHPTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentHPTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentHPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentHPTextBox.Location = new System.Drawing.Point(68, 35);
+            this.bonusCurrentHPTextBox.Name = "bonusCurrentHPTextBox";
+            this.bonusCurrentHPTextBox.ReadOnly = true;
+            this.bonusCurrentHPTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentHPTextBox.TabIndex = 46;
+            this.bonusCurrentHPTextBox.Text = "0";
+            this.bonusCurrentHPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // bonusDriveCounter
             // 
@@ -1395,8 +1508,7 @@ namespace Plandomizer
             this.bonusDataGridView.AllowUserToDeleteRows = false;
             this.bonusDataGridView.AllowUserToResizeColumns = false;
             this.bonusDataGridView.AllowUserToResizeRows = false;
-            this.bonusDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.bonusDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bonusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1409,6 +1521,7 @@ namespace Plandomizer
             this.bonusDataGridView.Size = new System.Drawing.Size(864, 272);
             this.bonusDataGridView.TabIndex = 9;
             this.bonusDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.bonusDataGridView_CellFormatting);
+            this.bonusDataGridView.SelectionChanged += new System.EventHandler(this.bonusDataGridView_SelectionChanged);
             // 
             // bonusWorldSelectorBox
             // 
@@ -1800,6 +1913,48 @@ namespace Plandomizer
             this.otherPage.Text = "Other";
             this.otherPage.UseVisualStyleBackColor = true;
             // 
+            // cheatBox
+            // 
+            this.cheatBox.Controls.Add(this.cheatApplyButton);
+            this.cheatBox.Controls.Add(this.cheatDataGridView);
+            this.cheatBox.Location = new System.Drawing.Point(914, 9);
+            this.cheatBox.Name = "cheatBox";
+            this.cheatBox.Size = new System.Drawing.Size(311, 287);
+            this.cheatBox.TabIndex = 5;
+            this.cheatBox.TabStop = false;
+            this.cheatBox.Text = "Cheats";
+            // 
+            // cheatApplyButton
+            // 
+            this.cheatApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cheatApplyButton.Location = new System.Drawing.Point(6, 258);
+            this.cheatApplyButton.Name = "cheatApplyButton";
+            this.cheatApplyButton.Size = new System.Drawing.Size(299, 23);
+            this.cheatApplyButton.TabIndex = 33;
+            this.cheatApplyButton.Text = "Apply";
+            this.cheatApplyButton.UseVisualStyleBackColor = true;
+            this.cheatApplyButton.Click += new System.EventHandler(this.cheatApplyButton_Click);
+            // 
+            // cheatDataGridView
+            // 
+            this.cheatDataGridView.AllowUserToAddRows = false;
+            this.cheatDataGridView.AllowUserToDeleteRows = false;
+            this.cheatDataGridView.AllowUserToResizeColumns = false;
+            this.cheatDataGridView.AllowUserToResizeRows = false;
+            this.cheatDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cheatDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.cheatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cheatDataGridView.ColumnHeadersVisible = false;
+            this.cheatDataGridView.Location = new System.Drawing.Point(6, 19);
+            this.cheatDataGridView.MultiSelect = false;
+            this.cheatDataGridView.Name = "cheatDataGridView";
+            this.cheatDataGridView.RowHeadersVisible = false;
+            this.cheatDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cheatDataGridView.Size = new System.Drawing.Size(299, 233);
+            this.cheatDataGridView.TabIndex = 4;
+            // 
             // startingGearBox
             // 
             this.startingGearBox.Controls.Add(this.startingAccessoryCheckBox);
@@ -1878,11 +2033,11 @@ namespace Plandomizer
             // startingMunnyCounter
             // 
             this.startingMunnyCounter.Location = new System.Drawing.Point(6, 184);
-            this.startingMunnyCounter.Maximum = Int32.MaxValue;/*new decimal(new int[] {
-            1215752191,
-            23,
+            this.startingMunnyCounter.Maximum = new decimal(new int[] {
+            2147483647,
             0,
-            0});*/
+            0,
+            0});
             this.startingMunnyCounter.Name = "startingMunnyCounter";
             this.startingMunnyCounter.Size = new System.Drawing.Size(195, 20);
             this.startingMunnyCounter.TabIndex = 10;
@@ -2168,48 +2323,6 @@ namespace Plandomizer
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
-            // cheatBox
-            // 
-            this.cheatBox.Controls.Add(this.cheatApplyButton);
-            this.cheatBox.Controls.Add(this.cheatDataGridView);
-            this.cheatBox.Location = new System.Drawing.Point(914, 9);
-            this.cheatBox.Name = "cheatBox";
-            this.cheatBox.Size = new System.Drawing.Size(311, 287);
-            this.cheatBox.TabIndex = 5;
-            this.cheatBox.TabStop = false;
-            this.cheatBox.Text = "Cheats";
-            // 
-            // cheatDataGridView
-            // 
-            this.cheatDataGridView.AllowUserToAddRows = false;
-            this.cheatDataGridView.AllowUserToDeleteRows = false;
-            this.cheatDataGridView.AllowUserToResizeColumns = false;
-            this.cheatDataGridView.AllowUserToResizeRows = false;
-            this.cheatDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cheatDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            this.cheatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cheatDataGridView.ColumnHeadersVisible = false;
-            this.cheatDataGridView.Location = new System.Drawing.Point(6, 19);
-            this.cheatDataGridView.MultiSelect = false;
-            this.cheatDataGridView.Name = "cheatDataGridView";
-            this.cheatDataGridView.RowHeadersVisible = false;
-            this.cheatDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cheatDataGridView.Size = new System.Drawing.Size(299, 233);
-            this.cheatDataGridView.TabIndex = 4;
-            // 
-            // cheatApplyButton
-            // 
-            this.cheatApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cheatApplyButton.Location = new System.Drawing.Point(6, 258);
-            this.cheatApplyButton.Name = "cheatApplyButton";
-            this.cheatApplyButton.Size = new System.Drawing.Size(299, 23);
-            this.cheatApplyButton.TabIndex = 33;
-            this.cheatApplyButton.Text = "Apply";
-            this.cheatApplyButton.UseVisualStyleBackColor = true;
-            this.cheatApplyButton.Click += new System.EventHandler(this.cheatApplyButton_Click);
-            // 
             // TabViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2257,6 +2370,7 @@ namespace Plandomizer
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataGridView)).EndInit();
             this.equipmentTypeBox.ResumeLayout(false);
             this.bonusPage.ResumeLayout(false);
+            this.bonusCharacterSelectorBox.ResumeLayout(false);
             this.bonusStatBox.ResumeLayout(false);
             this.bonusStatBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bonusDriveCounter)).EndInit();
@@ -2289,6 +2403,8 @@ namespace Plandomizer
             this.levelStaffBox.ResumeLayout(false);
             this.levelStaffBox.PerformLayout();
             this.otherPage.ResumeLayout(false);
+            this.cheatBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cheatDataGridView)).EndInit();
             this.startingGearBox.ResumeLayout(false);
             this.startingGearBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startingMunnyCounter)).EndInit();
@@ -2301,8 +2417,6 @@ namespace Plandomizer
             ((System.ComponentModel.ISupportInitialize)(this.criticalDataGridView)).EndInit();
             this.critExtraReplacementBox.ResumeLayout(false);
             this.critExtraReplacementBox.PerformLayout();
-            this.cheatBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cheatDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2313,7 +2427,6 @@ namespace Plandomizer
         private System.Windows.Forms.TabPage chestPage;
         private System.Windows.Forms.TabPage popupPage;
         private System.Windows.Forms.TabPage equipmentPage;
-        private System.Windows.Forms.TabPage bonusPage;
         private System.Windows.Forms.TabPage formPage;
         private System.Windows.Forms.DataGridView chestDataGridView;
         private System.Windows.Forms.GroupBox chestsWorldSelectorBox;
@@ -2359,21 +2472,6 @@ namespace Plandomizer
         private System.Windows.Forms.DataGridView formDataGridView;
         private System.Windows.Forms.GroupBox formSelectorBox;
         private System.Windows.Forms.ComboBox formSelectorComboBox;
-        private System.Windows.Forms.Button bonusDefaultButton;
-        private System.Windows.Forms.Button bonusReplaceButton;
-        private System.Windows.Forms.DataGridView bonusDataGridView;
-        private System.Windows.Forms.GroupBox bonusWorldSelectorBox;
-        private System.Windows.Forms.ComboBox bonusWorldSelectorComboBox;
-        private System.Windows.Forms.GroupBox bonusRewardBox1;
-        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox1;
-        private System.Windows.Forms.Label bonusRewardTypeLabel1;
-        private System.Windows.Forms.Label bonusRewardLabel1;
-        private System.Windows.Forms.ComboBox bonusRewardComboBox1;
-        private System.Windows.Forms.GroupBox bonusRewardBox2;
-        private System.Windows.Forms.Label bonusRewardLabel2;
-        private System.Windows.Forms.ComboBox bonusRewardComboBox2;
-        private System.Windows.Forms.Label bonusRewardTypeLabel2;
-        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox2;
         private System.Windows.Forms.ComboBox patchSelectorComboBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.GroupBox equipmentStatBox;
@@ -2430,19 +2528,6 @@ namespace Plandomizer
         private System.Windows.Forms.Label formExpToNextLevelLabel;
         private System.Windows.Forms.ComboBox formExpComboBox;
         private System.Windows.Forms.Label formExpLabel;
-        private System.Windows.Forms.GroupBox bonusStatBox;
-        private System.Windows.Forms.NumericUpDown bonusDriveCounter;
-        private System.Windows.Forms.Label bonusDriveLabel;
-        private System.Windows.Forms.NumericUpDown bonusItemCounter;
-        private System.Windows.Forms.Label bonusItemLabel;
-        private System.Windows.Forms.NumericUpDown bonusAccessoryCounter;
-        private System.Windows.Forms.Label bonusAccessoryLabel;
-        private System.Windows.Forms.NumericUpDown bonusArmorCounter;
-        private System.Windows.Forms.Label bonusArmorLabel;
-        private System.Windows.Forms.NumericUpDown bonusMPCounter;
-        private System.Windows.Forms.Label bonusMPLabel;
-        private System.Windows.Forms.NumericUpDown bonusHPCounter;
-        private System.Windows.Forms.Label bonusHPLabel;
         private System.Windows.Forms.TabPage otherPage;
         private System.Windows.Forms.GroupBox critExtraBox;
         private System.Windows.Forms.Button CritExtraDefaultButton;
@@ -2476,5 +2561,42 @@ namespace Plandomizer
         private System.Windows.Forms.GroupBox cheatBox;
         private System.Windows.Forms.DataGridView cheatDataGridView;
         private System.Windows.Forms.Button cheatApplyButton;
+        private System.Windows.Forms.TabPage bonusPage;
+        private System.Windows.Forms.GroupBox bonusCharacterSelectorBox;
+        private System.Windows.Forms.ComboBox bonusCharacterSelectorComboBox;
+        private System.Windows.Forms.GroupBox bonusStatBox;
+        private System.Windows.Forms.NumericUpDown bonusDriveCounter;
+        private System.Windows.Forms.Label bonusDriveLabel;
+        private System.Windows.Forms.NumericUpDown bonusItemCounter;
+        private System.Windows.Forms.Label bonusItemLabel;
+        private System.Windows.Forms.NumericUpDown bonusAccessoryCounter;
+        private System.Windows.Forms.Label bonusAccessoryLabel;
+        private System.Windows.Forms.NumericUpDown bonusArmorCounter;
+        private System.Windows.Forms.Label bonusArmorLabel;
+        private System.Windows.Forms.NumericUpDown bonusMPCounter;
+        private System.Windows.Forms.Label bonusMPLabel;
+        private System.Windows.Forms.NumericUpDown bonusHPCounter;
+        private System.Windows.Forms.Label bonusHPLabel;
+        private System.Windows.Forms.GroupBox bonusRewardBox2;
+        private System.Windows.Forms.Label bonusRewardLabel2;
+        private System.Windows.Forms.ComboBox bonusRewardComboBox2;
+        private System.Windows.Forms.Label bonusRewardTypeLabel2;
+        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox2;
+        private System.Windows.Forms.GroupBox bonusRewardBox1;
+        private System.Windows.Forms.Label bonusRewardLabel1;
+        private System.Windows.Forms.ComboBox bonusRewardComboBox1;
+        private System.Windows.Forms.Label bonusRewardTypeLabel1;
+        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox1;
+        private System.Windows.Forms.Button bonusDefaultButton;
+        private System.Windows.Forms.Button bonusReplaceButton;
+        private System.Windows.Forms.DataGridView bonusDataGridView;
+        private System.Windows.Forms.GroupBox bonusWorldSelectorBox;
+        private System.Windows.Forms.ComboBox bonusWorldSelectorComboBox;
+        private System.Windows.Forms.TextBox bonusCurrentAccessorySlotTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentArmorSlotTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentMPTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentItemSlotTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentDriveTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentHPTextBox;
     }
 }
