@@ -1,4 +1,6 @@
-﻿namespace Plandomizer
+﻿using System;
+
+namespace Plandomizer
 {
     partial class TabViewForm
     {
@@ -51,6 +53,10 @@
             this.popupWorldSelectorBox = new System.Windows.Forms.GroupBox();
             this.popupWorldSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.formPage = new System.Windows.Forms.TabPage();
+            this.formExpComboBox = new System.Windows.Forms.ComboBox();
+            this.formExpLabel = new System.Windows.Forms.Label();
+            this.formExpToNextLevelCounter = new System.Windows.Forms.NumericUpDown();
+            this.formExpToNextLevelLabel = new System.Windows.Forms.Label();
             this.formRewardComboBox = new System.Windows.Forms.ComboBox();
             this.formRewardLabel = new System.Windows.Forms.Label();
             this.formRewardTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -96,6 +102,15 @@
             this.equipmentTypeBox = new System.Windows.Forms.GroupBox();
             this.equipmentTypeSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.bonusPage = new System.Windows.Forms.TabPage();
+            this.bonusCharacterSelectorBox = new System.Windows.Forms.GroupBox();
+            this.bonusCharacterSelectorComboBox = new System.Windows.Forms.ComboBox();
+            this.bonusStatBox = new System.Windows.Forms.GroupBox();
+            this.bonusCurrentAccessorySlotTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentArmorSlotTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentMPTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentItemSlotTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentDriveTextBox = new System.Windows.Forms.TextBox();
+            this.bonusCurrentHPTextBox = new System.Windows.Forms.TextBox();
             this.bonusDriveCounter = new System.Windows.Forms.NumericUpDown();
             this.bonusDriveLabel = new System.Windows.Forms.Label();
             this.bonusItemCounter = new System.Windows.Forms.NumericUpDown();
@@ -155,6 +170,39 @@
             this.staffRewardTypeComboBox = new System.Windows.Forms.ComboBox();
             this.levelDefaultButton = new System.Windows.Forms.Button();
             this.levelReplaceButton = new System.Windows.Forms.Button();
+            this.otherPage = new System.Windows.Forms.TabPage();
+            this.cheatBox = new System.Windows.Forms.GroupBox();
+            this.cheatApplyButton = new System.Windows.Forms.Button();
+            this.cheatDataGridView = new System.Windows.Forms.DataGridView();
+            this.startingGearBox = new System.Windows.Forms.GroupBox();
+            this.startingAccessoryCheckBox = new System.Windows.Forms.CheckBox();
+            this.startingArmorCheckBox = new System.Windows.Forms.CheckBox();
+            this.startingKeybladeCheckBox = new System.Windows.Forms.CheckBox();
+            this.startingGearDefaultButton = new System.Windows.Forms.Button();
+            this.startingGearReplaceButton = new System.Windows.Forms.Button();
+            this.startingMunnyCounter = new System.Windows.Forms.NumericUpDown();
+            this.startingMunnyLabel = new System.Windows.Forms.Label();
+            this.startingAccessoryComboBox = new System.Windows.Forms.ComboBox();
+            this.startingArmorComboBox = new System.Windows.Forms.ComboBox();
+            this.startingKeybladeComboBox = new System.Windows.Forms.ComboBox();
+            this.startingStatsBox = new System.Windows.Forms.GroupBox();
+            this.startingStatsDefaultButton = new System.Windows.Forms.Button();
+            this.startingStatsReplaceButton = new System.Windows.Forms.Button();
+            this.startingDriveCounter = new System.Windows.Forms.NumericUpDown();
+            this.startingDriveLabel = new System.Windows.Forms.Label();
+            this.startingMPCounter = new System.Windows.Forms.NumericUpDown();
+            this.startingMPLabel = new System.Windows.Forms.Label();
+            this.startingHPCounter = new System.Windows.Forms.NumericUpDown();
+            this.startingHPLabel = new System.Windows.Forms.Label();
+            this.critExtraBox = new System.Windows.Forms.GroupBox();
+            this.criticalDataGridView = new System.Windows.Forms.DataGridView();
+            this.CritExtraDefaultButton = new System.Windows.Forms.Button();
+            this.critExtraReplaceButton = new System.Windows.Forms.Button();
+            this.critExtraReplacementBox = new System.Windows.Forms.GroupBox();
+            this.critExtraRewardLabel = new System.Windows.Forms.Label();
+            this.critExtraRewardComboBox = new System.Windows.Forms.ComboBox();
+            this.critExtraRewardTypeLabel = new System.Windows.Forms.Label();
+            this.critExtraRewardTypeComboBox = new System.Windows.Forms.ComboBox();
             this.patchSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
@@ -166,6 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupDataGridView)).BeginInit();
             this.popupWorldSelectorBox.SuspendLayout();
             this.formPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.formExpToNextLevelCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formDataGridView)).BeginInit();
             this.formSelectorBox.SuspendLayout();
             this.equipmentPage.SuspendLayout();
@@ -186,6 +235,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataGridView)).BeginInit();
             this.equipmentTypeBox.SuspendLayout();
             this.bonusPage.SuspendLayout();
+            this.bonusCharacterSelectorBox.SuspendLayout();
+            this.bonusStatBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bonusDriveCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bonusItemCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bonusAccessoryCounter)).BeginInit();
@@ -208,6 +259,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.levelStrengthCounter)).BeginInit();
             this.levelShieldBox.SuspendLayout();
             this.levelStaffBox.SuspendLayout();
+            this.otherPage.SuspendLayout();
+            this.cheatBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cheatDataGridView)).BeginInit();
+            this.startingGearBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startingMunnyCounter)).BeginInit();
+            this.startingStatsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startingDriveCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingMPCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingHPCounter)).BeginInit();
+            this.critExtraBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.criticalDataGridView)).BeginInit();
+            this.critExtraReplacementBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlContainer
@@ -221,6 +284,7 @@
             this.tabControlContainer.Controls.Add(this.equipmentPage);
             this.tabControlContainer.Controls.Add(this.bonusPage);
             this.tabControlContainer.Controls.Add(this.levelPage);
+            this.tabControlContainer.Controls.Add(this.otherPage);
             this.tabControlContainer.Location = new System.Drawing.Point(13, 13);
             this.tabControlContainer.Name = "tabControlContainer";
             this.tabControlContainer.SelectedIndex = 0;
@@ -247,6 +311,7 @@
             // 
             // chestRewardComboBox
             // 
+            this.chestRewardComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chestRewardComboBox.FormattingEnabled = true;
             this.chestRewardComboBox.Location = new System.Drawing.Point(1032, 139);
             this.chestRewardComboBox.Name = "chestRewardComboBox";
@@ -255,6 +320,7 @@
             // 
             // chestRewardLabel
             // 
+            this.chestRewardLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chestRewardLabel.AutoSize = true;
             this.chestRewardLabel.Location = new System.Drawing.Point(1029, 122);
             this.chestRewardLabel.Name = "chestRewardLabel";
@@ -264,6 +330,7 @@
             // 
             // chestRewardTypeComboBox
             // 
+            this.chestRewardTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chestRewardTypeComboBox.FormattingEnabled = true;
             this.chestRewardTypeComboBox.Location = new System.Drawing.Point(1032, 79);
             this.chestRewardTypeComboBox.Name = "chestRewardTypeComboBox";
@@ -273,6 +340,7 @@
             // 
             // chestRewardTypeLabel
             // 
+            this.chestRewardTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chestRewardTypeLabel.AutoSize = true;
             this.chestRewardTypeLabel.Location = new System.Drawing.Point(1029, 63);
             this.chestRewardTypeLabel.Name = "chestRewardTypeLabel";
@@ -282,6 +350,7 @@
             // 
             // chestDefaultButton
             // 
+            this.chestDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chestDefaultButton.Location = new System.Drawing.Point(1088, 525);
             this.chestDefaultButton.Name = "chestDefaultButton";
             this.chestDefaultButton.Size = new System.Drawing.Size(137, 23);
@@ -292,6 +361,7 @@
             // 
             // chestReplaceButton
             // 
+            this.chestReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chestReplaceButton.Location = new System.Drawing.Point(1088, 496);
             this.chestReplaceButton.Name = "chestReplaceButton";
             this.chestReplaceButton.Size = new System.Drawing.Size(137, 23);
@@ -306,6 +376,9 @@
             this.chestDataGridView.AllowUserToDeleteRows = false;
             this.chestDataGridView.AllowUserToResizeColumns = false;
             this.chestDataGridView.AllowUserToResizeRows = false;
+            this.chestDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chestDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.chestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chestDataGridView.Location = new System.Drawing.Point(13, 63);
@@ -317,7 +390,6 @@
             this.chestDataGridView.Size = new System.Drawing.Size(747, 484);
             this.chestDataGridView.TabIndex = 1;
             this.chestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.chestDataGridView_CellFormatting);
-            this.chestDataGridView.SelectionChanged += new System.EventHandler(this.chestDataGridView_SelectionChanged);
             // 
             // chestsWorldSelectorBox
             // 
@@ -358,6 +430,7 @@
             // 
             // popupRewardComboBox
             // 
+            this.popupRewardComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.popupRewardComboBox.FormattingEnabled = true;
             this.popupRewardComboBox.Location = new System.Drawing.Point(1032, 139);
             this.popupRewardComboBox.Name = "popupRewardComboBox";
@@ -366,6 +439,7 @@
             // 
             // popupRewardLabel
             // 
+            this.popupRewardLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.popupRewardLabel.AutoSize = true;
             this.popupRewardLabel.Location = new System.Drawing.Point(1029, 122);
             this.popupRewardLabel.Name = "popupRewardLabel";
@@ -375,6 +449,7 @@
             // 
             // popupRewardTypeComboBox
             // 
+            this.popupRewardTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.popupRewardTypeComboBox.FormattingEnabled = true;
             this.popupRewardTypeComboBox.Location = new System.Drawing.Point(1032, 79);
             this.popupRewardTypeComboBox.Name = "popupRewardTypeComboBox";
@@ -384,6 +459,7 @@
             // 
             // popupRewardTypeLabel
             // 
+            this.popupRewardTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.popupRewardTypeLabel.AutoSize = true;
             this.popupRewardTypeLabel.Location = new System.Drawing.Point(1029, 63);
             this.popupRewardTypeLabel.Name = "popupRewardTypeLabel";
@@ -393,6 +469,7 @@
             // 
             // popupDefaultButton
             // 
+            this.popupDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.popupDefaultButton.Location = new System.Drawing.Point(1088, 525);
             this.popupDefaultButton.Name = "popupDefaultButton";
             this.popupDefaultButton.Size = new System.Drawing.Size(137, 23);
@@ -403,6 +480,7 @@
             // 
             // popupReplaceButton
             // 
+            this.popupReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.popupReplaceButton.Location = new System.Drawing.Point(1088, 496);
             this.popupReplaceButton.Name = "popupReplaceButton";
             this.popupReplaceButton.Size = new System.Drawing.Size(137, 23);
@@ -417,6 +495,9 @@
             this.popupDataGridView.AllowUserToDeleteRows = false;
             this.popupDataGridView.AllowUserToResizeColumns = false;
             this.popupDataGridView.AllowUserToResizeRows = false;
+            this.popupDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.popupDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.popupDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.popupDataGridView.Location = new System.Drawing.Point(13, 63);
@@ -428,7 +509,6 @@
             this.popupDataGridView.Size = new System.Drawing.Size(747, 484);
             this.popupDataGridView.TabIndex = 3;
             this.popupDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.popupDataGridView_CellFormatting);
-            this.popupDataGridView.SelectionChanged += new System.EventHandler(this.popupDataGridView_SelectionChanged);
             // 
             // popupWorldSelectorBox
             // 
@@ -451,6 +531,10 @@
             // 
             // formPage
             // 
+            this.formPage.Controls.Add(this.formExpComboBox);
+            this.formPage.Controls.Add(this.formExpLabel);
+            this.formPage.Controls.Add(this.formExpToNextLevelCounter);
+            this.formPage.Controls.Add(this.formExpToNextLevelLabel);
             this.formPage.Controls.Add(this.formRewardComboBox);
             this.formPage.Controls.Add(this.formRewardLabel);
             this.formPage.Controls.Add(this.formRewardTypeComboBox);
@@ -467,8 +551,52 @@
             this.formPage.Text = "Forms";
             this.formPage.UseVisualStyleBackColor = true;
             // 
+            // formExpComboBox
+            // 
+            this.formExpComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.formExpComboBox.FormattingEnabled = true;
+            this.formExpComboBox.Location = new System.Drawing.Point(1032, 200);
+            this.formExpComboBox.Name = "formExpComboBox";
+            this.formExpComboBox.Size = new System.Drawing.Size(193, 21);
+            this.formExpComboBox.TabIndex = 36;
+            this.formExpComboBox.SelectedIndexChanged += new System.EventHandler(this.formExpComboBox_SelectedIndexChanged);
+            // 
+            // formExpLabel
+            // 
+            this.formExpLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.formExpLabel.AutoSize = true;
+            this.formExpLabel.Location = new System.Drawing.Point(1029, 183);
+            this.formExpLabel.Name = "formExpLabel";
+            this.formExpLabel.Size = new System.Drawing.Size(130, 13);
+            this.formExpLabel.TabIndex = 35;
+            this.formExpLabel.Text = "Form Experience Multiplier";
+            // 
+            // formExpToNextLevelCounter
+            // 
+            this.formExpToNextLevelCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.formExpToNextLevelCounter.Location = new System.Drawing.Point(1032, 261);
+            this.formExpToNextLevelCounter.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.formExpToNextLevelCounter.Name = "formExpToNextLevelCounter";
+            this.formExpToNextLevelCounter.Size = new System.Drawing.Size(193, 20);
+            this.formExpToNextLevelCounter.TabIndex = 34;
+            // 
+            // formExpToNextLevelLabel
+            // 
+            this.formExpToNextLevelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.formExpToNextLevelLabel.AutoSize = true;
+            this.formExpToNextLevelLabel.Location = new System.Drawing.Point(1029, 244);
+            this.formExpToNextLevelLabel.Name = "formExpToNextLevelLabel";
+            this.formExpToNextLevelLabel.Size = new System.Drawing.Size(155, 13);
+            this.formExpToNextLevelLabel.TabIndex = 33;
+            this.formExpToNextLevelLabel.Text = "Experience to Next Form Level ";
+            // 
             // formRewardComboBox
             // 
+            this.formRewardComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.formRewardComboBox.FormattingEnabled = true;
             this.formRewardComboBox.Location = new System.Drawing.Point(1032, 139);
             this.formRewardComboBox.Name = "formRewardComboBox";
@@ -477,6 +605,7 @@
             // 
             // formRewardLabel
             // 
+            this.formRewardLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.formRewardLabel.AutoSize = true;
             this.formRewardLabel.Location = new System.Drawing.Point(1029, 122);
             this.formRewardLabel.Name = "formRewardLabel";
@@ -486,6 +615,7 @@
             // 
             // formRewardTypeComboBox
             // 
+            this.formRewardTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.formRewardTypeComboBox.FormattingEnabled = true;
             this.formRewardTypeComboBox.Location = new System.Drawing.Point(1032, 79);
             this.formRewardTypeComboBox.Name = "formRewardTypeComboBox";
@@ -495,6 +625,7 @@
             // 
             // formRewardTypeLabel
             // 
+            this.formRewardTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.formRewardTypeLabel.AutoSize = true;
             this.formRewardTypeLabel.Location = new System.Drawing.Point(1029, 63);
             this.formRewardTypeLabel.Name = "formRewardTypeLabel";
@@ -504,6 +635,7 @@
             // 
             // formDefaultButton
             // 
+            this.formDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.formDefaultButton.Location = new System.Drawing.Point(1088, 525);
             this.formDefaultButton.Name = "formDefaultButton";
             this.formDefaultButton.Size = new System.Drawing.Size(137, 23);
@@ -514,6 +646,7 @@
             // 
             // formReplaceButton
             // 
+            this.formReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.formReplaceButton.Location = new System.Drawing.Point(1088, 496);
             this.formReplaceButton.Name = "formReplaceButton";
             this.formReplaceButton.Size = new System.Drawing.Size(137, 23);
@@ -528,6 +661,9 @@
             this.formDataGridView.AllowUserToDeleteRows = false;
             this.formDataGridView.AllowUserToResizeColumns = false;
             this.formDataGridView.AllowUserToResizeRows = false;
+            this.formDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.formDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.formDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.formDataGridView.Location = new System.Drawing.Point(13, 63);
@@ -539,7 +675,6 @@
             this.formDataGridView.Size = new System.Drawing.Size(747, 484);
             this.formDataGridView.TabIndex = 21;
             this.formDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.formDataGridView_CellFormatting);
-            this.formDataGridView.SelectionChanged += new System.EventHandler(this.formDataGridView_SelectionChanged);
             // 
             // formSelectorBox
             // 
@@ -583,6 +718,7 @@
             // 
             // elementalOtherResistanceBox
             // 
+            this.elementalOtherResistanceBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.elementalOtherResistanceBox.Controls.Add(this.physicalResistanceLabel);
             this.elementalOtherResistanceBox.Controls.Add(this.physicalResistanceCounter);
             this.elementalOtherResistanceBox.Controls.Add(this.lightResistanceLabel);
@@ -661,6 +797,7 @@
             // 
             // equipmentElementalResistanceBox
             // 
+            this.equipmentElementalResistanceBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentElementalResistanceBox.Controls.Add(this.fireResistanceLabel);
             this.equipmentElementalResistanceBox.Controls.Add(this.fireResistanceCounter);
             this.equipmentElementalResistanceBox.Controls.Add(this.blizzardResistanceLabel);
@@ -762,6 +899,7 @@
             // 
             // equipmentStatBox
             // 
+            this.equipmentStatBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentStatBox.Controls.Add(this.equipmentAPLabel);
             this.equipmentStatBox.Controls.Add(this.equipmentAPCounter);
             this.equipmentStatBox.Controls.Add(this.equipmentMagicLabel);
@@ -863,6 +1001,7 @@
             // 
             // equipmentRewardComboBox
             // 
+            this.equipmentRewardComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentRewardComboBox.FormattingEnabled = true;
             this.equipmentRewardComboBox.Location = new System.Drawing.Point(1032, 139);
             this.equipmentRewardComboBox.Name = "equipmentRewardComboBox";
@@ -871,6 +1010,7 @@
             // 
             // equipmentRewardLabel
             // 
+            this.equipmentRewardLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentRewardLabel.AutoSize = true;
             this.equipmentRewardLabel.Location = new System.Drawing.Point(1029, 122);
             this.equipmentRewardLabel.Name = "equipmentRewardLabel";
@@ -880,6 +1020,7 @@
             // 
             // equipmentRewardTypeComboBox
             // 
+            this.equipmentRewardTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentRewardTypeComboBox.FormattingEnabled = true;
             this.equipmentRewardTypeComboBox.Location = new System.Drawing.Point(1032, 79);
             this.equipmentRewardTypeComboBox.Name = "equipmentRewardTypeComboBox";
@@ -889,6 +1030,7 @@
             // 
             // equipmentRewardTypeLabel
             // 
+            this.equipmentRewardTypeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentRewardTypeLabel.AutoSize = true;
             this.equipmentRewardTypeLabel.Location = new System.Drawing.Point(1029, 63);
             this.equipmentRewardTypeLabel.Name = "equipmentRewardTypeLabel";
@@ -898,6 +1040,7 @@
             // 
             // equipmentDefaultButton
             // 
+            this.equipmentDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentDefaultButton.Location = new System.Drawing.Point(1088, 525);
             this.equipmentDefaultButton.Name = "equipmentDefaultButton";
             this.equipmentDefaultButton.Size = new System.Drawing.Size(137, 23);
@@ -908,6 +1051,7 @@
             // 
             // equipmentReplaceButton
             // 
+            this.equipmentReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentReplaceButton.Location = new System.Drawing.Point(1088, 496);
             this.equipmentReplaceButton.Name = "equipmentReplaceButton";
             this.equipmentReplaceButton.Size = new System.Drawing.Size(137, 23);
@@ -922,6 +1066,9 @@
             this.equipmentDataGridView.AllowUserToDeleteRows = false;
             this.equipmentDataGridView.AllowUserToResizeColumns = false;
             this.equipmentDataGridView.AllowUserToResizeRows = false;
+            this.equipmentDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.equipmentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.equipmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.equipmentDataGridView.Location = new System.Drawing.Point(13, 63);
@@ -933,7 +1080,6 @@
             this.equipmentDataGridView.Size = new System.Drawing.Size(747, 484);
             this.equipmentDataGridView.TabIndex = 5;
             this.equipmentDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.equipmentDataGridView_CellFormatting);
-            this.equipmentDataGridView.SelectionChanged += new System.EventHandler(this.equipmentDataGridView_SelectionChanged);
             // 
             // equipmentTypeBox
             // 
@@ -956,18 +1102,8 @@
             // 
             // bonusPage
             // 
-            this.bonusPage.Controls.Add(this.bonusDriveCounter);
-            this.bonusPage.Controls.Add(this.bonusDriveLabel);
-            this.bonusPage.Controls.Add(this.bonusItemCounter);
-            this.bonusPage.Controls.Add(this.bonusItemLabel);
-            this.bonusPage.Controls.Add(this.bonusAccessoryCounter);
-            this.bonusPage.Controls.Add(this.bonusAccessoryLabel);
-            this.bonusPage.Controls.Add(this.bonusArmorCounter);
-            this.bonusPage.Controls.Add(this.bonusArmorLabel);
-            this.bonusPage.Controls.Add(this.bonusMPCounter);
-            this.bonusPage.Controls.Add(this.bonusMPLabel);
-            this.bonusPage.Controls.Add(this.bonusHPCounter);
-            this.bonusPage.Controls.Add(this.bonusHPLabel);
+            this.bonusPage.Controls.Add(this.bonusCharacterSelectorBox);
+            this.bonusPage.Controls.Add(this.bonusStatBox);
             this.bonusPage.Controls.Add(this.bonusRewardBox2);
             this.bonusPage.Controls.Add(this.bonusRewardBox1);
             this.bonusPage.Controls.Add(this.bonusDefaultButton);
@@ -982,9 +1118,135 @@
             this.bonusPage.Text = "Bonus Levels";
             this.bonusPage.UseVisualStyleBackColor = true;
             // 
+            // bonusCharacterSelectorBox
+            // 
+            this.bonusCharacterSelectorBox.Controls.Add(this.bonusCharacterSelectorComboBox);
+            this.bonusCharacterSelectorBox.Location = new System.Drawing.Point(275, 7);
+            this.bonusCharacterSelectorBox.Name = "bonusCharacterSelectorBox";
+            this.bonusCharacterSelectorBox.Size = new System.Drawing.Size(263, 50);
+            this.bonusCharacterSelectorBox.TabIndex = 35;
+            this.bonusCharacterSelectorBox.TabStop = false;
+            this.bonusCharacterSelectorBox.Text = "Character Selector";
+            // 
+            // bonusCharacterSelectorComboBox
+            // 
+            this.bonusCharacterSelectorComboBox.FormattingEnabled = true;
+            this.bonusCharacterSelectorComboBox.Location = new System.Drawing.Point(7, 20);
+            this.bonusCharacterSelectorComboBox.Name = "bonusCharacterSelectorComboBox";
+            this.bonusCharacterSelectorComboBox.Size = new System.Drawing.Size(250, 21);
+            this.bonusCharacterSelectorComboBox.TabIndex = 0;
+            this.bonusCharacterSelectorComboBox.SelectedIndexChanged += new System.EventHandler(this.bonusCharacterSelectorComboBox_SelectedIndexChanged);
+            // 
+            // bonusStatBox
+            // 
+            this.bonusStatBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusStatBox.Controls.Add(this.bonusCurrentAccessorySlotTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentArmorSlotTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentMPTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentItemSlotTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentDriveTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusCurrentHPTextBox);
+            this.bonusStatBox.Controls.Add(this.bonusDriveCounter);
+            this.bonusStatBox.Controls.Add(this.bonusDriveLabel);
+            this.bonusStatBox.Controls.Add(this.bonusItemCounter);
+            this.bonusStatBox.Controls.Add(this.bonusItemLabel);
+            this.bonusStatBox.Controls.Add(this.bonusAccessoryCounter);
+            this.bonusStatBox.Controls.Add(this.bonusAccessoryLabel);
+            this.bonusStatBox.Controls.Add(this.bonusArmorCounter);
+            this.bonusStatBox.Controls.Add(this.bonusArmorLabel);
+            this.bonusStatBox.Controls.Add(this.bonusMPCounter);
+            this.bonusStatBox.Controls.Add(this.bonusMPLabel);
+            this.bonusStatBox.Controls.Add(this.bonusHPCounter);
+            this.bonusStatBox.Controls.Add(this.bonusHPLabel);
+            this.bonusStatBox.Location = new System.Drawing.Point(883, 63);
+            this.bonusStatBox.Name = "bonusStatBox";
+            this.bonusStatBox.Size = new System.Drawing.Size(136, 272);
+            this.bonusStatBox.TabIndex = 34;
+            this.bonusStatBox.TabStop = false;
+            this.bonusStatBox.Text = "Stat Increases";
+            // 
+            // bonusCurrentAccessorySlotTextBox
+            // 
+            this.bonusCurrentAccessorySlotTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentAccessorySlotTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentAccessorySlotTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentAccessorySlotTextBox.Location = new System.Drawing.Point(67, 155);
+            this.bonusCurrentAccessorySlotTextBox.Name = "bonusCurrentAccessorySlotTextBox";
+            this.bonusCurrentAccessorySlotTextBox.ReadOnly = true;
+            this.bonusCurrentAccessorySlotTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentAccessorySlotTextBox.TabIndex = 47;
+            this.bonusCurrentAccessorySlotTextBox.Text = "0";
+            this.bonusCurrentAccessorySlotTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentArmorSlotTextBox
+            // 
+            this.bonusCurrentArmorSlotTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentArmorSlotTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentArmorSlotTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentArmorSlotTextBox.Location = new System.Drawing.Point(68, 113);
+            this.bonusCurrentArmorSlotTextBox.Name = "bonusCurrentArmorSlotTextBox";
+            this.bonusCurrentArmorSlotTextBox.ReadOnly = true;
+            this.bonusCurrentArmorSlotTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentArmorSlotTextBox.TabIndex = 47;
+            this.bonusCurrentArmorSlotTextBox.Text = "0";
+            this.bonusCurrentArmorSlotTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentMPTextBox
+            // 
+            this.bonusCurrentMPTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentMPTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentMPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentMPTextBox.Location = new System.Drawing.Point(68, 74);
+            this.bonusCurrentMPTextBox.Name = "bonusCurrentMPTextBox";
+            this.bonusCurrentMPTextBox.ReadOnly = true;
+            this.bonusCurrentMPTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentMPTextBox.TabIndex = 47;
+            this.bonusCurrentMPTextBox.Text = "0";
+            this.bonusCurrentMPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentItemSlotTextBox
+            // 
+            this.bonusCurrentItemSlotTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentItemSlotTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentItemSlotTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentItemSlotTextBox.Location = new System.Drawing.Point(67, 194);
+            this.bonusCurrentItemSlotTextBox.Name = "bonusCurrentItemSlotTextBox";
+            this.bonusCurrentItemSlotTextBox.ReadOnly = true;
+            this.bonusCurrentItemSlotTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentItemSlotTextBox.TabIndex = 47;
+            this.bonusCurrentItemSlotTextBox.Text = "0";
+            this.bonusCurrentItemSlotTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentDriveTextBox
+            // 
+            this.bonusCurrentDriveTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentDriveTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentDriveTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentDriveTextBox.Location = new System.Drawing.Point(67, 235);
+            this.bonusCurrentDriveTextBox.Name = "bonusCurrentDriveTextBox";
+            this.bonusCurrentDriveTextBox.ReadOnly = true;
+            this.bonusCurrentDriveTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentDriveTextBox.TabIndex = 47;
+            this.bonusCurrentDriveTextBox.Text = "0";
+            this.bonusCurrentDriveTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bonusCurrentHPTextBox
+            // 
+            this.bonusCurrentHPTextBox.BackColor = System.Drawing.Color.LightGreen;
+            this.bonusCurrentHPTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bonusCurrentHPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusCurrentHPTextBox.Location = new System.Drawing.Point(68, 35);
+            this.bonusCurrentHPTextBox.Name = "bonusCurrentHPTextBox";
+            this.bonusCurrentHPTextBox.ReadOnly = true;
+            this.bonusCurrentHPTextBox.Size = new System.Drawing.Size(62, 20);
+            this.bonusCurrentHPTextBox.TabIndex = 46;
+            this.bonusCurrentHPTextBox.Text = "0";
+            this.bonusCurrentHPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // bonusDriveCounter
             // 
-            this.bonusDriveCounter.Location = new System.Drawing.Point(770, 280);
+            this.bonusDriveCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusDriveCounter.Location = new System.Drawing.Point(11, 235);
             this.bonusDriveCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -992,20 +1254,23 @@
             0});
             this.bonusDriveCounter.Name = "bonusDriveCounter";
             this.bonusDriveCounter.Size = new System.Drawing.Size(51, 20);
-            this.bonusDriveCounter.TabIndex = 33;
+            this.bonusDriveCounter.TabIndex = 45;
             // 
             // bonusDriveLabel
             // 
+            this.bonusDriveLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusDriveLabel.AutoSize = true;
-            this.bonusDriveLabel.Location = new System.Drawing.Point(767, 263);
+            this.bonusDriveLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bonusDriveLabel.Location = new System.Drawing.Point(8, 218);
             this.bonusDriveLabel.Name = "bonusDriveLabel";
             this.bonusDriveLabel.Size = new System.Drawing.Size(111, 13);
-            this.bonusDriveLabel.TabIndex = 32;
+            this.bonusDriveLabel.TabIndex = 44;
             this.bonusDriveLabel.Text = "Drive Gauge Increase";
             // 
             // bonusItemCounter
             // 
-            this.bonusItemCounter.Location = new System.Drawing.Point(770, 240);
+            this.bonusItemCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusItemCounter.Location = new System.Drawing.Point(11, 195);
             this.bonusItemCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1013,20 +1278,22 @@
             0});
             this.bonusItemCounter.Name = "bonusItemCounter";
             this.bonusItemCounter.Size = new System.Drawing.Size(51, 20);
-            this.bonusItemCounter.TabIndex = 31;
+            this.bonusItemCounter.TabIndex = 43;
             // 
             // bonusItemLabel
             // 
+            this.bonusItemLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusItemLabel.AutoSize = true;
-            this.bonusItemLabel.Location = new System.Drawing.Point(767, 223);
+            this.bonusItemLabel.Location = new System.Drawing.Point(8, 178);
             this.bonusItemLabel.Name = "bonusItemLabel";
             this.bonusItemLabel.Size = new System.Drawing.Size(92, 13);
-            this.bonusItemLabel.TabIndex = 30;
+            this.bonusItemLabel.TabIndex = 42;
             this.bonusItemLabel.Text = "Item Slot Increase";
             // 
             // bonusAccessoryCounter
             // 
-            this.bonusAccessoryCounter.Location = new System.Drawing.Point(770, 200);
+            this.bonusAccessoryCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusAccessoryCounter.Location = new System.Drawing.Point(11, 155);
             this.bonusAccessoryCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1034,20 +1301,22 @@
             0});
             this.bonusAccessoryCounter.Name = "bonusAccessoryCounter";
             this.bonusAccessoryCounter.Size = new System.Drawing.Size(51, 20);
-            this.bonusAccessoryCounter.TabIndex = 29;
+            this.bonusAccessoryCounter.TabIndex = 41;
             // 
             // bonusAccessoryLabel
             // 
+            this.bonusAccessoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusAccessoryLabel.AutoSize = true;
-            this.bonusAccessoryLabel.Location = new System.Drawing.Point(767, 183);
+            this.bonusAccessoryLabel.Location = new System.Drawing.Point(8, 138);
             this.bonusAccessoryLabel.Name = "bonusAccessoryLabel";
             this.bonusAccessoryLabel.Size = new System.Drawing.Size(121, 13);
-            this.bonusAccessoryLabel.TabIndex = 28;
+            this.bonusAccessoryLabel.TabIndex = 40;
             this.bonusAccessoryLabel.Text = "Accessory Slot Increase";
             // 
             // bonusArmorCounter
             // 
-            this.bonusArmorCounter.Location = new System.Drawing.Point(770, 160);
+            this.bonusArmorCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusArmorCounter.Location = new System.Drawing.Point(11, 115);
             this.bonusArmorCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1055,20 +1324,22 @@
             0});
             this.bonusArmorCounter.Name = "bonusArmorCounter";
             this.bonusArmorCounter.Size = new System.Drawing.Size(51, 20);
-            this.bonusArmorCounter.TabIndex = 27;
+            this.bonusArmorCounter.TabIndex = 39;
             // 
             // bonusArmorLabel
             // 
+            this.bonusArmorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusArmorLabel.AutoSize = true;
-            this.bonusArmorLabel.Location = new System.Drawing.Point(767, 143);
+            this.bonusArmorLabel.Location = new System.Drawing.Point(8, 98);
             this.bonusArmorLabel.Name = "bonusArmorLabel";
             this.bonusArmorLabel.Size = new System.Drawing.Size(99, 13);
-            this.bonusArmorLabel.TabIndex = 26;
+            this.bonusArmorLabel.TabIndex = 38;
             this.bonusArmorLabel.Text = "Armor Slot Increase";
             // 
             // bonusMPCounter
             // 
-            this.bonusMPCounter.Location = new System.Drawing.Point(770, 120);
+            this.bonusMPCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusMPCounter.Location = new System.Drawing.Point(11, 75);
             this.bonusMPCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1076,20 +1347,22 @@
             0});
             this.bonusMPCounter.Name = "bonusMPCounter";
             this.bonusMPCounter.Size = new System.Drawing.Size(51, 20);
-            this.bonusMPCounter.TabIndex = 25;
+            this.bonusMPCounter.TabIndex = 37;
             // 
             // bonusMPLabel
             // 
+            this.bonusMPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusMPLabel.AutoSize = true;
-            this.bonusMPLabel.Location = new System.Drawing.Point(767, 103);
+            this.bonusMPLabel.Location = new System.Drawing.Point(8, 58);
             this.bonusMPLabel.Name = "bonusMPLabel";
             this.bonusMPLabel.Size = new System.Drawing.Size(67, 13);
-            this.bonusMPLabel.TabIndex = 24;
+            this.bonusMPLabel.TabIndex = 36;
             this.bonusMPLabel.Text = "MP Increase";
             // 
             // bonusHPCounter
             // 
-            this.bonusHPCounter.Location = new System.Drawing.Point(770, 80);
+            this.bonusHPCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bonusHPCounter.Location = new System.Drawing.Point(11, 35);
             this.bonusHPCounter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1097,19 +1370,21 @@
             0});
             this.bonusHPCounter.Name = "bonusHPCounter";
             this.bonusHPCounter.Size = new System.Drawing.Size(51, 20);
-            this.bonusHPCounter.TabIndex = 23;
+            this.bonusHPCounter.TabIndex = 35;
             // 
             // bonusHPLabel
             // 
+            this.bonusHPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusHPLabel.AutoSize = true;
-            this.bonusHPLabel.Location = new System.Drawing.Point(767, 63);
+            this.bonusHPLabel.Location = new System.Drawing.Point(8, 18);
             this.bonusHPLabel.Name = "bonusHPLabel";
             this.bonusHPLabel.Size = new System.Drawing.Size(66, 13);
-            this.bonusHPLabel.TabIndex = 22;
+            this.bonusHPLabel.TabIndex = 34;
             this.bonusHPLabel.Text = "HP Increase";
             // 
             // bonusRewardBox2
             // 
+            this.bonusRewardBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusRewardBox2.Controls.Add(this.bonusRewardLabel2);
             this.bonusRewardBox2.Controls.Add(this.bonusRewardComboBox2);
             this.bonusRewardBox2.Controls.Add(this.bonusRewardTypeLabel2);
@@ -1158,6 +1433,7 @@
             // 
             // bonusRewardBox1
             // 
+            this.bonusRewardBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusRewardBox1.Controls.Add(this.bonusRewardLabel1);
             this.bonusRewardBox1.Controls.Add(this.bonusRewardComboBox1);
             this.bonusRewardBox1.Controls.Add(this.bonusRewardTypeLabel1);
@@ -1206,6 +1482,7 @@
             // 
             // bonusDefaultButton
             // 
+            this.bonusDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusDefaultButton.Location = new System.Drawing.Point(1088, 525);
             this.bonusDefaultButton.Name = "bonusDefaultButton";
             this.bonusDefaultButton.Size = new System.Drawing.Size(137, 23);
@@ -1216,6 +1493,7 @@
             // 
             // bonusReplaceButton
             // 
+            this.bonusReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusReplaceButton.Location = new System.Drawing.Point(1088, 496);
             this.bonusReplaceButton.Name = "bonusReplaceButton";
             this.bonusReplaceButton.Size = new System.Drawing.Size(137, 23);
@@ -1230,6 +1508,8 @@
             this.bonusDataGridView.AllowUserToDeleteRows = false;
             this.bonusDataGridView.AllowUserToResizeColumns = false;
             this.bonusDataGridView.AllowUserToResizeRows = false;
+            this.bonusDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bonusDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bonusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bonusDataGridView.Location = new System.Drawing.Point(13, 63);
@@ -1238,7 +1518,7 @@
             this.bonusDataGridView.ReadOnly = true;
             this.bonusDataGridView.RowHeadersVisible = false;
             this.bonusDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bonusDataGridView.Size = new System.Drawing.Size(747, 484);
+            this.bonusDataGridView.Size = new System.Drawing.Size(864, 272);
             this.bonusDataGridView.TabIndex = 9;
             this.bonusDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.bonusDataGridView_CellFormatting);
             this.bonusDataGridView.SelectionChanged += new System.EventHandler(this.bonusDataGridView_SelectionChanged);
@@ -1282,6 +1562,9 @@
             this.levelDataGridView.AllowUserToDeleteRows = false;
             this.levelDataGridView.AllowUserToResizeColumns = false;
             this.levelDataGridView.AllowUserToResizeRows = false;
+            this.levelDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.levelDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.levelDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.levelDataGridView.Location = new System.Drawing.Point(3, 49);
@@ -1293,10 +1576,11 @@
             this.levelDataGridView.Size = new System.Drawing.Size(721, 441);
             this.levelDataGridView.TabIndex = 32;
             this.levelDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.levelDataGridView_CellFormatting);
-            this.levelDataGridView.SelectionChanged += new System.EventHandler(this.levelDataGridView_SelectionChanged);
             // 
             // soraLevelBox
             // 
+            this.soraLevelBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.soraLevelBox.Controls.Add(this.levelHelpTextBox);
             this.soraLevelBox.Controls.Add(this.nextEXPCounter);
             this.soraLevelBox.Controls.Add(this.nextEXPLabel);
@@ -1313,6 +1597,8 @@
             // 
             // levelHelpTextBox
             // 
+            this.levelHelpTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.levelHelpTextBox.Location = new System.Drawing.Point(212, 167);
             this.levelHelpTextBox.Multiline = true;
             this.levelHelpTextBox.Name = "levelHelpTextBox";
@@ -1322,6 +1608,7 @@
             // 
             // nextEXPCounter
             // 
+            this.nextEXPCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nextEXPCounter.Location = new System.Drawing.Point(217, 141);
             this.nextEXPCounter.Maximum = new decimal(new int[] {
             -1,
@@ -1329,11 +1616,12 @@
             0,
             0});
             this.nextEXPCounter.Name = "nextEXPCounter";
-            this.nextEXPCounter.Size = new System.Drawing.Size(154, 20);
+            this.nextEXPCounter.Size = new System.Drawing.Size(263, 20);
             this.nextEXPCounter.TabIndex = 32;
             // 
             // nextEXPLabel
             // 
+            this.nextEXPLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nextEXPLabel.AutoSize = true;
             this.nextEXPLabel.Location = new System.Drawing.Point(214, 124);
             this.nextEXPLabel.Name = "nextEXPLabel";
@@ -1391,6 +1679,7 @@
             // 
             // levelStatBox
             // 
+            this.levelStatBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.levelStatBox.Controls.Add(this.levelAPLabel);
             this.levelStatBox.Controls.Add(this.levelAPCounter);
             this.levelStatBox.Controls.Add(this.levelMagicLabel);
@@ -1401,7 +1690,7 @@
             this.levelStatBox.Controls.Add(this.levelStrengthCounter);
             this.levelStatBox.Location = new System.Drawing.Point(212, 19);
             this.levelStatBox.Name = "levelStatBox";
-            this.levelStatBox.Size = new System.Drawing.Size(158, 102);
+            this.levelStatBox.Size = new System.Drawing.Size(267, 102);
             this.levelStatBox.TabIndex = 29;
             this.levelStatBox.TabStop = false;
             this.levelStatBox.Text = "Stats";
@@ -1492,6 +1781,7 @@
             // 
             // levelShieldBox
             // 
+            this.levelShieldBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.levelShieldBox.Controls.Add(this.shieldRewardLabel);
             this.levelShieldBox.Controls.Add(this.shieldRewardComboBox);
             this.levelShieldBox.Controls.Add(this.shieldRewardTypeLabel);
@@ -1540,6 +1830,7 @@
             // 
             // levelStaffBox
             // 
+            this.levelStaffBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.levelStaffBox.Controls.Add(this.staffRewardLabel);
             this.levelStaffBox.Controls.Add(this.staffRewardComboBox);
             this.levelStaffBox.Controls.Add(this.staffRewardTypeLabel);
@@ -1588,6 +1879,7 @@
             // 
             // levelDefaultButton
             // 
+            this.levelDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.levelDefaultButton.Location = new System.Drawing.Point(1088, 525);
             this.levelDefaultButton.Name = "levelDefaultButton";
             this.levelDefaultButton.Size = new System.Drawing.Size(137, 23);
@@ -1598,6 +1890,7 @@
             // 
             // levelReplaceButton
             // 
+            this.levelReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.levelReplaceButton.Location = new System.Drawing.Point(1088, 496);
             this.levelReplaceButton.Name = "levelReplaceButton";
             this.levelReplaceButton.Size = new System.Drawing.Size(137, 23);
@@ -1606,8 +1899,402 @@
             this.levelReplaceButton.UseVisualStyleBackColor = true;
             this.levelReplaceButton.Click += new System.EventHandler(this.levelReplaceButton_Click);
             // 
+            // otherPage
+            // 
+            this.otherPage.Controls.Add(this.cheatBox);
+            this.otherPage.Controls.Add(this.startingGearBox);
+            this.otherPage.Controls.Add(this.startingStatsBox);
+            this.otherPage.Controls.Add(this.critExtraBox);
+            this.otherPage.Location = new System.Drawing.Point(4, 22);
+            this.otherPage.Name = "otherPage";
+            this.otherPage.Padding = new System.Windows.Forms.Padding(3);
+            this.otherPage.Size = new System.Drawing.Size(1231, 554);
+            this.otherPage.TabIndex = 7;
+            this.otherPage.Text = "Other";
+            this.otherPage.UseVisualStyleBackColor = true;
+            // 
+            // cheatBox
+            // 
+            this.cheatBox.Controls.Add(this.cheatApplyButton);
+            this.cheatBox.Controls.Add(this.cheatDataGridView);
+            this.cheatBox.Location = new System.Drawing.Point(914, 9);
+            this.cheatBox.Name = "cheatBox";
+            this.cheatBox.Size = new System.Drawing.Size(311, 287);
+            this.cheatBox.TabIndex = 5;
+            this.cheatBox.TabStop = false;
+            this.cheatBox.Text = "Cheats";
+            // 
+            // cheatApplyButton
+            // 
+            this.cheatApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cheatApplyButton.Location = new System.Drawing.Point(6, 258);
+            this.cheatApplyButton.Name = "cheatApplyButton";
+            this.cheatApplyButton.Size = new System.Drawing.Size(299, 23);
+            this.cheatApplyButton.TabIndex = 33;
+            this.cheatApplyButton.Text = "Apply";
+            this.cheatApplyButton.UseVisualStyleBackColor = true;
+            this.cheatApplyButton.Click += new System.EventHandler(this.cheatApplyButton_Click);
+            // 
+            // cheatDataGridView
+            // 
+            this.cheatDataGridView.AllowUserToAddRows = false;
+            this.cheatDataGridView.AllowUserToDeleteRows = false;
+            this.cheatDataGridView.AllowUserToResizeColumns = false;
+            this.cheatDataGridView.AllowUserToResizeRows = false;
+            this.cheatDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cheatDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.cheatDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cheatDataGridView.ColumnHeadersVisible = false;
+            this.cheatDataGridView.Location = new System.Drawing.Point(6, 19);
+            this.cheatDataGridView.MultiSelect = false;
+            this.cheatDataGridView.Name = "cheatDataGridView";
+            this.cheatDataGridView.RowHeadersVisible = false;
+            this.cheatDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cheatDataGridView.Size = new System.Drawing.Size(299, 233);
+            this.cheatDataGridView.TabIndex = 4;
+            // 
+            // startingGearBox
+            // 
+            this.startingGearBox.Controls.Add(this.startingAccessoryCheckBox);
+            this.startingGearBox.Controls.Add(this.startingArmorCheckBox);
+            this.startingGearBox.Controls.Add(this.startingKeybladeCheckBox);
+            this.startingGearBox.Controls.Add(this.startingGearDefaultButton);
+            this.startingGearBox.Controls.Add(this.startingGearReplaceButton);
+            this.startingGearBox.Controls.Add(this.startingMunnyCounter);
+            this.startingGearBox.Controls.Add(this.startingMunnyLabel);
+            this.startingGearBox.Controls.Add(this.startingAccessoryComboBox);
+            this.startingGearBox.Controls.Add(this.startingArmorComboBox);
+            this.startingGearBox.Controls.Add(this.startingKeybladeComboBox);
+            this.startingGearBox.Location = new System.Drawing.Point(486, 6);
+            this.startingGearBox.Name = "startingGearBox";
+            this.startingGearBox.Size = new System.Drawing.Size(208, 271);
+            this.startingGearBox.TabIndex = 3;
+            this.startingGearBox.TabStop = false;
+            this.startingGearBox.Text = "Starting Gear";
+            // 
+            // startingAccessoryCheckBox
+            // 
+            this.startingAccessoryCheckBox.AutoSize = true;
+            this.startingAccessoryCheckBox.Location = new System.Drawing.Point(7, 113);
+            this.startingAccessoryCheckBox.Name = "startingAccessoryCheckBox";
+            this.startingAccessoryCheckBox.Size = new System.Drawing.Size(114, 17);
+            this.startingAccessoryCheckBox.TabIndex = 35;
+            this.startingAccessoryCheckBox.Text = "Starting Accessory";
+            this.startingAccessoryCheckBox.UseVisualStyleBackColor = true;
+            this.startingAccessoryCheckBox.CheckStateChanged += new System.EventHandler(this.startingAccessoryCheckBox_CheckStateChanged);
+            // 
+            // startingArmorCheckBox
+            // 
+            this.startingArmorCheckBox.AutoSize = true;
+            this.startingArmorCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.startingArmorCheckBox.Location = new System.Drawing.Point(6, 64);
+            this.startingArmorCheckBox.Name = "startingArmorCheckBox";
+            this.startingArmorCheckBox.Size = new System.Drawing.Size(92, 17);
+            this.startingArmorCheckBox.TabIndex = 34;
+            this.startingArmorCheckBox.Text = "Starting Armor";
+            this.startingArmorCheckBox.UseVisualStyleBackColor = false;
+            this.startingArmorCheckBox.CheckStateChanged += new System.EventHandler(this.startingArmorCheckBox_CheckStateChanged);
+            // 
+            // startingKeybladeCheckBox
+            // 
+            this.startingKeybladeCheckBox.AutoSize = true;
+            this.startingKeybladeCheckBox.Location = new System.Drawing.Point(7, 20);
+            this.startingKeybladeCheckBox.Name = "startingKeybladeCheckBox";
+            this.startingKeybladeCheckBox.Size = new System.Drawing.Size(109, 17);
+            this.startingKeybladeCheckBox.TabIndex = 33;
+            this.startingKeybladeCheckBox.Text = "Starting Keyblade";
+            this.startingKeybladeCheckBox.UseVisualStyleBackColor = true;
+            this.startingKeybladeCheckBox.CheckStateChanged += new System.EventHandler(this.startingKeybladeCheckBox_CheckStateChanged);
+            // 
+            // startingGearDefaultButton
+            // 
+            this.startingGearDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startingGearDefaultButton.Location = new System.Drawing.Point(7, 242);
+            this.startingGearDefaultButton.Name = "startingGearDefaultButton";
+            this.startingGearDefaultButton.Size = new System.Drawing.Size(195, 23);
+            this.startingGearDefaultButton.TabIndex = 32;
+            this.startingGearDefaultButton.Text = "Default";
+            this.startingGearDefaultButton.UseVisualStyleBackColor = true;
+            this.startingGearDefaultButton.Click += new System.EventHandler(this.startingGearDefaultButton_Click);
+            // 
+            // startingGearReplaceButton
+            // 
+            this.startingGearReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startingGearReplaceButton.Location = new System.Drawing.Point(7, 213);
+            this.startingGearReplaceButton.Name = "startingGearReplaceButton";
+            this.startingGearReplaceButton.Size = new System.Drawing.Size(195, 23);
+            this.startingGearReplaceButton.TabIndex = 31;
+            this.startingGearReplaceButton.Text = "Replace";
+            this.startingGearReplaceButton.UseVisualStyleBackColor = true;
+            this.startingGearReplaceButton.Click += new System.EventHandler(this.startingGearReplaceButton_Click);
+            // 
+            // startingMunnyCounter
+            // 
+            this.startingMunnyCounter.Location = new System.Drawing.Point(6, 184);
+            this.startingMunnyCounter.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.startingMunnyCounter.Name = "startingMunnyCounter";
+            this.startingMunnyCounter.Size = new System.Drawing.Size(195, 20);
+            this.startingMunnyCounter.TabIndex = 10;
+            // 
+            // startingMunnyLabel
+            // 
+            this.startingMunnyLabel.AutoSize = true;
+            this.startingMunnyLabel.Location = new System.Drawing.Point(3, 168);
+            this.startingMunnyLabel.Name = "startingMunnyLabel";
+            this.startingMunnyLabel.Size = new System.Drawing.Size(78, 13);
+            this.startingMunnyLabel.TabIndex = 9;
+            this.startingMunnyLabel.Text = "Starting Munny";
+            // 
+            // startingAccessoryComboBox
+            // 
+            this.startingAccessoryComboBox.Enabled = false;
+            this.startingAccessoryComboBox.FormattingEnabled = true;
+            this.startingAccessoryComboBox.Location = new System.Drawing.Point(6, 136);
+            this.startingAccessoryComboBox.Name = "startingAccessoryComboBox";
+            this.startingAccessoryComboBox.Size = new System.Drawing.Size(195, 21);
+            this.startingAccessoryComboBox.TabIndex = 8;
+            // 
+            // startingArmorComboBox
+            // 
+            this.startingArmorComboBox.Enabled = false;
+            this.startingArmorComboBox.FormattingEnabled = true;
+            this.startingArmorComboBox.Location = new System.Drawing.Point(6, 86);
+            this.startingArmorComboBox.Name = "startingArmorComboBox";
+            this.startingArmorComboBox.Size = new System.Drawing.Size(195, 21);
+            this.startingArmorComboBox.TabIndex = 7;
+            // 
+            // startingKeybladeComboBox
+            // 
+            this.startingKeybladeComboBox.Enabled = false;
+            this.startingKeybladeComboBox.FormattingEnabled = true;
+            this.startingKeybladeComboBox.Location = new System.Drawing.Point(7, 37);
+            this.startingKeybladeComboBox.Name = "startingKeybladeComboBox";
+            this.startingKeybladeComboBox.Size = new System.Drawing.Size(195, 21);
+            this.startingKeybladeComboBox.TabIndex = 6;
+            // 
+            // startingStatsBox
+            // 
+            this.startingStatsBox.Controls.Add(this.startingStatsDefaultButton);
+            this.startingStatsBox.Controls.Add(this.startingStatsReplaceButton);
+            this.startingStatsBox.Controls.Add(this.startingDriveCounter);
+            this.startingStatsBox.Controls.Add(this.startingDriveLabel);
+            this.startingStatsBox.Controls.Add(this.startingMPCounter);
+            this.startingStatsBox.Controls.Add(this.startingMPLabel);
+            this.startingStatsBox.Controls.Add(this.startingHPCounter);
+            this.startingStatsBox.Controls.Add(this.startingHPLabel);
+            this.startingStatsBox.Location = new System.Drawing.Point(700, 6);
+            this.startingStatsBox.Name = "startingStatsBox";
+            this.startingStatsBox.Size = new System.Drawing.Size(208, 213);
+            this.startingStatsBox.TabIndex = 2;
+            this.startingStatsBox.TabStop = false;
+            this.startingStatsBox.Text = "Starting Stats";
+            // 
+            // startingStatsDefaultButton
+            // 
+            this.startingStatsDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startingStatsDefaultButton.Location = new System.Drawing.Point(6, 184);
+            this.startingStatsDefaultButton.Name = "startingStatsDefaultButton";
+            this.startingStatsDefaultButton.Size = new System.Drawing.Size(196, 23);
+            this.startingStatsDefaultButton.TabIndex = 32;
+            this.startingStatsDefaultButton.Text = "Default";
+            this.startingStatsDefaultButton.UseVisualStyleBackColor = true;
+            this.startingStatsDefaultButton.Click += new System.EventHandler(this.startingStatsDefaultButton_Click);
+            // 
+            // startingStatsReplaceButton
+            // 
+            this.startingStatsReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startingStatsReplaceButton.Location = new System.Drawing.Point(6, 155);
+            this.startingStatsReplaceButton.Name = "startingStatsReplaceButton";
+            this.startingStatsReplaceButton.Size = new System.Drawing.Size(196, 23);
+            this.startingStatsReplaceButton.TabIndex = 31;
+            this.startingStatsReplaceButton.Text = "Replace";
+            this.startingStatsReplaceButton.UseVisualStyleBackColor = true;
+            this.startingStatsReplaceButton.Click += new System.EventHandler(this.startingStatsReplaceButton_Click);
+            // 
+            // startingDriveCounter
+            // 
+            this.startingDriveCounter.Location = new System.Drawing.Point(7, 117);
+            this.startingDriveCounter.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.startingDriveCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.startingDriveCounter.Name = "startingDriveCounter";
+            this.startingDriveCounter.Size = new System.Drawing.Size(195, 20);
+            this.startingDriveCounter.TabIndex = 5;
+            this.startingDriveCounter.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // startingDriveLabel
+            // 
+            this.startingDriveLabel.AutoSize = true;
+            this.startingDriveLabel.Location = new System.Drawing.Point(7, 100);
+            this.startingDriveLabel.Name = "startingDriveLabel";
+            this.startingDriveLabel.Size = new System.Drawing.Size(32, 13);
+            this.startingDriveLabel.TabIndex = 4;
+            this.startingDriveLabel.Text = "Drive";
+            // 
+            // startingMPCounter
+            // 
+            this.startingMPCounter.Location = new System.Drawing.Point(7, 77);
+            this.startingMPCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.startingMPCounter.Name = "startingMPCounter";
+            this.startingMPCounter.Size = new System.Drawing.Size(195, 20);
+            this.startingMPCounter.TabIndex = 3;
+            // 
+            // startingMPLabel
+            // 
+            this.startingMPLabel.AutoSize = true;
+            this.startingMPLabel.Location = new System.Drawing.Point(7, 60);
+            this.startingMPLabel.Name = "startingMPLabel";
+            this.startingMPLabel.Size = new System.Drawing.Size(23, 13);
+            this.startingMPLabel.TabIndex = 2;
+            this.startingMPLabel.Text = "MP";
+            // 
+            // startingHPCounter
+            // 
+            this.startingHPCounter.Location = new System.Drawing.Point(7, 37);
+            this.startingHPCounter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.startingHPCounter.Name = "startingHPCounter";
+            this.startingHPCounter.Size = new System.Drawing.Size(195, 20);
+            this.startingHPCounter.TabIndex = 1;
+            // 
+            // startingHPLabel
+            // 
+            this.startingHPLabel.AutoSize = true;
+            this.startingHPLabel.Location = new System.Drawing.Point(7, 20);
+            this.startingHPLabel.Name = "startingHPLabel";
+            this.startingHPLabel.Size = new System.Drawing.Size(22, 13);
+            this.startingHPLabel.TabIndex = 0;
+            this.startingHPLabel.Text = "HP";
+            // 
+            // critExtraBox
+            // 
+            this.critExtraBox.Controls.Add(this.criticalDataGridView);
+            this.critExtraBox.Controls.Add(this.CritExtraDefaultButton);
+            this.critExtraBox.Controls.Add(this.critExtraReplaceButton);
+            this.critExtraBox.Controls.Add(this.critExtraReplacementBox);
+            this.critExtraBox.Location = new System.Drawing.Point(6, 6);
+            this.critExtraBox.Name = "critExtraBox";
+            this.critExtraBox.Size = new System.Drawing.Size(474, 337);
+            this.critExtraBox.TabIndex = 0;
+            this.critExtraBox.TabStop = false;
+            this.critExtraBox.Text = "Critical Mode Extra Abilities";
+            // 
+            // criticalDataGridView
+            // 
+            this.criticalDataGridView.AllowUserToAddRows = false;
+            this.criticalDataGridView.AllowUserToDeleteRows = false;
+            this.criticalDataGridView.AllowUserToResizeColumns = false;
+            this.criticalDataGridView.AllowUserToResizeRows = false;
+            this.criticalDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.criticalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.criticalDataGridView.Location = new System.Drawing.Point(6, 19);
+            this.criticalDataGridView.MultiSelect = false;
+            this.criticalDataGridView.Name = "criticalDataGridView";
+            this.criticalDataGridView.ReadOnly = true;
+            this.criticalDataGridView.RowHeadersVisible = false;
+            this.criticalDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.criticalDataGridView.Size = new System.Drawing.Size(462, 177);
+            this.criticalDataGridView.TabIndex = 31;
+            this.criticalDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.criticalDataGridView_CellFormatting);
+            // 
+            // CritExtraDefaultButton
+            // 
+            this.CritExtraDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritExtraDefaultButton.Location = new System.Drawing.Point(273, 308);
+            this.CritExtraDefaultButton.Name = "CritExtraDefaultButton";
+            this.CritExtraDefaultButton.Size = new System.Drawing.Size(196, 23);
+            this.CritExtraDefaultButton.TabIndex = 30;
+            this.CritExtraDefaultButton.Text = "Default";
+            this.CritExtraDefaultButton.UseVisualStyleBackColor = true;
+            this.CritExtraDefaultButton.Click += new System.EventHandler(this.CritExtraDefaultButton_Click);
+            // 
+            // critExtraReplaceButton
+            // 
+            this.critExtraReplaceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.critExtraReplaceButton.Location = new System.Drawing.Point(273, 279);
+            this.critExtraReplaceButton.Name = "critExtraReplaceButton";
+            this.critExtraReplaceButton.Size = new System.Drawing.Size(196, 23);
+            this.critExtraReplaceButton.TabIndex = 29;
+            this.critExtraReplaceButton.Text = "Replace";
+            this.critExtraReplaceButton.UseVisualStyleBackColor = true;
+            this.critExtraReplaceButton.Click += new System.EventHandler(this.critExtraReplaceButton_Click);
+            // 
+            // critExtraReplacementBox
+            // 
+            this.critExtraReplacementBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.critExtraReplacementBox.Controls.Add(this.critExtraRewardLabel);
+            this.critExtraReplacementBox.Controls.Add(this.critExtraRewardComboBox);
+            this.critExtraReplacementBox.Controls.Add(this.critExtraRewardTypeLabel);
+            this.critExtraReplacementBox.Controls.Add(this.critExtraRewardTypeComboBox);
+            this.critExtraReplacementBox.Location = new System.Drawing.Point(6, 198);
+            this.critExtraReplacementBox.Name = "critExtraReplacementBox";
+            this.critExtraReplacementBox.Size = new System.Drawing.Size(196, 133);
+            this.critExtraReplacementBox.TabIndex = 21;
+            this.critExtraReplacementBox.TabStop = false;
+            this.critExtraReplacementBox.Text = "Reward";
+            // 
+            // critExtraRewardLabel
+            // 
+            this.critExtraRewardLabel.AutoSize = true;
+            this.critExtraRewardLabel.Location = new System.Drawing.Point(6, 79);
+            this.critExtraRewardLabel.Name = "critExtraRewardLabel";
+            this.critExtraRewardLabel.Size = new System.Drawing.Size(44, 13);
+            this.critExtraRewardLabel.TabIndex = 18;
+            this.critExtraRewardLabel.Text = "Reward";
+            // 
+            // critExtraRewardComboBox
+            // 
+            this.critExtraRewardComboBox.FormattingEnabled = true;
+            this.critExtraRewardComboBox.Location = new System.Drawing.Point(6, 95);
+            this.critExtraRewardComboBox.Name = "critExtraRewardComboBox";
+            this.critExtraRewardComboBox.Size = new System.Drawing.Size(184, 21);
+            this.critExtraRewardComboBox.TabIndex = 19;
+            // 
+            // critExtraRewardTypeLabel
+            // 
+            this.critExtraRewardTypeLabel.AutoSize = true;
+            this.critExtraRewardTypeLabel.Location = new System.Drawing.Point(6, 26);
+            this.critExtraRewardTypeLabel.Name = "critExtraRewardTypeLabel";
+            this.critExtraRewardTypeLabel.Size = new System.Drawing.Size(71, 13);
+            this.critExtraRewardTypeLabel.TabIndex = 16;
+            this.critExtraRewardTypeLabel.Text = "Reward Type";
+            // 
+            // critExtraRewardTypeComboBox
+            // 
+            this.critExtraRewardTypeComboBox.FormattingEnabled = true;
+            this.critExtraRewardTypeComboBox.Location = new System.Drawing.Point(6, 42);
+            this.critExtraRewardTypeComboBox.Name = "critExtraRewardTypeComboBox";
+            this.critExtraRewardTypeComboBox.Size = new System.Drawing.Size(184, 21);
+            this.critExtraRewardTypeComboBox.TabIndex = 17;
+            this.critExtraRewardTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.critExtraRewardTypeComboBox_SelectedIndexChanged);
+            // 
             // patchSelectorComboBox
             // 
+            this.patchSelectorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.patchSelectorComboBox.FormattingEnabled = true;
             this.patchSelectorComboBox.Location = new System.Drawing.Point(811, 607);
             this.patchSelectorComboBox.Name = "patchSelectorComboBox";
@@ -1616,6 +2303,7 @@
             // 
             // saveButton
             // 
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveButton.Location = new System.Drawing.Point(1105, 607);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(137, 23);
@@ -1626,6 +2314,7 @@
             // 
             // helpButton
             // 
+            this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.helpButton.Location = new System.Drawing.Point(13, 607);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(75, 23);
@@ -1656,6 +2345,7 @@
             this.popupWorldSelectorBox.ResumeLayout(false);
             this.formPage.ResumeLayout(false);
             this.formPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.formExpToNextLevelCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formDataGridView)).EndInit();
             this.formSelectorBox.ResumeLayout(false);
             this.equipmentPage.ResumeLayout(false);
@@ -1680,7 +2370,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataGridView)).EndInit();
             this.equipmentTypeBox.ResumeLayout(false);
             this.bonusPage.ResumeLayout(false);
-            this.bonusPage.PerformLayout();
+            this.bonusCharacterSelectorBox.ResumeLayout(false);
+            this.bonusStatBox.ResumeLayout(false);
+            this.bonusStatBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bonusDriveCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bonusItemCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bonusAccessoryCounter)).EndInit();
@@ -1710,6 +2402,21 @@
             this.levelShieldBox.PerformLayout();
             this.levelStaffBox.ResumeLayout(false);
             this.levelStaffBox.PerformLayout();
+            this.otherPage.ResumeLayout(false);
+            this.cheatBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cheatDataGridView)).EndInit();
+            this.startingGearBox.ResumeLayout(false);
+            this.startingGearBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startingMunnyCounter)).EndInit();
+            this.startingStatsBox.ResumeLayout(false);
+            this.startingStatsBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startingDriveCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingMPCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingHPCounter)).EndInit();
+            this.critExtraBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.criticalDataGridView)).EndInit();
+            this.critExtraReplacementBox.ResumeLayout(false);
+            this.critExtraReplacementBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1720,7 +2427,6 @@
         private System.Windows.Forms.TabPage chestPage;
         private System.Windows.Forms.TabPage popupPage;
         private System.Windows.Forms.TabPage equipmentPage;
-        private System.Windows.Forms.TabPage bonusPage;
         private System.Windows.Forms.TabPage formPage;
         private System.Windows.Forms.DataGridView chestDataGridView;
         private System.Windows.Forms.GroupBox chestsWorldSelectorBox;
@@ -1766,33 +2472,6 @@
         private System.Windows.Forms.DataGridView formDataGridView;
         private System.Windows.Forms.GroupBox formSelectorBox;
         private System.Windows.Forms.ComboBox formSelectorComboBox;
-        private System.Windows.Forms.Button bonusDefaultButton;
-        private System.Windows.Forms.Button bonusReplaceButton;
-        private System.Windows.Forms.DataGridView bonusDataGridView;
-        private System.Windows.Forms.GroupBox bonusWorldSelectorBox;
-        private System.Windows.Forms.ComboBox bonusWorldSelectorComboBox;
-        private System.Windows.Forms.GroupBox bonusRewardBox1;
-        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox1;
-        private System.Windows.Forms.Label bonusRewardTypeLabel1;
-        private System.Windows.Forms.Label bonusRewardLabel1;
-        private System.Windows.Forms.ComboBox bonusRewardComboBox1;
-        private System.Windows.Forms.GroupBox bonusRewardBox2;
-        private System.Windows.Forms.Label bonusRewardLabel2;
-        private System.Windows.Forms.ComboBox bonusRewardComboBox2;
-        private System.Windows.Forms.Label bonusRewardTypeLabel2;
-        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox2;
-        private System.Windows.Forms.NumericUpDown bonusAccessoryCounter;
-        private System.Windows.Forms.Label bonusAccessoryLabel;
-        private System.Windows.Forms.NumericUpDown bonusArmorCounter;
-        private System.Windows.Forms.Label bonusArmorLabel;
-        private System.Windows.Forms.NumericUpDown bonusMPCounter;
-        private System.Windows.Forms.Label bonusMPLabel;
-        private System.Windows.Forms.NumericUpDown bonusHPCounter;
-        private System.Windows.Forms.Label bonusHPLabel;
-        private System.Windows.Forms.NumericUpDown bonusDriveCounter;
-        private System.Windows.Forms.Label bonusDriveLabel;
-        private System.Windows.Forms.NumericUpDown bonusItemCounter;
-        private System.Windows.Forms.Label bonusItemLabel;
         private System.Windows.Forms.ComboBox patchSelectorComboBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.GroupBox equipmentStatBox;
@@ -1845,5 +2524,79 @@
         private System.Windows.Forms.DataGridView levelDataGridView;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.TextBox levelHelpTextBox;
+        private System.Windows.Forms.NumericUpDown formExpToNextLevelCounter;
+        private System.Windows.Forms.Label formExpToNextLevelLabel;
+        private System.Windows.Forms.ComboBox formExpComboBox;
+        private System.Windows.Forms.Label formExpLabel;
+        private System.Windows.Forms.TabPage otherPage;
+        private System.Windows.Forms.GroupBox critExtraBox;
+        private System.Windows.Forms.Button CritExtraDefaultButton;
+        private System.Windows.Forms.Button critExtraReplaceButton;
+        private System.Windows.Forms.GroupBox critExtraReplacementBox;
+        private System.Windows.Forms.Label critExtraRewardLabel;
+        private System.Windows.Forms.ComboBox critExtraRewardComboBox;
+        private System.Windows.Forms.Label critExtraRewardTypeLabel;
+        private System.Windows.Forms.ComboBox critExtraRewardTypeComboBox;
+        private System.Windows.Forms.GroupBox startingStatsBox;
+        private System.Windows.Forms.NumericUpDown startingDriveCounter;
+        private System.Windows.Forms.Label startingDriveLabel;
+        private System.Windows.Forms.NumericUpDown startingMPCounter;
+        private System.Windows.Forms.Label startingMPLabel;
+        private System.Windows.Forms.NumericUpDown startingHPCounter;
+        private System.Windows.Forms.Label startingHPLabel;
+        private System.Windows.Forms.GroupBox startingGearBox;
+        private System.Windows.Forms.Button startingGearDefaultButton;
+        private System.Windows.Forms.Button startingGearReplaceButton;
+        private System.Windows.Forms.NumericUpDown startingMunnyCounter;
+        private System.Windows.Forms.Label startingMunnyLabel;
+        private System.Windows.Forms.ComboBox startingAccessoryComboBox;
+        private System.Windows.Forms.ComboBox startingArmorComboBox;
+        private System.Windows.Forms.ComboBox startingKeybladeComboBox;
+        private System.Windows.Forms.Button startingStatsDefaultButton;
+        private System.Windows.Forms.Button startingStatsReplaceButton;
+        private System.Windows.Forms.DataGridView criticalDataGridView;
+        private System.Windows.Forms.CheckBox startingAccessoryCheckBox;
+        private System.Windows.Forms.CheckBox startingArmorCheckBox;
+        private System.Windows.Forms.CheckBox startingKeybladeCheckBox;
+        private System.Windows.Forms.GroupBox cheatBox;
+        private System.Windows.Forms.DataGridView cheatDataGridView;
+        private System.Windows.Forms.Button cheatApplyButton;
+        private System.Windows.Forms.TabPage bonusPage;
+        private System.Windows.Forms.GroupBox bonusCharacterSelectorBox;
+        private System.Windows.Forms.ComboBox bonusCharacterSelectorComboBox;
+        private System.Windows.Forms.GroupBox bonusStatBox;
+        private System.Windows.Forms.NumericUpDown bonusDriveCounter;
+        private System.Windows.Forms.Label bonusDriveLabel;
+        private System.Windows.Forms.NumericUpDown bonusItemCounter;
+        private System.Windows.Forms.Label bonusItemLabel;
+        private System.Windows.Forms.NumericUpDown bonusAccessoryCounter;
+        private System.Windows.Forms.Label bonusAccessoryLabel;
+        private System.Windows.Forms.NumericUpDown bonusArmorCounter;
+        private System.Windows.Forms.Label bonusArmorLabel;
+        private System.Windows.Forms.NumericUpDown bonusMPCounter;
+        private System.Windows.Forms.Label bonusMPLabel;
+        private System.Windows.Forms.NumericUpDown bonusHPCounter;
+        private System.Windows.Forms.Label bonusHPLabel;
+        private System.Windows.Forms.GroupBox bonusRewardBox2;
+        private System.Windows.Forms.Label bonusRewardLabel2;
+        private System.Windows.Forms.ComboBox bonusRewardComboBox2;
+        private System.Windows.Forms.Label bonusRewardTypeLabel2;
+        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox2;
+        private System.Windows.Forms.GroupBox bonusRewardBox1;
+        private System.Windows.Forms.Label bonusRewardLabel1;
+        private System.Windows.Forms.ComboBox bonusRewardComboBox1;
+        private System.Windows.Forms.Label bonusRewardTypeLabel1;
+        private System.Windows.Forms.ComboBox bonusRewardTypeComboBox1;
+        private System.Windows.Forms.Button bonusDefaultButton;
+        private System.Windows.Forms.Button bonusReplaceButton;
+        private System.Windows.Forms.DataGridView bonusDataGridView;
+        private System.Windows.Forms.GroupBox bonusWorldSelectorBox;
+        private System.Windows.Forms.ComboBox bonusWorldSelectorComboBox;
+        private System.Windows.Forms.TextBox bonusCurrentAccessorySlotTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentArmorSlotTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentMPTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentItemSlotTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentDriveTextBox;
+        private System.Windows.Forms.TextBox bonusCurrentHPTextBox;
     }
 }

@@ -1,0 +1,228 @@
+// Agrabah
+Escort Abu
+11D10DC2
+21D10DC4
+21D10DC8
+Donald Blizzard
+Treasure Room Heartless
+11D10E62
+21D10E64
+21D10E68
+HP +4
+Volcanic Lord & Blizzard Lord
+11D10CF2
+21D10CF4
+21D10CF8
+HP +4
+Lexaeus (Absent Silhouette)
+11D11132
+21D11134
+21D11138
+HP +3
+// Atlantica
+// Beast's Castle
+Thresholder
+11D10762
+21D10764
+21D10768
+Donald Fire
+The Beast
+11D10952
+21D10954
+21D10958
+HP +4
+Dark Thorn
+11D10792
+21D10794
+21D10798
+HP +4
+Xaldin
+11D107D2
+21D107D4
+21D107D8
+Auto Healing
+// Cavern of Remembrance
+Transport to Remembrance Nobodies III
+11D11252
+21D11254
+21D11258
+HP +3
+// Disney Castle
+Marluxia (Absent Silhouette)
+11D11192
+21D11194
+21D11198
+HP +3
+Lingering Will
+11D11202
+21D11204
+21D11208
+HP +3
+// Halloween Town
+Prison Keeper
+11D109F2
+21D109F4
+21D109F8
+Hyper Healing
+Oogie Boogie
+11D10A32
+21D10A34
+21D10A38
+HP +4
+Lock/Shock/Barrel
+11D10D82
+21D10D84
+21D10D88
+HP +4
+The Experiment
+11D10A72
+21D10A74
+21D10A78
+Jackpot
+Vexen (Absent Silhouette)
+11D11102
+21D11104
+21D11108
+HP +3
+// Hollow Bastion
+Demyx (Hollow Bastion)
+11D10BB2
+21D10BB4
+21D10BB8
+Blizzard Boost
+// Land of Dragons
+Shan-Yu
+11D108D2
+21D108D4
+21D108D8
+HP +4
+Storm Rider
+11D10912
+21D10914
+21D10918
+HP +4
+// Olympus Coliseum
+Demyx (Olympus Coliseum)
+11D11002
+21D11004
+21D11008
+MP Rage
+Pete (Olympus Coliseum)
+11D10832
+21D10834
+21D10838
+HP +4
+The Hydra
+11D10862
+21D10864
+21D10868
+Armor Slot +
+Hades
+11D10892
+21D10894
+21D10898
+Accessory Slot +
+Zexion (Absent Silhouette)
+11D11162
+21D11164
+21D11168
+HP +3
+// Olympus Cups
+// 100 Acre Wood
+// Port Royal
+The Interceptor Pirates
+11D110C2
+21D110C4
+21D110C8
+Draw
+The Interceptor Barrels
+11D10D42
+21D10D44
+21D10D48
+HP +4
+Captain Barbossa
+11D10AB2
+21D10AB4
+21D10AB8
+HP +4
+Grim Reaper I
+11D11032
+21D11034
+21D11038
+HP +4
+Grim Reaper II
+11D10AF2
+21D10AF4
+21D10AF8
+Flare Force
+// Pride Lands
+Hyenas I
+11D10EB2
+21D10EB4
+21D10EB8
+HP +4
+Scar
+11D10BE2
+21D10BE4
+21D10BE8
+Fire Boost
+Hyenas II
+11D10EE2
+21D10EE4
+21D10EE8
+HP +4
+// Simulated Twilight Town
+// Space Paranoids
+Dataspace Computers
+11D10E22
+21D10E24
+21D10E28
+Thunder Boost
+Hostile Program
+11D10C42
+21D10C44
+21D10C48
+HP +4
+Solar Sailor Heartless
+11D11082
+21D11084
+21D11088
+MP Hastera
+MCP
+11D10C82
+21D10C84
+21D10C88
+HP +4
+Larxene (Absent Silhouette)
+11D111C2
+21D111C4
+21D111C8
+Item Slot +
+// Timeless River
+Pete (Steamboat Fight)
+11D10992
+21D10994
+21D10998
+Fantasia / Auto Limit
+Pete (Timeless River)
+11D109C2
+21D109C4
+21D109C8
+HP +4
+// Twilight Town
+The Old Mansion Nobodies
+11D10FC2
+21D10FC4
+21D10FC8
+Lucky Lucky
+// The World that Never Was
+Xigbar
+11D10B32
+21D10B34
+21D10B38
+Item Slot +
+Saix
+11D10B72
+21D10B74
+21D10B78
+HP +4

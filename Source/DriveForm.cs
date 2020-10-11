@@ -9,7 +9,7 @@ namespace Plandomizer
     class DriveForm
 	{
 		[System.ComponentModel.DisplayName("Drive Form Level")]
-		public string form
+		public string level
 		{ get; set; }
 		[System.ComponentModel.DisplayName("Original Ability")]
 		public string originalAbility
@@ -17,29 +17,53 @@ namespace Plandomizer
 		[System.ComponentModel.DisplayName("Replacement")]
 		public string replacement
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Original Experience to This Level")]
+		public int originalExp
+		{ get; set; }
+		[System.ComponentModel.DisplayName("Replaced Experience to This Level")]
+		public int newExp
+		{ get; set; }
+		public string expAddress
+		{ get; set; }
 		public string originalAddress
 		{ get; set; }
 		public string replacementAddress
 		{ get; set; }
 		public bool changed
 		{ get; set; }
+		public bool expChanged
+		{ get; set; }
 
-		public DriveForm(string f, string oAb, string oAd)
+		public DriveForm(string l, string oAb, string oAd, string eA, int oE)
 		{
-			form = f;
+			level = l;
 			originalAbility = oAb;
+			expAddress = eA;
+			originalExp = oE;
+			newExp = oE;
 			replacement = "";
 			originalAddress = oAd;
 			replacementAddress = "";
 			changed = false;
+			expChanged = false;
 		}
 
-		public string toString()
+		public string toStringAbility()
 		{
 			string ret = "";
 			if (changed)
-				// ret += "patch=1,EE," + originalAddress + ",extended,0000" + replacementAddress + "// " + form + ", " + originalAbility + "\n";
-				ret += "patch=1,EE," + originalAddress + ",extended,0000" + replacementAddress + " // " + form + ", " + originalAbility + " is now " + replacement + "\n";
+				ret += "patch=1,EE," + originalAddress + ",extended,0000" + replacementAddress + " // " + level + ", " + originalAbility + " is now " + replacement + "\n";
+			return ret;
+		}
+
+		public string toStringExp()
+		{
+			string ret = "";
+			if (expChanged)
+				ret += "patch=1,EE," + expAddress + ",extended," + newExp.ToString("X8") + " // " + newExp + " experience is required to reach " + level + "\n";
+			/*else
+				if(multiplier != 1)
+					ret += "patch=1,EE," + expAddress + ",extended," + (multiplier * originalExp).ToString("X8") + " // " + newExp + " experience is required to reach " + level + "\n";*/
 			return ret;
 		}
 	}

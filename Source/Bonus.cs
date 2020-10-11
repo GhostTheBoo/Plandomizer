@@ -8,6 +8,8 @@ namespace Plandomizer
 {
     class Bonus
 	{
+		public string character
+		{ get; set; }
 		[System.ComponentModel.DisplayName("Fight")]
 		public string fight
 		{ get; set; }
@@ -30,23 +32,30 @@ namespace Plandomizer
 		{ get; set; }
 		public string replacementRewardAddress2
 		{ get; set; }
+		[System.ComponentModel.DisplayName("HP Increase")]
 		public int hpIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("MP Increase")]
 		public int mpIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Armor Slot Increase")]
 		public int armorSlotIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Accessory Slot Increase")]
 		public int accessorySlotIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Item Slot Increase")]
 		public int itemSlotIncrease
 		{ get; set; }
+		[System.ComponentModel.DisplayName("Drive Gauge Increase")]
 		public int driveGaugeIncrease
 		{ get; set; }
 		public int changeCount
 		{ get; set; }
 
-		public Bonus(string f, string stA, string slA, string rA, string oR)
+		public Bonus(string c, string f, string stA, string slA, string rA, string oR)
 		{
+			character = c;
 			fight = f;
 			statAddress = stA;
 			slotAddress = slA;
@@ -57,13 +66,35 @@ namespace Plandomizer
 			replacementRewardAddress1 = "";
 			replacementReward2 = "";
 			replacementRewardAddress2 = "";
-			hpIncrease = -1;
-			mpIncrease = -1;
-			armorSlotIncrease = -1;
-			accessorySlotIncrease = -1;
-			itemSlotIncrease = -1;
-			driveGaugeIncrease = -1;
+			hpIncrease = 0;
+			mpIncrease = 0;
+			armorSlotIncrease = 0;
+			accessorySlotIncrease = 0;
+			itemSlotIncrease = 0;
+			driveGaugeIncrease = 0;
 			changeCount = 0;
+		}
+
+		public Bonus(Bonus other)
+        {
+			character = other.character;
+			fight = other.fight;
+			statAddress = other.statAddress;
+			slotAddress = other.slotAddress;
+			rewardAddress = other.rewardAddress;
+			originalReward = other.originalReward;
+
+			replacementReward1 = other.replacementReward1;
+			replacementRewardAddress1 = other.replacementRewardAddress1;
+			replacementReward2 = other.replacementReward2;
+			replacementRewardAddress2 = other.replacementRewardAddress2;
+			hpIncrease = other.hpIncrease;
+			mpIncrease = other.mpIncrease;
+			armorSlotIncrease = other.armorSlotIncrease;
+			accessorySlotIncrease = other.accessorySlotIncrease;
+			itemSlotIncrease = other.itemSlotIncrease;
+			driveGaugeIncrease = other.driveGaugeIncrease;
+			changeCount = other.changeCount;
 		}
 
 		public string toString()
@@ -114,7 +145,7 @@ namespace Plandomizer
 					ret += replacementRewardAddress1;
 				else
 					ret += "0000";
-				ret += " // " + replacementReward2 + " " + replacementReward1 + "\n";
+				ret += " // Replacement Reward #2:" + replacementReward2 + " Replacement Reward #1:" + replacementReward1 + "\n";
 			}
 
 			return ret;
