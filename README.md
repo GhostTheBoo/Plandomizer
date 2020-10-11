@@ -6,7 +6,7 @@ Download entire folder as zip.
 
 Run executable in this exact file structure.
 
-Select between chests, popups, bonuses, forms, levels, or equipment.
+Select between chests, popups, forms, bonuses, levels, or equipment.
 
 Select the world or form.
 
@@ -23,6 +23,6 @@ Click the help button for details on how each tab works and warnings for replace
 
 # TODO
 
-Add Party Level Ups? (I don't feel they would be incredibly useful)
+Add Vanilla Information for Equipment, and Bonus Levels
 
-Add Boss Replacement? (Boss rando is already incredibly jank, may not be worth the effort)
+Add Party Level Ups? (I don't feel they would be incredibly useful)

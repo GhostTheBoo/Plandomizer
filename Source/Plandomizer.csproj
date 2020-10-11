@@ -107,7 +107,6 @@
     <Content Include="Data\keyblades.txt" />
     <Content Include="Data\rewardLocations.txt" />
     <Content Include="Data\rewards.txt" />
-    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

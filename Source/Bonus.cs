@@ -145,7 +145,7 @@ namespace Plandomizer
 					ret += replacementRewardAddress1;
 				else
 					ret += "0000";
-				ret += " // " + replacementReward2 + " " + replacementReward1 + "\n";
+				ret += " // Replacement Reward #2:" + replacementReward2 + " Replacement Reward #1:" + replacementReward1 + "\n";
 			}
 
 			return ret;
