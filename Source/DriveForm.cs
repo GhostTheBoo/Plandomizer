@@ -48,6 +48,15 @@ namespace Plandomizer
 			expChanged = false;
 		}
 
+		public void Default()
+		{
+			newExp = originalExp;
+			replacement = "";
+			replacementAddress = "";
+			changed = false;
+			expChanged = false;
+		}
+
 		public string toStringAbility()
 		{
 			string ret = "";
@@ -61,9 +70,6 @@ namespace Plandomizer
 			string ret = "";
 			if (expChanged)
 				ret += "patch=1,EE," + expAddress + ",extended," + newExp.ToString("X8") + " // " + newExp + " experience is required to reach " + level + "\n";
-			/*else
-				if(multiplier != 1)
-					ret += "patch=1,EE," + expAddress + ",extended," + (multiplier * originalExp).ToString("X8") + " // " + newExp + " experience is required to reach " + level + "\n";*/
 			return ret;
 		}
 	}
