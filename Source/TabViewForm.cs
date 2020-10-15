@@ -24,6 +24,7 @@ namespace Plandomizer
         internal List<string> characterList;
         internal List<string> levelReplacementTypeList;
         internal List<int> levelNumberList;
+        internal List<string> formJankList;
         Color replacedBackground;
         Color defaultBackground;
 
@@ -79,6 +80,7 @@ namespace Plandomizer
             loadLevels();
             loadCritical();
             loadCheats();
+            loadFormJank();
 
             #region Data Sources and Display Members
             bonusWorldSelectorComboBox.DataSource = worldList;
@@ -1067,7 +1069,13 @@ namespace Plandomizer
                 temp.Clear();
                 skip += 2 + lineCount;
             }
-
+        }
+        public void loadFormJank()
+        {
+            formJankList = new List<string>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\jank.txt");
+            foreach(string s in data)
+                formJankList.Add(s);
         }
 
         internal void populateBonusList(int characterID, List<Bonus> bList, string[] data, int worldCount)
@@ -1481,18 +1489,23 @@ namespace Plandomizer
         #region Buttons
         private void chestReplaceButton_Click(object sender, EventArgs e)
         {
-            if(chestRewardTypeComboBox.SelectedIndex != 17)
+            int world = chestsWorldSelectorComboBox.SelectedIndex;
+            int chest = chestDataGridView.SelectedRows[0].Index;
+            if (chestRewardTypeComboBox.SelectedIndex != 17)
             {
-                int world = chestsWorldSelectorComboBox.SelectedIndex;
-                int chest = chestDataGridView.SelectedRows[0].Index;
                 Reward temp = rewardList[chestRewardTypeComboBox.SelectedIndex][chestRewardComboBox.SelectedIndex];
                 chestList[world][chest].replacement = temp.reward;
                 chestList[world][chest].replacementAddress = temp.rewardAddress;
-                chestList[world][chest].changed = true;
-                chestReplaced = true;
-                chestDataGridView.Update();
-                chestDataGridView.Refresh();
             }
+            else
+            {
+                chestList[world][chest].replacement = "EMPTY";
+                chestList[world][chest].replacementAddress = "0000";
+            }
+            chestList[world][chest].changed = true;
+            chestReplaced = true;
+            chestDataGridView.Update();
+            chestDataGridView.Refresh();
         }
 
         private void chestDefaultButton_Click(object sender, EventArgs e)
@@ -1504,18 +1517,23 @@ namespace Plandomizer
 
         private void popupReplaceButton_Click(object sender, EventArgs e)
         {
-            if(popupRewardTypeComboBox.SelectedIndex != 17)
+            int world = popupWorldSelectorComboBox.SelectedIndex;
+            int popup = popupDataGridView.SelectedRows[0].Index;
+            if (popupRewardTypeComboBox.SelectedIndex != 17)
             {
-                int world = popupWorldSelectorComboBox.SelectedIndex;
-                int popup = popupDataGridView.SelectedRows[0].Index;
                 Reward temp = rewardList[popupRewardTypeComboBox.SelectedIndex][popupRewardComboBox.SelectedIndex];
                 popupList[world][popup].replacement = temp.reward;
                 popupList[world][popup].replacementAddress = temp.rewardAddress;
-                popupList[world][popup].changed = true;
-                popupReplaced = true;
-                popupDataGridView.Update();
-                popupDataGridView.Refresh();
             }
+            else
+            {
+                popupList[world][popup].replacement = "EMPTY";
+                popupList[world][popup].replacementAddress = "0000";
+            }
+            popupList[world][popup].changed = true;
+            popupReplaced = true;
+            popupDataGridView.Update();
+            popupDataGridView.Refresh();
         }
 
         private void popupDefaultButton_Click(object sender, EventArgs e)
@@ -1619,10 +1637,15 @@ namespace Plandomizer
                 Reward temp = rewardList[formRewardTypeComboBox.SelectedIndex][formRewardComboBox.SelectedIndex];
                 driveFormList[form][level].replacement = temp.reward;
                 driveFormList[form][level].replacementAddress = temp.rewardAddress;
-                driveFormList[form][level].changed = true;
-
-                formReplaced = true;
             }
+            else
+            {
+                driveFormList[form][level].replacement = "";
+                driveFormList[form][level].replacementAddress = "0000";
+            }
+
+            driveFormList[form][level].changed = true;
+            formReplaced = true;
 
             switch (id)
             {
@@ -1663,7 +1686,7 @@ namespace Plandomizer
             }
             else
             {
-                equipmentList[equipmentType][equipment].ability = "";
+                equipmentList[equipmentType][equipment].ability = "EMPTY";
                 equipmentList[equipmentType][equipment].replacementAbilityAddress = "0000";
             }
             equipmentList[equipmentType][equipment].ap = Convert.ToInt32(equipmentAPCounter.Value);
@@ -1714,7 +1737,7 @@ namespace Plandomizer
                 }
                 else
                 {
-                    levelList[level].swordReplacement = "";
+                    levelList[level].swordReplacement = "EMPTY";
                     levelList[level].swordReplacementAddress = "0000";
                 }
 
@@ -1735,7 +1758,7 @@ namespace Plandomizer
                     }
                     else
                     {
-                        levelList[level].shieldReplacement = "";
+                        levelList[level].shieldReplacement = "EMPTY";
                         levelList[level].shieldReplacementAddress = "0000";
                     }
 
@@ -1747,7 +1770,7 @@ namespace Plandomizer
                     }
                     else
                     {
-                        levelList[level].staffReplacement = "";
+                        levelList[level].staffReplacement = "EMPTY";
                         levelList[level].staffReplacementAddress = "0000";
                     }
                 }
@@ -1765,17 +1788,22 @@ namespace Plandomizer
 
         private void critExtraReplaceButton_Click(object sender, EventArgs e)
         {
-            if(critExtraRewardTypeComboBox.SelectedIndex != 17)
+            int ability = criticalDataGridView.SelectedRows[0].Index;
+            if (critExtraRewardTypeComboBox.SelectedIndex != 17)
             {
-                int ability = criticalDataGridView.SelectedRows[0].Index;
                 Reward temp = rewardList[critExtraRewardTypeComboBox.SelectedIndex][critExtraRewardComboBox.SelectedIndex];
                 criticalList[ability].replacement = temp.reward;
                 criticalList[ability].replacementAddress = temp.rewardAddress;
-                criticalList[ability].changed = true;
-
-                criticalDataGridView.Update();
-                criticalDataGridView.Refresh();
             }
+            else
+            {
+                criticalList[ability].replacement = "EMPTY";
+                criticalList[ability].replacementAddress = "0000";
+            }
+            criticalList[ability].changed = true;
+
+            criticalDataGridView.Update();
+            criticalDataGridView.Refresh();
         }
 
         private void CritExtraDefaultButton_Click(object sender, EventArgs e)
@@ -1916,14 +1944,18 @@ namespace Plandomizer
                     if (c.enabled)
                         file.Write(c.toString() + "\n");
                 }
-                i = 0;
+                if(formReplaced)
+                {
+                    file.WriteLine("\n//Remove Vanilla Growth");
+                    foreach (string s in formJankList)
+                        file.Write(s + "\n");
+                }
                 file.WriteLine("\n//Critical Mode Extras");
                 foreach (Critical c in criticalList)
                 {
                     if (c.changed)
                         file.Write(c.toString());
                 }
-                i = 0;
                 file.WriteLine("\n//Sora's Starting Status");
                 file.Write(startingStuff.toString());
                 i = 0;
