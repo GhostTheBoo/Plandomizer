@@ -23,6 +23,4 @@ Click the help button for details on how each tab works and warnings for replace
 
 # TODO
 
-Add Vanilla Information for Equipment, and Bonus Levels
-
-Add Party Level Ups? (I don't feel they would be incredibly useful)
+???
