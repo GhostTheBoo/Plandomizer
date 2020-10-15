@@ -141,6 +141,8 @@ namespace Plandomizer
             this.levelPage = new System.Windows.Forms.TabPage();
             this.levelDataGridView = new System.Windows.Forms.DataGridView();
             this.soraLevelBox = new System.Windows.Forms.GroupBox();
+            this.dreamWeaponReplacementTypeLabel = new System.Windows.Forms.Label();
+            this.levelRewardReplacementTypeComboBox = new System.Windows.Forms.ComboBox();
             this.levelHelpTextBox = new System.Windows.Forms.TextBox();
             this.nextEXPCounter = new System.Windows.Forms.NumericUpDown();
             this.nextEXPLabel = new System.Windows.Forms.Label();
@@ -206,6 +208,7 @@ namespace Plandomizer
             this.patchSelectorComboBox = new System.Windows.Forms.ComboBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
+            this.darkModeButton = new System.Windows.Forms.Button();
             this.tabControlContainer.SuspendLayout();
             this.chestPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chestDataGridView)).BeginInit();
@@ -1567,13 +1570,13 @@ namespace Plandomizer
             | System.Windows.Forms.AnchorStyles.Right)));
             this.levelDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.levelDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.levelDataGridView.Location = new System.Drawing.Point(3, 49);
+            this.levelDataGridView.Location = new System.Drawing.Point(3, 6);
             this.levelDataGridView.MultiSelect = false;
             this.levelDataGridView.Name = "levelDataGridView";
             this.levelDataGridView.ReadOnly = true;
             this.levelDataGridView.RowHeadersVisible = false;
             this.levelDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.levelDataGridView.Size = new System.Drawing.Size(721, 441);
+            this.levelDataGridView.Size = new System.Drawing.Size(721, 484);
             this.levelDataGridView.TabIndex = 32;
             this.levelDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.levelDataGridView_CellFormatting);
             // 
@@ -1581,6 +1584,8 @@ namespace Plandomizer
             // 
             this.soraLevelBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.soraLevelBox.Controls.Add(this.dreamWeaponReplacementTypeLabel);
+            this.soraLevelBox.Controls.Add(this.levelRewardReplacementTypeComboBox);
             this.soraLevelBox.Controls.Add(this.levelHelpTextBox);
             this.soraLevelBox.Controls.Add(this.nextEXPCounter);
             this.soraLevelBox.Controls.Add(this.nextEXPLabel);
@@ -1588,21 +1593,38 @@ namespace Plandomizer
             this.soraLevelBox.Controls.Add(this.levelStatBox);
             this.soraLevelBox.Controls.Add(this.levelShieldBox);
             this.soraLevelBox.Controls.Add(this.levelStaffBox);
-            this.soraLevelBox.Location = new System.Drawing.Point(730, 49);
+            this.soraLevelBox.Location = new System.Drawing.Point(730, 6);
             this.soraLevelBox.Name = "soraLevelBox";
-            this.soraLevelBox.Size = new System.Drawing.Size(485, 441);
+            this.soraLevelBox.Size = new System.Drawing.Size(485, 484);
             this.soraLevelBox.TabIndex = 30;
             this.soraLevelBox.TabStop = false;
             this.soraLevelBox.Text = "Sora";
+            // 
+            // dreamWeaponReplacementTypeLabel
+            // 
+            this.dreamWeaponReplacementTypeLabel.AutoSize = true;
+            this.dreamWeaponReplacementTypeLabel.Location = new System.Drawing.Point(6, 18);
+            this.dreamWeaponReplacementTypeLabel.Name = "dreamWeaponReplacementTypeLabel";
+            this.dreamWeaponReplacementTypeLabel.Size = new System.Drawing.Size(187, 13);
+            this.dreamWeaponReplacementTypeLabel.TabIndex = 35;
+            this.dreamWeaponReplacementTypeLabel.Text = "Dream Weapon Replacement Method";
+            // 
+            // levelRewardReplacementTypeComboBox
+            // 
+            this.levelRewardReplacementTypeComboBox.FormattingEnabled = true;
+            this.levelRewardReplacementTypeComboBox.Location = new System.Drawing.Point(6, 37);
+            this.levelRewardReplacementTypeComboBox.Name = "levelRewardReplacementTypeComboBox";
+            this.levelRewardReplacementTypeComboBox.Size = new System.Drawing.Size(200, 21);
+            this.levelRewardReplacementTypeComboBox.TabIndex = 34;
             // 
             // levelHelpTextBox
             // 
             this.levelHelpTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.levelHelpTextBox.Location = new System.Drawing.Point(212, 167);
+            this.levelHelpTextBox.Location = new System.Drawing.Point(217, 167);
             this.levelHelpTextBox.Multiline = true;
             this.levelHelpTextBox.Name = "levelHelpTextBox";
-            this.levelHelpTextBox.Size = new System.Drawing.Size(267, 265);
+            this.levelHelpTextBox.Size = new System.Drawing.Size(262, 308);
             this.levelHelpTextBox.TabIndex = 33;
             this.levelHelpTextBox.Text = resources.GetString("levelHelpTextBox.Text");
             // 
@@ -1635,7 +1657,7 @@ namespace Plandomizer
             this.levelSwordBox.Controls.Add(this.swordRewardComboBox);
             this.levelSwordBox.Controls.Add(this.swordRewardTypeLabel);
             this.levelSwordBox.Controls.Add(this.swordRewardTypeComboBox);
-            this.levelSwordBox.Location = new System.Drawing.Point(6, 19);
+            this.levelSwordBox.Location = new System.Drawing.Point(6, 64);
             this.levelSwordBox.Name = "levelSwordBox";
             this.levelSwordBox.Size = new System.Drawing.Size(200, 133);
             this.levelSwordBox.TabIndex = 24;
@@ -1786,7 +1808,7 @@ namespace Plandomizer
             this.levelShieldBox.Controls.Add(this.shieldRewardComboBox);
             this.levelShieldBox.Controls.Add(this.shieldRewardTypeLabel);
             this.levelShieldBox.Controls.Add(this.shieldRewardTypeComboBox);
-            this.levelShieldBox.Location = new System.Drawing.Point(6, 160);
+            this.levelShieldBox.Location = new System.Drawing.Point(6, 203);
             this.levelShieldBox.Name = "levelShieldBox";
             this.levelShieldBox.Size = new System.Drawing.Size(200, 133);
             this.levelShieldBox.TabIndex = 25;
@@ -1835,7 +1857,7 @@ namespace Plandomizer
             this.levelStaffBox.Controls.Add(this.staffRewardComboBox);
             this.levelStaffBox.Controls.Add(this.staffRewardTypeLabel);
             this.levelStaffBox.Controls.Add(this.staffRewardTypeComboBox);
-            this.levelStaffBox.Location = new System.Drawing.Point(6, 299);
+            this.levelStaffBox.Location = new System.Drawing.Point(6, 342);
             this.levelStaffBox.Name = "levelStaffBox";
             this.levelStaffBox.Size = new System.Drawing.Size(200, 133);
             this.levelStaffBox.TabIndex = 26;
@@ -2323,11 +2345,23 @@ namespace Plandomizer
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // darkModeButton
+            // 
+            this.darkModeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.darkModeButton.Location = new System.Drawing.Point(94, 607);
+            this.darkModeButton.Name = "darkModeButton";
+            this.darkModeButton.Size = new System.Drawing.Size(75, 23);
+            this.darkModeButton.TabIndex = 4;
+            this.darkModeButton.Text = "Theme";
+            this.darkModeButton.UseVisualStyleBackColor = true;
+            this.darkModeButton.Click += new System.EventHandler(this.darkModeButton_Click);
+            // 
             // TabViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 642);
+            this.Controls.Add(this.darkModeButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.patchSelectorComboBox);
@@ -2598,5 +2632,8 @@ namespace Plandomizer
         private System.Windows.Forms.TextBox bonusCurrentItemSlotTextBox;
         private System.Windows.Forms.TextBox bonusCurrentDriveTextBox;
         private System.Windows.Forms.TextBox bonusCurrentHPTextBox;
+        private System.Windows.Forms.Button darkModeButton;
+        private System.Windows.Forms.Label dreamWeaponReplacementTypeLabel;
+        private System.Windows.Forms.ComboBox levelRewardReplacementTypeComboBox;
     }
 }

@@ -51,17 +51,28 @@ namespace Plandomizer
 		[System.ComponentModel.DisplayName("Staff")]
 		public string staffReplacement
 		{ get; set; }
+		public string vanillaSword
+		{ get; set; }
+		public string vanillaShield
+		{ get; set; }
+		public string vanillaStaff
+		{ get; set; }
+		public int rewardReplacementType
+		{ get; set; }
 		public bool changed
 		{ get; set; }
 
-		public Level(int l, string expA, string statA, string swordA, string shieldA, string staffA)
+		public Level(int l, string[] entries)
         {
 			level = l;
-			expToNextAddress = expA;
-			statAddress = statA;
-			swordAddress = swordA;
-			shieldAddress = shieldA;
-			staffAddress = staffA;
+			expToNextAddress = entries[0];
+			statAddress = entries[1];
+			swordAddress = entries[2];
+			shieldAddress = entries[3];
+			staffAddress = entries[4];
+			vanillaSword = entries[5];
+			vanillaShield = entries[6];
+			vanillaStaff = entries[7];
 			expToNext = 0;
 			ap = 0;
 			defense = 0;
@@ -70,9 +81,27 @@ namespace Plandomizer
 			swordReplacementAddress = "";
 			shieldReplacementAddress = "";
 			staffReplacementAddress = "";
-			swordReplacement = "";
-			shieldReplacement = "";
-			staffReplacement = "";
+			swordReplacement = vanillaSword;
+			shieldReplacement = vanillaShield;
+			staffReplacement = vanillaStaff;
+			rewardReplacementType = 0;
+			changed = false;
+		}
+
+		public void Default()
+		{
+			expToNext = 0;
+			ap = 0;
+			defense = 0;
+			magic = 0;
+			strength = 0;
+			swordReplacementAddress = "";
+			shieldReplacementAddress = "";
+			staffReplacementAddress = "";
+			swordReplacement = vanillaSword;
+			shieldReplacement = vanillaShield;
+			staffReplacement = vanillaStaff;
+			rewardReplacementType = 0;
 			changed = false;
 		}
 
@@ -91,9 +120,12 @@ namespace Plandomizer
 					ret += "// No Level 1 Dream Weapon Rewards\n";
 				else
 				{
-					ret += "patch=1,EE," + swordAddress + ",extended,0000" + swordReplacementAddress + " // Sword Reward: " + swordReplacement + "\n";
-					ret += "patch=1,EE," + shieldAddress + ",extended,0000" + shieldReplacementAddress + " // Shield Reward: " + shieldReplacement + "\n";
-					ret += "patch=1,EE," + staffAddress + ",extended,0000" + staffReplacementAddress + " // Staff Reward: " + staffReplacement + "\n";
+					if(rewardReplacementType != 0)
+                    {
+						ret += "patch=1,EE," + swordAddress + ",extended,0000" + swordReplacementAddress + " // Sword Reward: " + swordReplacement + "\n";
+						ret += "patch=1,EE," + shieldAddress + ",extended,0000" + shieldReplacementAddress + " // Shield Reward: " + shieldReplacement + "\n";
+						ret += "patch=1,EE," + staffAddress + ",extended,0000" + staffReplacementAddress + " // Staff Reward: " + staffReplacement + "\n";
+                    }
 				}
 			}
 			return ret;

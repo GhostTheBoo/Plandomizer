@@ -30,6 +30,13 @@ namespace Plandomizer
             changed = false;
         }
 
+        public void Default()
+        {
+            replacement = ability;
+            replacementAddress = "";
+            changed = false;
+        }
+
         public string toString()
         {
             string ret = "";

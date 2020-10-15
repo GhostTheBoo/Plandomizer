@@ -97,6 +97,21 @@ namespace Plandomizer
 			changeCount = other.changeCount;
 		}
 
+		public void Default()
+		{
+			replacementReward1 = "";
+			replacementRewardAddress1 = "";
+			replacementReward2 = "";
+			replacementRewardAddress2 = "";
+			hpIncrease = 0;
+			mpIncrease = 0;
+			armorSlotIncrease = 0;
+			accessorySlotIncrease = 0;
+			itemSlotIncrease = 0;
+			driveGaugeIncrease = 0;
+			changeCount = 0;
+		}
+
 		public string toString()
 		{
 			string ret = "";

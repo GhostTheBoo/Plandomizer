@@ -22,10 +22,12 @@ namespace Plandomizer
         internal List<string> equipmentTypeList;
         internal List<string> patchList;
         internal List<string> characterList;
+        internal List<string> levelReplacementTypeList;
         internal List<int> levelNumberList;
+        internal List<string> formJankList;
         Color replacedBackground;
+        Color defaultBackground;
 
-        internal List<Bonus> singleBonusList;
         internal List<List<List<Bonus>>> bonusList;
         internal bool bonusReplaced = false;
         internal List<List<Chest>> chestList;
@@ -43,14 +45,17 @@ namespace Plandomizer
         internal Starting startingStuff;
         internal List<Cheat> cheatList;
         internal List<List<Reward>> rewardList;
+        internal bool isDarkModeEnabled;
 
         public TabViewForm()
         {
             InitializeComponent();
 
             replacedBackground = Color.FromArgb(255, 150, 200);
+            defaultBackground = Color.White;
+
             startingStuff = new Starting();
-            singleBonusList = new List<Bonus>();
+            isDarkModeEnabled = false;
 
             populateWorldList();
             populateRewardTypeList();
@@ -60,6 +65,7 @@ namespace Plandomizer
             populatePatchList();
             populateCharacterList();
             populateLevelNumberList();
+            populateLevelReplacementTypeList();
 
             bonusList = new List<List<List<Bonus>>>();
 
@@ -74,6 +80,7 @@ namespace Plandomizer
             loadLevels();
             loadCritical();
             loadCheats();
+            loadFormJank();
 
             #region Data Sources and Display Members
             bonusWorldSelectorComboBox.DataSource = worldList;
@@ -117,6 +124,7 @@ namespace Plandomizer
             popupRewardTypeComboBox.SelectedIndex = 17;
 
             levelDataGridView.DataSource = levelList;
+            levelRewardReplacementTypeComboBox.DataSource = levelReplacementTypeList;
             swordRewardTypeComboBox.BindingContext = new BindingContext();
             swordRewardComboBox.BindingContext = new BindingContext();
             swordRewardTypeComboBox.DataSource = rewardTypeList;
@@ -194,6 +202,15 @@ namespace Plandomizer
             equipmentDataGridView.Columns["statAddress"].Visible = false;
             equipmentDataGridView.Columns["elementalResistanceAddress"].Visible = false;
             equipmentDataGridView.Columns["otherResistanceAddress"].Visible = false;
+            equipmentDataGridView.Columns["vanillaStrength"].Visible = false;
+            equipmentDataGridView.Columns["vanillaMagic"].Visible = false;
+            equipmentDataGridView.Columns["vanillaAP"].Visible = false;
+            equipmentDataGridView.Columns["vanillaDefense"].Visible = false;
+            equipmentDataGridView.Columns["vanillaAbility"].Visible = false;
+            equipmentDataGridView.Columns["vanillaFireResistance"].Visible = false;
+            equipmentDataGridView.Columns["vanillaBlizzardResistance"].Visible = false;
+            equipmentDataGridView.Columns["vanillaThunderResistance"].Visible = false;
+            equipmentDataGridView.Columns["vanillaDarkResistance"].Visible = false;
             equipmentDataGridView.Columns["changed"].Visible = false;
             equipmentDataGridView.Columns["replacementAbilityAddress"].Visible = false;
 
@@ -201,6 +218,14 @@ namespace Plandomizer
             popupDataGridView.Columns["replacementAddress"].Visible = false;
             popupDataGridView.Columns["changed"].Visible = false;
 
+            levelDataGridView.Columns["swordReplacement"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            levelDataGridView.Columns["shieldReplacement"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            levelDataGridView.Columns["staffReplacement"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            levelDataGridView.Columns["level"].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            //levelDataGridView.Columns["ap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //levelDataGridView.Columns["defense"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //levelDataGridView.Columns["strength"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //levelDataGridView.Columns["magic"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             levelDataGridView.Columns["expToNextAddress"].Visible = false;
             levelDataGridView.Columns["statAddress"].Visible = false;
             levelDataGridView.Columns["swordAddress"].Visible = false;
@@ -209,6 +234,10 @@ namespace Plandomizer
             levelDataGridView.Columns["swordReplacementAddress"].Visible = false;
             levelDataGridView.Columns["shieldReplacementAddress"].Visible = false;
             levelDataGridView.Columns["staffReplacementAddress"].Visible = false;
+            levelDataGridView.Columns["vanillaSword"].Visible = false;
+            levelDataGridView.Columns["vanillaShield"].Visible = false;
+            levelDataGridView.Columns["vanillaStaff"].Visible = false;
+            levelDataGridView.Columns["rewardReplacementType"].Visible = false;
             levelDataGridView.Columns["changed"].Visible = false;
 
             criticalDataGridView.Columns["address"].Visible = false;
@@ -826,7 +855,14 @@ namespace Plandomizer
         }
         public void loadEquipment()
         {
-            int entryCount = 5;
+            int kbEntryCount = 8;
+            int dsEntryCount = 8;
+            int gsEntryCount = 8;
+            int awEntryCount = 7;
+            int armEntryCount = 11;
+            int accEntryCount = 9;
+
+            //int entryCount = 5;
             int skip = 1;
 
             int kbCount = 27;
@@ -840,32 +876,32 @@ namespace Plandomizer
             string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\equipment.txt");
 
             List<Equipment> temp = new List<Equipment>();
-            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * kbCount).ToArray(), kbCount, equipmentTypeList[0]);
+            populateEquipmentList(0, temp, data.Skip(skip).Take(kbEntryCount * kbCount).ToArray(), kbCount, kbEntryCount);
             equipmentList.Add(temp);
-            skip += 1 + (entryCount * kbCount);
+            skip += 1 + (kbEntryCount * kbCount);
             temp = new List<Equipment>();
 
-            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * dsCount).ToArray(), dsCount, equipmentTypeList[1]);
+            populateEquipmentList(1, temp, data.Skip(skip).Take(dsEntryCount * dsCount).ToArray(), dsCount, dsEntryCount);
             equipmentList.Add(temp);
-            skip += 1 + (entryCount * dsCount);
+            skip += 1 + (dsEntryCount * dsCount);
             temp = new List<Equipment>();
 
-            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * gsCount).ToArray(), gsCount, equipmentTypeList[2]);
+            populateEquipmentList(2, temp, data.Skip(skip).Take(gsEntryCount * gsCount).ToArray(), gsCount, gsEntryCount);
             equipmentList.Add(temp);
-            skip += 1 + (entryCount * gsCount);
+            skip += 1 + (gsEntryCount * gsCount);
             temp = new List<Equipment>();
 
-            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * awCount).ToArray(), awCount, equipmentTypeList[3]);
+            populateEquipmentList(3, temp, data.Skip(skip).Take(awEntryCount * awCount).ToArray(), awCount, awEntryCount);
             equipmentList.Add(temp);
-            skip += 1 + (entryCount * awCount);
+            skip += 1 + (awEntryCount * awCount);
             temp = new List<Equipment>();
 
-            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * armCount).ToArray(), armCount, equipmentTypeList[4]);
+            populateEquipmentList(4, temp, data.Skip(skip).Take(armEntryCount * armCount).ToArray(), armCount, armEntryCount);
             equipmentList.Add(temp);
-            skip += 1 + (entryCount * armCount);
+            skip += 1 + (armEntryCount * armCount);
             temp = new List<Equipment>();
 
-            populateEquipmentList(temp, data.Skip(skip).Take(entryCount * accCount).ToArray(), accCount, equipmentTypeList[5]);
+            populateEquipmentList(5, temp, data.Skip(skip).Take(accEntryCount * accCount).ToArray(), accCount, accEntryCount);
             equipmentList.Add(temp);
 
         }
@@ -981,19 +1017,22 @@ namespace Plandomizer
         }
         public void loadLevels()
         {
-            string[] entries = new string[5];
+            string[] entries = new string[8];
 
             levelList = new List<Level>();
             string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\levels.txt");
 
             for(int i = 1; i < 100; i++)
             {
-                entries[0] = data[(6 * (i - 1)) + 1];
-                entries[1] = data[(6 * (i - 1)) + 2];
-                entries[2] = data[(6 * (i - 1)) + 3];
-                entries[3] = data[(6 * (i - 1)) + 4];
-                entries[4] = data[(6 * (i - 1)) + 5];
-                levelList.Add(new Level(i, entries[0], entries[1], entries[2], entries[3], entries[4]));
+                entries[0] = data[(9 * (i - 1)) + 1];
+                entries[1] = data[(9 * (i - 1)) + 2];
+                entries[2] = data[(9 * (i - 1)) + 3];
+                entries[3] = data[(9 * (i - 1)) + 4];
+                entries[4] = data[(9 * (i - 1)) + 5];
+                entries[5] = data[(9 * (i - 1)) + 6];
+                entries[6] = data[(9 * (i - 1)) + 7];
+                entries[7] = data[(9 * (i - 1)) + 8];
+                levelList.Add(new Level(i, entries));
             }
         }
         public void loadCritical()
@@ -1030,7 +1069,13 @@ namespace Plandomizer
                 temp.Clear();
                 skip += 2 + lineCount;
             }
-
+        }
+        public void loadFormJank()
+        {
+            formJankList = new List<string>();
+            string[] data = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Data\\jank.txt");
+            foreach(string s in data)
+                formJankList.Add(s);
         }
 
         internal void populateBonusList(int characterID, List<Bonus> bList, string[] data, int worldCount)
@@ -1085,17 +1130,85 @@ namespace Plandomizer
                 pList.Add(new Popup(entries[0], entries[1], entries[2]));
             }
         }
-        internal void populateEquipmentList(List<Equipment> eList, string[] data, int typeCount, string equipmentType)
+        internal void populateEquipmentList(int equipmentTypeID, List<Equipment> eList, string[] data, int typeCount, int entryCount)
         {
-            string[] entries = new string[5];
+            string[] entries = new string[15];
 
             for (int i = 0; i < typeCount; i++)
             {
-                for (int j = 0; j < 5; j++)
+                entries[0] = equipmentTypeList[equipmentTypeID];
+                entries[1] = data[(entryCount * i) + 0];
+                entries[2] = data[(entryCount * i) + 1];
+                entries[3] = data[(entryCount * i) + 2];
+                entries[4] = data[(entryCount * i) + 3];
+                entries[5] = data[(entryCount * i) + 4];
+                /* Entries:
+                 * 0 equipment type
+                 * 1 equipment name
+                 * 2 ability address
+                 * 3 stat address
+                 * 4 elemental resistance address
+                 * 5 other resistance address
+                 * 6 vanilla strength
+                 * 7 vanilla magic
+                 * 8 vanilla ap
+                 * 9 vanilla defense
+                 * 10 vanilla ability
+                 * 11 vanilla fire resistance
+                 * 12 vanilla blizzard resistance
+                 * 13 vanilla thunder resistance
+                 * 14 vanilla dark resistance
+                */
+                switch (equipmentTypeID)
                 {
-                    entries[j] = data[(5 * i) + j];
+                    case 0:
+                        // Keyblade
+                    case 1:
+                        // Donald Staff
+                    case 2:
+                        // Goofy Shield
+                        entries[6] = data[(entryCount * i) + 5];
+                        entries[7] = data[(entryCount * i) + 6];
+                        entries[8] = "0";
+                        entries[9] = "0";
+                        entries[10] = data[(entryCount * i) + 7];
+                        for (int j = 11; j < 15; j++)
+                            entries[j] = "0";
+                        break;
+                    case 3:
+                        // Ally Weapon
+                        entries[6] = data[(entryCount * i) + 5];
+                        entries[7] = data[(entryCount * i) + 6];
+                        for (int j = 8; j < 15; j++)
+                            entries[j] = "0";
+                        break;
+                    case 4:
+                        // Armor
+                        entries[6] = "0";
+                        entries[7] = "0";
+                        entries[8] = "0";
+                        entries[9] = data[(entryCount * i) + 5];
+                        entries[10] = data[(entryCount * i) + 6];
+                        entries[11] = data[(entryCount * i) + 7];
+                        entries[12] = data[(entryCount * i) + 8];
+                        entries[13] = data[(entryCount * i) + 9];
+                        entries[14] = data[(entryCount * i) + 10];
+                        break;
+                    case 5:
+                        // Accessory
+                        entries[6] = data[(entryCount * i) + 5];
+                        entries[7] = data[(entryCount * i) + 6];
+                        entries[8] = data[(entryCount * i) + 7];
+                        entries[9] = "0";
+                        entries[10] = data[(entryCount * i) + 8];
+                        for (int j = 11; j < 15; j++)
+                            entries[j] = "0";
+                        break;
+                    default:
+                        break;
                 }
-                eList.Add(new Equipment(equipmentType, entries[0], entries[1], entries[2], entries[3], entries[4]));
+                //eList.Add(new Equipment(equipmentType, entries[0], entries[1], entries[2], entries[3], entries[4]));
+                eList.Add(new Equipment(entries));
             }
         }
         internal void populateRewardList(List<Reward> rList, string[] data, int rewardTypeCount)
@@ -1111,7 +1224,7 @@ namespace Plandomizer
                 rList.Add(new Reward(entries[0], entries[1]));
             }
         }
-        
+
         public void populateWorldList()
         {
             worldList = new List<string>();
@@ -1216,6 +1329,14 @@ namespace Plandomizer
 
             for (int i = 1; i < 100; i++)
                 levelNumberList.Add(i);
+        }
+        internal void populateLevelReplacementTypeList()
+        {
+            levelReplacementTypeList = new List<string>();
+
+            levelReplacementTypeList.Add("Vanilla");
+            levelReplacementTypeList.Add("Custom");
+            levelReplacementTypeList.Add("Replace All");
         }
 
         private void chestsWorldSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -1368,54 +1489,56 @@ namespace Plandomizer
         #region Buttons
         private void chestReplaceButton_Click(object sender, EventArgs e)
         {
-            if(chestRewardTypeComboBox.SelectedIndex != 17)
+            int world = chestsWorldSelectorComboBox.SelectedIndex;
+            int chest = chestDataGridView.SelectedRows[0].Index;
+            if (chestRewardTypeComboBox.SelectedIndex != 17)
             {
-                int world = chestsWorldSelectorComboBox.SelectedIndex;
-                int chest = chestDataGridView.SelectedRows[0].Index;
                 Reward temp = rewardList[chestRewardTypeComboBox.SelectedIndex][chestRewardComboBox.SelectedIndex];
                 chestList[world][chest].replacement = temp.reward;
                 chestList[world][chest].replacementAddress = temp.rewardAddress;
-                chestList[world][chest].changed = true;
-                chestReplaced = true;
-                chestDataGridView.Update();
-                chestDataGridView.Refresh();
             }
+            else
+            {
+                chestList[world][chest].replacement = "EMPTY";
+                chestList[world][chest].replacementAddress = "0000";
+            }
+            chestList[world][chest].changed = true;
+            chestReplaced = true;
+            chestDataGridView.Update();
+            chestDataGridView.Refresh();
         }
 
         private void chestDefaultButton_Click(object sender, EventArgs e)
         {
-            int world = chestsWorldSelectorComboBox.SelectedIndex;
-            int chest = chestDataGridView.SelectedRows[0].Index;
-            chestList[world][chest].replacement = "";
-            chestList[world][chest].replacementAddress = "";
-            chestList[world][chest].changed = false;
+            chestList[chestsWorldSelectorComboBox.SelectedIndex][chestDataGridView.SelectedRows[0].Index].Default();
             chestDataGridView.Update();
             chestDataGridView.Refresh();
         }
 
         private void popupReplaceButton_Click(object sender, EventArgs e)
         {
-            if(popupRewardTypeComboBox.SelectedIndex != 17)
+            int world = popupWorldSelectorComboBox.SelectedIndex;
+            int popup = popupDataGridView.SelectedRows[0].Index;
+            if (popupRewardTypeComboBox.SelectedIndex != 17)
             {
-                int world = popupWorldSelectorComboBox.SelectedIndex;
-                int popup = popupDataGridView.SelectedRows[0].Index;
                 Reward temp = rewardList[popupRewardTypeComboBox.SelectedIndex][popupRewardComboBox.SelectedIndex];
                 popupList[world][popup].replacement = temp.reward;
                 popupList[world][popup].replacementAddress = temp.rewardAddress;
-                popupList[world][popup].changed = true;
-                popupReplaced = true;
-                popupDataGridView.Update();
-                popupDataGridView.Refresh();
             }
+            else
+            {
+                popupList[world][popup].replacement = "EMPTY";
+                popupList[world][popup].replacementAddress = "0000";
+            }
+            popupList[world][popup].changed = true;
+            popupReplaced = true;
+            popupDataGridView.Update();
+            popupDataGridView.Refresh();
         }
 
         private void popupDefaultButton_Click(object sender, EventArgs e)
         {
-            int world = popupWorldSelectorComboBox.SelectedIndex;
-            int popup = popupDataGridView.SelectedRows[0].Index;
-            popupList[world][popup].replacement = "";
-            popupList[world][popup].replacementAddress = "";
-            popupList[world][popup].changed = false;
+            popupList[popupWorldSelectorComboBox.SelectedIndex][popupDataGridView.SelectedRows[0].Index].Default();
             popupDataGridView.Update();
             popupDataGridView.Refresh();
         }
@@ -1490,20 +1613,7 @@ namespace Plandomizer
 
         private void bonusDefaultButton_Click(object sender, EventArgs e)
         {
-            int world = bonusWorldSelectorComboBox.SelectedIndex;
-            int bonus = bonusDataGridView.SelectedRows[0].Index;
-            int cID = bonusCharacterSelectorComboBox.SelectedIndex;
-            bonusList[cID][world][bonus].hpIncrease = 0;
-            bonusList[cID][world][bonus].mpIncrease = 0;
-            bonusList[cID][world][bonus].armorSlotIncrease = 0;
-            bonusList[cID][world][bonus].accessorySlotIncrease = 0;
-            bonusList[cID][world][bonus].itemSlotIncrease = 0;
-            bonusList[cID][world][bonus].driveGaugeIncrease = 0;
-            bonusList[cID][world][bonus].replacementReward1 = "";
-            bonusList[cID][world][bonus].replacementRewardAddress1 = "";
-            bonusList[cID][world][bonus].replacementReward2 = "";
-            bonusList[cID][world][bonus].replacementRewardAddress2 = "";
-            bonusList[cID][world][bonus].changeCount = 0;
+            bonusList[bonusCharacterSelectorComboBox.SelectedIndex][bonusWorldSelectorComboBox.SelectedIndex][bonusDataGridView.SelectedRows[0].Index].Default();
 
             bonusCurrentHPTextBox.Text = Convert.ToString(0);
             bonusCurrentMPTextBox.Text = Convert.ToString(0);
@@ -1527,10 +1637,15 @@ namespace Plandomizer
                 Reward temp = rewardList[formRewardTypeComboBox.SelectedIndex][formRewardComboBox.SelectedIndex];
                 driveFormList[form][level].replacement = temp.reward;
                 driveFormList[form][level].replacementAddress = temp.rewardAddress;
-                driveFormList[form][level].changed = true;
-
-                formReplaced = true;
             }
+            else
+            {
+                driveFormList[form][level].replacement = "";
+                driveFormList[form][level].replacementAddress = "0000";
+            }
+
+            driveFormList[form][level].changed = true;
+            formReplaced = true;
 
             switch (id)
             {
@@ -1554,14 +1669,7 @@ namespace Plandomizer
 
         private void formDefaultButton_Click(object sender, EventArgs e)
         {
-            int form = formSelectorComboBox.SelectedIndex;
-            int level = formDataGridView.SelectedRows[0].Index;
-            driveFormList[form][level].replacement = "";
-            driveFormList[form][level].replacementAddress = "";
-            driveFormList[form][level].changed = false;
-            driveFormList[form][level].expChanged = false;
-            driveFormList[form][level].newExp = driveFormList[form][level].originalExp;
-
+            driveFormList[formSelectorComboBox.SelectedIndex][formDataGridView.SelectedRows[0].Index].Default();
             formDataGridView.Update();
             formDataGridView.Refresh();
         }
@@ -1575,6 +1683,11 @@ namespace Plandomizer
                 Reward temp = rewardList[equipmentRewardTypeComboBox.SelectedIndex][equipmentRewardComboBox.SelectedIndex];
                 equipmentList[equipmentType][equipment].ability = temp.reward;
                 equipmentList[equipmentType][equipment].replacementAbilityAddress = temp.rewardAddress;
+            }
+            else
+            {
+                equipmentList[equipmentType][equipment].ability = "EMPTY";
+                equipmentList[equipmentType][equipment].replacementAbilityAddress = "0000";
             }
             equipmentList[equipmentType][equipment].ap = Convert.ToInt32(equipmentAPCounter.Value);
             equipmentList[equipmentType][equipment].strength = Convert.ToInt32(equipmentStrengthCounter.Value);
@@ -1595,23 +1708,7 @@ namespace Plandomizer
 
         private void equipmentDefaultButton_Click(object sender, EventArgs e)
         {
-            int equipmentType = equipmentTypeSelectorComboBox.SelectedIndex;
-            int equipment = equipmentDataGridView.SelectedRows[0].Index;
-
-            equipmentList[equipmentType][equipment].ap = 0;
-            equipmentList[equipmentType][equipment].strength = 0;
-            equipmentList[equipmentType][equipment].magic = 0;
-            equipmentList[equipmentType][equipment].defense = 0;
-            equipmentList[equipmentType][equipment].physicalResistance = 0;
-            equipmentList[equipmentType][equipment].fireResistance = 0;
-            equipmentList[equipmentType][equipment].blizzardResistance = 0;
-            equipmentList[equipmentType][equipment].thunderResistance = 0;
-            equipmentList[equipmentType][equipment].darkResistance = 0;
-            equipmentList[equipmentType][equipment].lightResistance = 0;
-            equipmentList[equipmentType][equipment].allResistance = 0;
-            equipmentList[equipmentType][equipment].replacementAbilityAddress = "";
-            equipmentList[equipmentType][equipment].ability = "";
-            equipmentList[equipmentType][equipment].changed = false;
+            equipmentList[equipmentTypeSelectorComboBox.SelectedIndex][equipmentDataGridView.SelectedRows[0].Index].Default();
             equipmentDataGridView.Update();
             equipmentDataGridView.Refresh();
         }
@@ -1625,79 +1722,93 @@ namespace Plandomizer
             levelList[level].defense = Convert.ToInt32(levelDefenseCounter.Value);
             levelList[level].strength = Convert.ToInt32(levelStrengthCounter.Value);
             levelList[level].expToNext = Convert.ToInt32(nextEXPCounter.Value);
+            levelList[level].rewardReplacementType = levelRewardReplacementTypeComboBox.SelectedIndex;
             levelList[level].changed = true;
 
             Reward temp;
 
-            if (swordRewardTypeComboBox.SelectedIndex != 17)
+            if (levelRewardReplacementTypeComboBox.SelectedIndex != 0)
             {
-                temp = rewardList[swordRewardTypeComboBox.SelectedIndex][swordRewardComboBox.SelectedIndex];
-                levelList[level].swordReplacement = temp.reward;
-                levelList[level].swordReplacementAddress = temp.rewardAddress;
-            }
+                if (swordRewardTypeComboBox.SelectedIndex != 17)
+                {
+                    temp = rewardList[swordRewardTypeComboBox.SelectedIndex][swordRewardComboBox.SelectedIndex];
+                    levelList[level].swordReplacement = temp.reward;
+                    levelList[level].swordReplacementAddress = temp.rewardAddress;
+                }
+                else
+                {
+                    levelList[level].swordReplacement = "EMPTY";
+                    levelList[level].swordReplacementAddress = "0000";
+                }
 
-            if (shieldRewardTypeComboBox.SelectedIndex != 17)
-            {
-                temp = rewardList[shieldRewardTypeComboBox.SelectedIndex][shieldRewardComboBox.SelectedIndex];
-                levelList[level].shieldReplacement = temp.reward;
-                levelList[level].shieldReplacementAddress = temp.rewardAddress;
-            }
+                if(levelRewardReplacementTypeComboBox.SelectedIndex == 2)
+                {
+                    levelList[level].shieldReplacement = levelList[level].swordReplacement;
+                    levelList[level].shieldReplacementAddress = levelList[level].swordReplacementAddress;
+                    levelList[level].staffReplacement = levelList[level].swordReplacement;
+                    levelList[level].staffReplacementAddress = levelList[level].swordReplacementAddress;
+                }
+                else
+                {
+                    if (shieldRewardTypeComboBox.SelectedIndex != 17)
+                    {
+                        temp = rewardList[shieldRewardTypeComboBox.SelectedIndex][shieldRewardComboBox.SelectedIndex];
+                        levelList[level].shieldReplacement = temp.reward;
+                        levelList[level].shieldReplacementAddress = temp.rewardAddress;
+                    }
+                    else
+                    {
+                        levelList[level].shieldReplacement = "EMPTY";
+                        levelList[level].shieldReplacementAddress = "0000";
+                    }
 
-            if (staffRewardTypeComboBox.SelectedIndex != 17)
-            {
-                temp = rewardList[staffRewardTypeComboBox.SelectedIndex][staffRewardComboBox.SelectedIndex];
-                levelList[level].staffReplacement = temp.reward;
-                levelList[level].staffReplacementAddress = temp.rewardAddress;
+                    if (staffRewardTypeComboBox.SelectedIndex != 17)
+                    {
+                        temp = rewardList[staffRewardTypeComboBox.SelectedIndex][staffRewardComboBox.SelectedIndex];
+                        levelList[level].staffReplacement = temp.reward;
+                        levelList[level].staffReplacementAddress = temp.rewardAddress;
+                    }
+                    else
+                    {
+                        levelList[level].staffReplacement = "EMPTY";
+                        levelList[level].staffReplacementAddress = "0000";
+                    }
+                }
             }
-
             levelDataGridView.Update();
             levelDataGridView.Refresh();
         }
 
         private void levelDefaultButton_Click(object sender, EventArgs e)
         {
-            int level = levelDataGridView.SelectedRows[0].Index;
-
-            levelList[level].ap = 0;
-            levelList[level].magic = 0;
-            levelList[level].defense = 0;
-            levelList[level].strength = 0;
-            levelList[level].expToNext = 0;
-            levelList[level].swordReplacement = "";
-            levelList[level].swordReplacementAddress = "";
-            levelList[level].shieldReplacement = "";
-            levelList[level].shieldReplacementAddress = "";
-            levelList[level].staffReplacement = "";
-            levelList[level].staffReplacementAddress = "";
-            levelList[level].changed = true;
-
+            levelList[levelDataGridView.SelectedRows[0].Index].Default();
             levelDataGridView.Update();
             levelDataGridView.Refresh();
         }
 
         private void critExtraReplaceButton_Click(object sender, EventArgs e)
         {
-            if(critExtraRewardTypeComboBox.SelectedIndex != 17)
+            int ability = criticalDataGridView.SelectedRows[0].Index;
+            if (critExtraRewardTypeComboBox.SelectedIndex != 17)
             {
-                int ability = criticalDataGridView.SelectedRows[0].Index;
                 Reward temp = rewardList[critExtraRewardTypeComboBox.SelectedIndex][critExtraRewardComboBox.SelectedIndex];
                 criticalList[ability].replacement = temp.reward;
                 criticalList[ability].replacementAddress = temp.rewardAddress;
-                criticalList[ability].changed = true;
-
-                criticalDataGridView.Update();
-                criticalDataGridView.Refresh();
             }
+            else
+            {
+                criticalList[ability].replacement = "EMPTY";
+                criticalList[ability].replacementAddress = "0000";
+            }
+            criticalList[ability].changed = true;
+
+            criticalDataGridView.Update();
+            criticalDataGridView.Refresh();
         }
 
         private void CritExtraDefaultButton_Click(object sender, EventArgs e)
         {
-            int ability = criticalDataGridView.SelectedRows[0].Index;
-
-            criticalList[ability].replacement = criticalList[ability].ability;
-            criticalList[ability].replacementAddress = "";
-            criticalList[ability].changed = false;
-
+            criticalList[criticalDataGridView.SelectedRows[0].Index].Default();
             criticalDataGridView.Update();
             criticalDataGridView.Refresh();
         }
@@ -1775,6 +1886,31 @@ namespace Plandomizer
             }
         }
 
+        private void darkModeButton_Click(object sender, EventArgs e)
+        {
+            if (!isDarkModeEnabled)
+            {
+                BackColor = SystemColors.ControlDarkDark;
+                foreach (TabPage tp in tabControlContainer.TabPages)
+                {
+                    tp.BackColor = SystemColors.ControlDark;
+                    //tp.UseVisualStyleBackColor = true;
+                }
+                defaultBackground = SystemColors.ControlDark;
+            }
+            else
+            {
+                BackColor = SystemColors.Control;
+                foreach (TabPage tp in tabControlContainer.TabPages)
+                {
+                    tp.BackColor = Color.Transparent;
+                    tp.UseVisualStyleBackColor = true;
+                }
+                defaultBackground = Color.White;
+            }
+            isDarkModeEnabled = !isDarkModeEnabled;
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             /*
@@ -1808,14 +1944,18 @@ namespace Plandomizer
                     if (c.enabled)
                         file.Write(c.toString() + "\n");
                 }
-                i = 0;
+                if(formReplaced)
+                {
+                    file.WriteLine("\n//Remove Vanilla Growth");
+                    foreach (string s in formJankList)
+                        file.Write(s + "\n");
+                }
                 file.WriteLine("\n//Critical Mode Extras");
                 foreach (Critical c in criticalList)
                 {
                     if (c.changed)
                         file.Write(c.toString());
                 }
-                i = 0;
                 file.WriteLine("\n//Sora's Starting Status");
                 file.Write(startingStuff.toString());
                 i = 0;
@@ -1932,55 +2072,80 @@ namespace Plandomizer
         #region Formatting Data Grid Views
         private void chestDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (isDarkModeEnabled)
+                chestDataGridView.GridColor = SystemColors.Control;
+            else
+                chestDataGridView.GridColor = SystemColors.ControlDark;
+
             foreach (DataGridViewRow r in chestDataGridView.Rows)
             {
                 if (Convert.ToBoolean(r.Cells["changed"].Value))
                     r.DefaultCellStyle.BackColor = replacedBackground;
                 else
-                    r.DefaultCellStyle.BackColor = Color.White;
+                    r.DefaultCellStyle.BackColor = defaultBackground;
             }
         }
 
         private void popupDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (isDarkModeEnabled)
+                popupDataGridView.GridColor = SystemColors.Control;
+            else
+                popupDataGridView.GridColor = SystemColors.ControlDark;
+
             foreach (DataGridViewRow r in popupDataGridView.Rows)
             {
                 if (Convert.ToBoolean(r.Cells["changed"].Value))
                     r.DefaultCellStyle.BackColor = replacedBackground;
                 else
-                    r.DefaultCellStyle.BackColor = Color.White;
+                    r.DefaultCellStyle.BackColor = defaultBackground;
             }
         }
 
         private void formDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (isDarkModeEnabled)
+                formDataGridView.GridColor = SystemColors.Control;
+            else
+                formDataGridView.GridColor = SystemColors.ControlDark;
+
             foreach (DataGridViewRow r in formDataGridView.Rows)
             {
                 if (Convert.ToBoolean(r.Cells["changed"].Value))
                     r.DefaultCellStyle.BackColor = replacedBackground;
                 else
-                    r.DefaultCellStyle.BackColor = Color.White;
+                    r.DefaultCellStyle.BackColor = defaultBackground;
             }
         }
 
         private void equipmentDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (isDarkModeEnabled)
+                equipmentDataGridView.GridColor = SystemColors.Control;
+            else
+                equipmentDataGridView.GridColor = SystemColors.ControlDark;
+
             foreach (DataGridViewRow r in equipmentDataGridView.Rows)
             {
                 if (Convert.ToBoolean(r.Cells["changed"].Value))
                     r.DefaultCellStyle.BackColor = replacedBackground;
                 else
-                    r.DefaultCellStyle.BackColor = Color.White;
+                    r.DefaultCellStyle.BackColor = defaultBackground;
             }
         }
 
         private void bonusDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (isDarkModeEnabled)
+                bonusDataGridView.GridColor = SystemColors.Control;
+            else
+                bonusDataGridView.GridColor = SystemColors.ControlDark;
+
             foreach (DataGridViewRow r in bonusDataGridView.Rows)
             {
                 int temp = Convert.ToInt32(r.Cells["changeCount"].Value);
                 if(temp == 0)
-                    r.DefaultCellStyle.BackColor = Color.White;
+                    r.DefaultCellStyle.BackColor = defaultBackground;
                 else
                 {
                     if (temp <= 2)
@@ -1993,23 +2158,33 @@ namespace Plandomizer
 
         private void levelDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (isDarkModeEnabled)
+                levelDataGridView.GridColor = SystemColors.Control;
+            else
+                levelDataGridView.GridColor = SystemColors.ControlDark;
+
             foreach (DataGridViewRow r in levelDataGridView.Rows)
             {
                 if (Convert.ToBoolean(r.Cells["changed"].Value))
                     r.DefaultCellStyle.BackColor = replacedBackground;
                 else
-                    r.DefaultCellStyle.BackColor = Color.White;
+                    r.DefaultCellStyle.BackColor = defaultBackground;
             }
         }
 
         private void criticalDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (isDarkModeEnabled)
+                criticalDataGridView.GridColor = SystemColors.Control;
+            else
+                criticalDataGridView.GridColor = SystemColors.ControlDark;
+
             foreach (DataGridViewRow r in criticalDataGridView.Rows)
             {
                 if (Convert.ToBoolean(r.Cells["changed"].Value))
                     r.DefaultCellStyle.BackColor = replacedBackground;
                 else
-                    r.DefaultCellStyle.BackColor = Color.White;
+                    r.DefaultCellStyle.BackColor = defaultBackground;
             }
         }
         #endregion

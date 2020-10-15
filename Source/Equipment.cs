@@ -49,6 +49,24 @@ namespace Plandomizer
 		[System.ComponentModel.DisplayName("Universal")]
 		public int allResistance
 		{ get; set; }
+		public string vanillaAbility
+		{ get; set; }
+		public int vanillaStrength
+		{ get; set; }
+		public int vanillaMagic
+		{ get; set; }
+		public int vanillaAP
+		{ get; set; }
+		public int vanillaDefense
+		{ get; set; }
+		public int vanillaFireResistance
+		{ get; set; }
+		public int vanillaBlizzardResistance
+		{ get; set; }
+		public int vanillaThunderResistance
+		{ get; set; }
+		public int vanillaDarkResistance
+		{ get; set; }
 		public string abilityAddress
 		{ get; set; }
 		public string statAddress
@@ -62,25 +80,52 @@ namespace Plandomizer
 		public bool changed
 		{ get; set; }
 
-		public Equipment(string eT, string en, string aA, string sA, string eRA, string oRA)
+		public Equipment(string[] entryList)
 		{
-			equipmentType = eT;
-			equipmentName = en;
-			abilityAddress = aA;
-			statAddress = sA;
-			elementalResistanceAddress = eRA;
-			otherResistanceAddress = oRA;
+			equipmentType = entryList[0];
+			equipmentName = entryList[1];
+			abilityAddress = entryList[2];
+			statAddress = entryList[3];
+			elementalResistanceAddress = entryList[4];
+			otherResistanceAddress = entryList[5];
+			vanillaStrength = Convert.ToInt32(entryList[6]);
+			vanillaMagic = Convert.ToInt32(entryList[7]);
+			vanillaAP = Convert.ToInt32(entryList[8]);
+			vanillaDefense = Convert.ToInt32(entryList[9]);
+			vanillaAbility = entryList[10];
+			vanillaFireResistance = Convert.ToInt32(entryList[11]);
+			vanillaBlizzardResistance = Convert.ToInt32(entryList[12]);
+			vanillaThunderResistance = Convert.ToInt32(entryList[13]);
+			vanillaDarkResistance = Convert.ToInt32(entryList[14]);
 			replacementAbilityAddress = "";
-			ability = "";
-			strength = 0;
-			magic = 0;
-			ap = 0;
-			defense = 0;
+			ability = vanillaAbility;
+			strength = vanillaStrength;
+			magic = vanillaMagic;
+			ap = vanillaAP;
+			defense = vanillaDefense;
 			physicalResistance = 0;
-			fireResistance = 0;
-			blizzardResistance = 0;
-			thunderResistance = 0;
-			darkResistance = 0;
+			fireResistance = vanillaFireResistance;
+			blizzardResistance = vanillaBlizzardResistance;
+			thunderResistance = vanillaThunderResistance;
+			darkResistance = vanillaDarkResistance;
+			lightResistance = 0;
+			allResistance = 0;
+			changed = false;
+		}
+
+		public void Default()
+		{
+			replacementAbilityAddress = "";
+			ability = vanillaAbility;
+			strength = vanillaStrength;
+			magic = vanillaMagic;
+			ap = vanillaAP;
+			defense = vanillaDefense;
+			physicalResistance = 0;
+			fireResistance = vanillaFireResistance;
+			blizzardResistance = vanillaBlizzardResistance;
+			thunderResistance = vanillaThunderResistance;
+			darkResistance = vanillaDarkResistance;
 			lightResistance = 0;
 			allResistance = 0;
 			changed = false;
@@ -94,7 +139,7 @@ namespace Plandomizer
 				string word = "0000";
 				ret += "// " + equipmentName + "\n";
 
-				word += replacementAbilityAddress + " // " + ability + "\n";
+				word += replacementAbilityAddress + " // Ability: " + ability + "\n";
 				ret += "patch=1,EE," + abilityAddress + ",extended," + word;
 				word = "";
 
