@@ -2,7 +2,11 @@
 
 ### Instructions
 
-Download entire folder as zip.
+Go to Release on the right side of the main github page.
+
+Download all the files in the newest release.
+
+MAKE SURE THE EXE IS IN THE SAME FOLDER AS DATA AND SOURCE.
 
 Run executable in this exact file structure.
 
